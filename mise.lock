@@ -216,6 +216,16 @@ checksum = "sha256:35c70c5c43c29108075e58b893234c67ef585f0b53a7eaf8e9e7d4eec9f33
 url = "https://github.com/eza-community/eza/releases/download/v0.23.5/eza_x86_64-unknown-linux-gnu.tar.gz"
 url_api = "https://api.github.com/repos/eza-community/eza/releases/assets/471228887"
 
+[tools."github:eza-community/eza"."platforms.macos-arm64"]
+checksum = "sha256:cbdae2ad79ae0ef1fd6a06f4644c90cef79a56353bc3bb7cf4663bb2831420f9"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.5/man-0.23.5.tar.gz"
+url_api = "https://api.github.com/repos/eza-community/eza/releases/assets/471228894"
+
+[tools."github:eza-community/eza"."platforms.macos-x64"]
+checksum = "sha256:cbdae2ad79ae0ef1fd6a06f4644c90cef79a56353bc3bb7cf4663bb2831420f9"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.5/man-0.23.5.tar.gz"
+url_api = "https://api.github.com/repos/eza-community/eza/releases/assets/471228894"
+
 [[tools.node]]
 version = "24.17.0"
 backend = "core:node"

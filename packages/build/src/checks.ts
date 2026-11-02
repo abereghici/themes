@@ -216,7 +216,12 @@ export const CHECKS: readonly ToolCheck[] = [
         copyFileSync(theme.path, join(dir, "bat/themes", `${theme.name}.tmTheme`));
       }
       writeFileSync(join(dir, "gitconfig"), `[include]\n  path = ${gitconfig}\n`);
-      const env = { BAT_CONFIG_DIR: join(dir, "bat"), BAT_CACHE_PATH: join(dir, "cache") };
+      // delta reads bat's cache from $XDG_CACHE_HOME/bat, not from BAT_CACHE_PATH
+      const env = {
+        BAT_CONFIG_DIR: join(dir, "bat"),
+        BAT_CACHE_PATH: join(dir, "cache/bat"),
+        XDG_CACHE_HOME: join(dir, "cache"),
+      };
 
       run("bat", ["cache", "--build"], { env });
       for (const appearance of APPEARANCES) {
