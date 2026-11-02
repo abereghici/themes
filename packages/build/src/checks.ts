@@ -104,7 +104,8 @@ const run = (
     encoding: "utf8",
     input: options.input,
     cwd: options.cwd,
-    env: withoutNoColor({ ...process.env, ...options.env }),
+    // A 24-bit color terminal, as the themes target: without it, tools round colors to 256
+    env: withoutNoColor({ ...process.env, COLORTERM: "truecolor", ...options.env }),
   });
 
   if (result.error !== undefined) throw result.error;
