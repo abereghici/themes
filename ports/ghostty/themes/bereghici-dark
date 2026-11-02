@@ -1,0 +1,24 @@
+# Bereghici Dark for Ghostty. Generated from abereghici/themes; do not edit.
+palette = 0=#1e221a
+palette = 1=#e99989
+palette = 2=#a6d1b0
+palette = 3=#fabc86
+palette = 4=#97bfe6
+palette = 5=#d4acca
+palette = 6=#87c8cb
+palette = 7=#a2a69d
+palette = 8=#858a81
+palette = 9=#ffbfb2
+palette = 10=#c9e7d0
+palette = 11=#ffd8ac
+palette = 12=#bedbf8
+palette = 13=#ebcde3
+palette = 14=#b3e2e4
+palette = 15=#eeefe9
+background = #12150f
+foreground = #eeefe9
+cursor-color = #eceac9
+cursor-text = #12150f
+selection-background = #4b4f45
+selection-foreground = #eeefe9
+split-divider-color = #696d63

@@ -1,0 +1,90 @@
+---
+output: themes/{{id}}.yazi/flavor.toml
+flavors: [dark, light]
+---
+# {{name}} for Yazi. Generated from abereghici/themes; do not edit.
+# Only the styles that carry the brand are set here; everything else is Yazi's preset, which
+# uses the terminal's ANSI colors (the Ghostty theme of the same name).
+#:schema https://yazi-rs.github.io/schemas/theme.json
+
+[mgr]
+cwd = { fg = "{{colors.blue.hex}}" }
+find_keyword = { fg = "{{colors.yellow.hex}}", bold = true, italic = true, underline = true }
+find_position = { fg = "{{colors.magenta.hex}}", bg = "reset", bold = true, italic = true }
+marker_copied = { fg = "{{colors.green.hex}}", bg = "{{colors.green.hex}}" }
+marker_cut = { fg = "{{colors.red.hex}}", bg = "{{colors.red.hex}}" }
+marker_marked = { fg = "{{colors.cyan.hex}}", bg = "{{colors.cyan.hex}}" }
+marker_selected = { fg = "{{colors.yellow.hex}}", bg = "{{colors.yellow.hex}}" }
+count_copied = { fg = "{{colors.surface.hex}}", bg = "{{colors.green.hex}}" }
+count_cut = { fg = "{{colors.surface.hex}}", bg = "{{colors.red.hex}}" }
+count_selected = { fg = "{{colors.surface.hex}}", bg = "{{colors.yellow.hex}}" }
+border_style = { fg = "{{colors.border.hex}}" }
+
+[tabs]
+active = { fg = "{{colors.surface.hex}}", bg = "{{colors.accent.hex}}", bold = true }
+inactive = { fg = "{{colors.textSubtle.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+
+[mode]
+normal_main = { fg = "{{colors.surface.hex}}", bg = "{{colors.accent.hex}}", bold = true }
+normal_alt = { fg = "{{colors.accent.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+select_main = { fg = "{{colors.surface.hex}}", bg = "{{colors.magenta.hex}}", bold = true }
+select_alt = { fg = "{{colors.magenta.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+unset_main = { fg = "{{colors.surface.hex}}", bg = "{{colors.red.hex}}", bold = true }
+unset_alt = { fg = "{{colors.red.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+
+[indicator]
+parent = { fg = "{{colors.text.hex}}", bg = "{{colors.selection.hex}}" }
+current = { fg = "{{colors.text.hex}}", bg = "{{colors.selection.hex}}" }
+preview = { underline = true }
+
+[status]
+perm_sep = { fg = "{{colors.textSubtlest.hex}}" }
+perm_type = { fg = "{{colors.blue.hex}}" }
+perm_read = { fg = "{{colors.yellow.hex}}" }
+perm_write = { fg = "{{colors.red.hex}}" }
+perm_exec = { fg = "{{colors.green.hex}}" }
+progress_normal = { fg = "{{colors.accent.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+progress_error = { fg = "{{colors.red.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+
+[which]
+border = { fg = "{{colors.border.hex}}" }
+cand = { fg = "{{colors.cyan.hex}}" }
+rest = { fg = "{{colors.textSubtlest.hex}}" }
+desc = { fg = "{{colors.magenta.hex}}" }
+separator_style = { fg = "{{colors.textSubtlest.hex}}" }
+
+[confirm]
+border = { fg = "{{colors.border.hex}}" }
+title = { fg = "{{colors.accent.hex}}" }
+
+[spot]
+border = { fg = "{{colors.border.hex}}" }
+title = { fg = "{{colors.accent.hex}}" }
+tbl_col = { fg = "{{colors.blue.hex}}" }
+tbl_cell = { fg = "{{colors.yellow.hex}}", reversed = true }
+
+[notify]
+title_info = { fg = "{{colors.green.hex}}" }
+title_warn = { fg = "{{colors.yellow.hex}}" }
+title_error = { fg = "{{colors.red.hex}}" }
+
+[pick]
+border = { fg = "{{colors.border.hex}}" }
+active = { fg = "{{colors.magenta.hex}}", bold = true }
+
+[input]
+border = { fg = "{{colors.border.hex}}" }
+selected = { bg = "{{colors.selection.hex}}" }
+
+[cmp]
+border = { fg = "{{colors.border.hex}}" }
+active = { bg = "{{colors.selection.hex}}" }
+
+[tasks]
+border = { fg = "{{colors.border.hex}}" }
+hovered = { fg = "{{colors.magenta.hex}}", bold = true }
+
+[help]
+border = { fg = "{{colors.border.hex}}" }
+chord = { fg = "{{colors.cyan.hex}}" }
+hovered = { bg = "{{colors.selection.hex}}", bold = true }

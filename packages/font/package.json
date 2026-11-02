@@ -1,0 +1,16 @@
+{
+  "name": "@repo/font",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Bereghici Symbols: the logo as a font glyph, for terminal prompts.",
+  "type": "module",
+  "scripts": {
+    "font": "node scripts/font.ts"
+  },
+  "dependencies": {
+    "opentype.js": "catalog:"
+  },
+  "devDependencies": {
+    "@types/opentype.js": "catalog:"
+  }
+}

@@ -1,0 +1,13 @@
+# Bereghici Dark for lazydocker. Generated from abereghici/themes; do not edit.
+# Paste it into lazydocker's config.yml.
+gui:
+  theme:
+    activeBorderColor:
+      - "#97bfe6"
+      - bold
+    inactiveBorderColor:
+      - "#a2a69d"
+    selectedLineBgColor:
+      - "#1e221a"
+    optionsTextColor:
+      - "#97bfe6"

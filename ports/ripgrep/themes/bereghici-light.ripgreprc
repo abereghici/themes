@@ -1,0 +1,7 @@
+# Bereghici Light for ripgrep. Generated from abereghici/themes; do not edit.
+# Add these lines to the file RIPGREP_CONFIG_PATH names.
+--colors=path:fg:139,83,127
+--colors=line:fg:31,124,68
+--colors=column:fg:31,124,68
+--colors=match:fg:168,72,55
+--colors=match:style:bold

@@ -1,0 +1,24 @@
+# Bereghici Light for Ghostty. Generated from abereghici/themes; do not edit.
+palette = 0=#e1e3dc
+palette = 1=#a84837
+palette = 2=#1f7c44
+palette = 3=#c3720f
+palette = 4=#2f6da4
+palette = 5=#8b537f
+palette = 6=#007a80
+palette = 7=#535750
+palette = 8=#686a64
+palette = 9=#833426
+palette = 10=#155f32
+palette = 11=#925613
+palette = 12=#20537f
+palette = 13=#6b3e62
+palette = 14=#005e63
+palette = 15=#2e3229
+background = #f3f5ee
+foreground = #2e3229
+cursor-color = #263316
+cursor-text = #f3f5ee
+selection-background = #c1c3bc
+selection-foreground = #2e3229
+split-divider-color = #a3a49e

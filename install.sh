@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+# Generated from ports.yml by `pnpm build`: edit it there.
+#
+# Usage:
+#   install.sh                     links every theme where its tool reads it; safe to run again
+#   install.sh sync dark|light     points the tools with one theme setting at an appearance
+
+set -euo pipefail
+
+# The physical path, so links made from a clone elsewhere still read as this repository's
+repo="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+ports="$repo/ports"
+failed=0
+
+# Links $1 at $2, replacing a link of its own or a broken one, never anything else of the user's
+link() {
+  if [ -L "$2" ] && [ -e "$2" ]; then
+    case "$(readlink "$2")" in
+      "$repo" | "$repo"/* | "$HOME/.local/share/bereghici"/*) ;;
+      *)
+        echo "skipped $2: it links somewhere else" >&2
+        return
+        ;;
+    esac
+  elif [ -e "$2" ]; then
+    echo "skipped $2: it exists and isn't a link" >&2
+    return
+  fi
+  if mkdir -p "$(dirname "$2")" && ln -sfn "$1" "$2"; then
+    echo "linked $2"
+  else
+    echo "failed: link $2" >&2
+    failed=1
+  fi
+}
+
+# Copies $1 to $2, over an older copy of itself
+copy() {
+  cmp -s "$1" "$2" && return
+  if mkdir -p "$(dirname "$2")" && cp "$1" "$2"; then
+    echo "copied $2"
+  else
+    echo "failed: copy $2" >&2
+    failed=1
+  fi
+}
+
+# Runs $2 when the command $1 exists; a failure is reported and the other ports still install
+run_if() {
+  command -v "$1" > /dev/null || return 0
+  echo "running $2"
+  if ! (eval "$2"); then
+    echo "failed: $2" >&2
+    failed=1
+  fi
+}
+
+current_appearance() {
+  # The key only exists in dark mode
+  if [ "$(defaults read -g AppleInterfaceStyle 2> /dev/null)" = "Dark" ]; then
+    echo dark
+  else
+    echo light
+  fi
+}
+
+sync() {
+  link "$ports/claude-code/themes/bereghici-$1.json" "$HOME/.claude/themes/bereghici.json"
+  link "$ports/codex/themes/bereghici-$1.tmTheme" "$HOME/.codex/themes/bereghici.tmTheme"
+}
+
+install() {
+  # Every port, under one stable path, for configs that reference a theme file
+  if [ "$repo" != "$HOME/.local/share/bereghici" ]; then
+    link "$repo" "$HOME/.local/share/bereghici"
+  fi
+
+  link "$ports/ghostty/themes" "$HOME/.config/ghostty/themes"
+  run_if code 'cd "$ports/vscode" && npx --yes @vscode/vsce@4.1.0 package --no-dependencies --out "${TMPDIR:-/tmp}/bereghici-theme.vsix" && code --install-extension "${TMPDIR:-/tmp}/bereghici-theme.vsix" --force'
+  link "$ports/bat/themes" "$HOME/.config/bat/themes"
+  run_if bat 'bat cache --build'
+  link "$ports/claude-code/themes/bereghici-dark.json" "$HOME/.claude/themes/bereghici-dark.json"
+  link "$ports/claude-code/themes/bereghici-light.json" "$HOME/.claude/themes/bereghici-light.json"
+  link "$ports/codex/themes/bereghici-dark.tmTheme" "$HOME/.codex/themes/bereghici-dark.tmTheme"
+  link "$ports/codex/themes/bereghici-light.tmTheme" "$HOME/.codex/themes/bereghici-light.tmTheme"
+  link "$ports/eza/themes/bereghici-terminal.yml" "$HOME/.config/eza/theme.yml"
+  link "$ports/yazi/themes/bereghici-dark.yazi" "$HOME/.config/yazi/flavors/bereghici-dark.yazi"
+  link "$ports/yazi/themes/bereghici-light.yazi" "$HOME/.config/yazi/flavors/bereghici-light.yazi"
+  copy "$ports/font/themes/BereghiciSymbols.otf" "$HOME/Library/Fonts/BereghiciSymbols.otf"
+
+  sync "$(current_appearance)"
+  return "$failed"
+}
+
+case "${1:-}" in
+  "") install ;;
+  sync)
+    case "${2:-}" in
+      dark | light)
+        sync "$2"
+        exit "$failed"
+        ;;
+      *)
+        echo "Usage: $(basename "$0") sync dark|light" >&2
+        exit 1
+        ;;
+    esac
+    ;;
+  *)
+    echo "Usage: $(basename "$0") [sync dark|light]" >&2
+    exit 1
+    ;;
+esac

@@ -1,0 +1,9 @@
+# Bereghici Terminal for ripgrep. Generated from abereghici/themes; do not edit.
+# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+# Add these lines to the file RIPGREP_CONFIG_PATH names.
+--colors=path:fg:5
+--colors=line:fg:2
+--colors=column:fg:2
+--colors=match:fg:1
+--colors=match:style:bold

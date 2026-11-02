@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          require-lockfile: true
+          cache: true
+      - run: pnpm lint
+      - run: pnpm format
+      - run: pnpm check-types
+      # The tests syntax-check the generated zsh files and load the Neovim port
+      - run: sudo apt-get install --yes --no-install-recommends zsh
+      - name: Install Neovim
+        env:
+          NVIM_VERSION: v0.12.6
+          NVIM_SHA256: 474430d53e6264f6d6dd18db42d6dc9df3a1b56ca9e88a325bbf860e1a811d87
+        run: |
+          curl --fail --location --silent --show-error --output nvim.tar.gz \
+            "https://github.com/neovim/neovim/releases/download/$NVIM_VERSION/nvim-linux-x86_64.tar.gz"
+          echo "$NVIM_SHA256  nvim.tar.gz" | sha256sum --check
+          sudo tar --extract --gzip --file nvim.tar.gz --directory /opt
+          echo /opt/nvim-linux-x86_64/bin >> "$GITHUB_PATH"
+      - run: pnpm test
+      # The generated themes are committed: fail when a template or token changed without `pnpm build`
+      - run: pnpm check

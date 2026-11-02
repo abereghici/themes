@@ -1,0 +1,9 @@
+---
+output: themes/{{id}}.sh
+flavors: [dark, light, terminal]
+---
+# {{name}} for jq. Generated from abereghici/themes; do not edit.
+{{#isTerminal}}# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+{{/isTerminal}}# JQ_COLORS: null, false, true, numbers, strings, arrays, objects, object keys
+export JQ_COLORS="{{colors.textSubtlest.sgr}}:{{colors.red.sgr}}:{{colors.green.sgr}}:{{colors.yellow.sgr}}:{{colors.green.sgr}}:1;{{colors.textSubtle.sgr}}:1;{{colors.textSubtle.sgr}}:{{colors.blue.sgr}}"

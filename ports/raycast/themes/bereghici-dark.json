@@ -1,0 +1,21 @@
+{
+  "author": "abereghici",
+  "authorUsername": "abereghici",
+  "version": "1",
+  "name": "Bereghici Dark",
+  "appearance": "dark",
+  "colors": {
+    "background": "#12150f",
+    "backgroundSecondary": "#181b14",
+    "text": "#eeefe9",
+    "selection": "#4b4f45",
+    "loader": "#eceac9",
+    "red": "#e99989",
+    "orange": "#ffd8ac",
+    "yellow": "#fabc86",
+    "green": "#a6d1b0",
+    "blue": "#97bfe6",
+    "purple": "#d4acca",
+    "magenta": "#ebcde3"
+  }
+}

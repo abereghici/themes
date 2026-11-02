@@ -1,0 +1,39 @@
+{
+  "name": "themes",
+  "private": true,
+  "description": "Bereghici Dark and Light themes for terminals, editors, command-line tools and apps, generated from the Bereghici Design System tokens.",
+  "license": "MIT",
+  "author": "abereghici",
+  "type": "module",
+  "scripts": {
+    "build": "node packages/build/src/cli.ts",
+    "check": "node packages/build/src/cli.ts --check",
+    "font": "pnpm --filter @repo/font font",
+    "test": "vitest run",
+    "check-types": "tsc",
+    "lint": "oxlint",
+    "format": "oxfmt --check",
+    "format:fix": "oxfmt",
+    "package:vscode": "cd ports/vscode && vsce package --no-dependencies --out bereghici-theme.vsix"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@vscode/vsce": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.15.0",
+      "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "24.17.0",
+      "onFail": "download"
+    }
+  }
+}

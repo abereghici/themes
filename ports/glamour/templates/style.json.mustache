@@ -1,0 +1,182 @@
+---
+output: themes/{{id}}.json
+flavors: [dark, light, terminal]
+---
+{
+  "document": {
+    "block_prefix": "\n",
+    "block_suffix": "\n",
+    "color": "{{colors.text.ref}}",
+    "margin": 2
+  },
+  "block_quote": {
+    "indent": 1,
+    "indent_token": "│ ",
+    "color": "{{colors.textSubtlest.ref}}"
+  },
+  "paragraph": {},
+  "list": {
+    "level_indent": 2
+  },
+  "heading": {
+    "block_suffix": "\n",
+    "color": "{{colors.accent.ref}}",
+    "bold": true
+  },
+  "h1": {
+    "prefix": " ",
+    "suffix": " ",
+    "color": "{{colors.surfaceNested.ref}}",
+    "background_color": "{{colors.accent.ref}}",
+    "bold": true
+  },
+  "h2": {
+    "prefix": "## "
+  },
+  "h3": {
+    "prefix": "### "
+  },
+  "h4": {
+    "prefix": "#### "
+  },
+  "h5": {
+    "prefix": "##### "
+  },
+  "h6": {
+    "prefix": "###### ",
+    "bold": false
+  },
+  "text": {},
+  "strikethrough": {
+    "crossed_out": true
+  },
+  "emph": {
+    "italic": true
+  },
+  "strong": {
+    "bold": true
+  },
+  "hr": {
+    "color": "{{colors.border.ref}}",
+    "format": "\n--------\n"
+  },
+  "item": {
+    "block_prefix": "• "
+  },
+  "enumeration": {
+    "block_prefix": ". "
+  },
+  "task": {
+    "ticked": "[✓] ",
+    "unticked": "[ ] "
+  },
+  "link": {
+    "color": "{{colors.blue.ref}}",
+    "underline": true
+  },
+  "link_text": {
+    "color": "{{colors.cyan.ref}}",
+    "bold": true
+  },
+  "image": {
+    "color": "{{colors.blue.ref}}",
+    "underline": true
+  },
+  "image_text": {
+    "color": "{{colors.cyan.ref}}"
+  },
+  "code": {
+    "prefix": " ",
+    "suffix": " ",
+    "color": "{{colors.red.ref}}",
+    "background_color": "{{colors.surfaceNested.ref}}"
+  },
+  "code_block": {
+    "color": "{{colors.text.ref}}",
+    "margin": 2,
+    "chroma": {
+      "text": {
+        "color": "{{colors.text.ref}}"
+      },
+      "error": {
+        "color": "{{colors.red.ref}}"
+      },
+      "comment": {
+        "color": "{{colors.textSubtlest.ref}}"
+      },
+      "comment_preproc": {
+        "color": "{{colors.magenta.ref}}"
+      },
+      "keyword": {
+        "color": "{{colors.magenta.ref}}"
+      },
+      "keyword_reserved": {
+        "color": "{{colors.magenta.ref}}"
+      },
+      "keyword_namespace": {
+        "color": "{{colors.magenta.ref}}"
+      },
+      "keyword_type": {
+        "color": "{{colors.cyan.ref}}"
+      },
+      "operator": {
+        "color": "{{colors.textSubtlest.ref}}"
+      },
+      "punctuation": {
+        "color": "{{colors.textSubtle.ref}}"
+      },
+      "name": {
+        "color": "{{colors.text.ref}}"
+      },
+      "name_builtin": {
+        "color": "{{colors.red.ref}}"
+      },
+      "name_tag": {
+        "color": "{{colors.blue.ref}}"
+      },
+      "name_attribute": {
+        "color": "{{colors.cyan.ref}}"
+      },
+      "name_class": {
+        "color": "{{colors.yellow.ref}}"
+      },
+      "name_constant": {
+        "color": "{{colors.yellow.ref}}"
+      },
+      "name_decorator": {
+        "color": "{{colors.magenta.ref}}"
+      },
+      "name_function": {
+        "color": "{{colors.blue.ref}}"
+      },
+      "literal_number": {
+        "color": "{{colors.red.ref}}"
+      },
+      "literal_string": {
+        "color": "{{colors.yellow.ref}}"
+      },
+      "literal_string_escape": {
+        "color": "{{colors.cyan.ref}}"
+      },
+      "generic_deleted": {
+        "color": "{{colors.red.ref}}"
+      },
+      "generic_inserted": {
+        "color": "{{colors.green.ref}}"
+      },
+      "generic_subheading": {
+        "color": "{{colors.textSubtle.ref}}"
+      },
+      "generic_emph": {
+        "italic": true
+      },
+      "generic_strong": {
+        "bold": true
+      }
+    }
+  },
+  "table": {},
+  "definition_description": {
+    "block_prefix": "\n🠶 "
+  }
+}

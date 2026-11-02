@@ -1,0 +1,16 @@
+{
+  "name": "@repo/palette",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The Bereghici Dark and Light terminal palettes, resolved from DTCG design tokens.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./contrast": "./src/contrast.ts"
+  },
+  "dependencies": {
+    "@abereghici/tokens": "catalog:",
+    "colorjs.io": "catalog:",
+    "style-dictionary": "catalog:"
+  }
+}

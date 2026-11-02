@@ -1,0 +1,19 @@
+---
+output: themes/{{id}}.yml
+flavors: [dark, light, terminal]
+---
+# {{name}} for lazydocker. Generated from abereghici/themes; do not edit.
+{{#isTerminal}}# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+{{/isTerminal}}# Paste it into lazydocker's config.yml.
+gui:
+  theme:
+    activeBorderColor:
+      - {{#isTerminal}}{{colors.blue.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.blue.hex}}"{{/isTerminal}}
+      - bold
+    inactiveBorderColor:
+      - {{#isTerminal}}{{colors.textSubtle.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.textSubtle.hex}}"{{/isTerminal}}
+    selectedLineBgColor:
+      - {{#isTerminal}}{{colors.surfaceNested.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.surfaceNested.hex}}"{{/isTerminal}}
+    optionsTextColor:
+      - {{#isTerminal}}{{colors.blue.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.blue.hex}}"{{/isTerminal}}

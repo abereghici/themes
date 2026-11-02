@@ -1,0 +1,39 @@
+{
+  "name": "bereghici-theme",
+  "displayName": "Bereghici Theme",
+  "version": "0.1.0",
+  "description": "Bereghici Dark and Light: the Bereghici design system's colors for VS Code.",
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "color-theme",
+    "dark",
+    "light",
+    "theme"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abereghici/themes.git",
+    "directory": "ports/vscode"
+  },
+  "publisher": "abereghici",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Bereghici Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/bereghici-dark-color-theme.json"
+      },
+      {
+        "label": "Bereghici Light",
+        "uiTheme": "vs",
+        "path": "./themes/bereghici-light-color-theme.json"
+      }
+    ]
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  }
+}

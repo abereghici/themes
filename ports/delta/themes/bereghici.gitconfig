@@ -1,0 +1,66 @@
+# Bereghici Dark and Light for delta. Generated from abereghici/themes; do not edit.
+# [include] this file, then pick the feature for the current appearance when the pager starts:
+#   [core] pager = delta --features=\"bereghici-$(appearance)\"
+# `appearance` is a script of your own printing `dark` or `light` (see the README).
+# Syntax colors come from the bat themes of the same name (ports/bat).
+[delta "bereghici-dark"]
+  dark = true
+  syntax-theme = bereghici-dark
+  commit-decoration-style = "#d4acca" box
+  commit-style = "#d4acca"
+  file-style = "#fabc86" bold
+  file-decoration-style = "#696d63" overline
+  hunk-header-style = file line-number syntax
+  hunk-header-decoration-style = "#696d63" box
+  hunk-header-file-style = "#fabc86"
+  hunk-header-line-number-style = "#858a81"
+  line-numbers-left-style = "#696d63"
+  line-numbers-right-style = "#696d63"
+  line-numbers-minus-style = "#e99989" bold
+  line-numbers-plus-style = "#a6d1b0" bold
+  line-numbers-zero-style = "#858a81"
+  minus-style = syntax "#2f2820"
+  minus-emph-style = syntax "#4f3b32"
+  minus-empty-line-marker-style = syntax "#2f2820"
+  plus-style = syntax "#262e25"
+  plus-emph-style = syntax "#3c4a3c"
+  plus-empty-line-marker-style = syntax "#262e25"
+  zero-style = syntax
+  whitespace-error-style = "#e99989" reverse
+  blame-palette = "#12150f #181b14 #1e221a"
+  merge-conflict-begin-symbol = ~
+  merge-conflict-end-symbol = ~
+  merge-conflict-ours-diff-header-style = "#fabc86" bold
+  merge-conflict-theirs-diff-header-style = "#97bfe6" bold
+  map-styles = bold purple => syntax "#242c2c", bold cyan => syntax "#242c2c"
+
+[delta "bereghici-light"]
+  light = true
+  syntax-theme = bereghici-light
+  commit-decoration-style = "#8b537f" box
+  commit-style = "#8b537f"
+  file-style = "#c3720f" bold
+  file-decoration-style = "#a3a49e" overline
+  hunk-header-style = file line-number syntax
+  hunk-header-decoration-style = "#a3a49e" box
+  hunk-header-file-style = "#c3720f"
+  hunk-header-line-number-style = "#686a64"
+  line-numbers-left-style = "#a3a49e"
+  line-numbers-right-style = "#a3a49e"
+  line-numbers-minus-style = "#a84837" bold
+  line-numbers-plus-style = "#1f7c44" bold
+  line-numbers-zero-style = "#686a64"
+  minus-style = syntax "#ead9cf"
+  minus-emph-style = syntax "#dfbdb1"
+  minus-empty-line-marker-style = syntax "#ead9cf"
+  plus-style = syntax "#d3e1d1"
+  plus-emph-style = syntax "#b3ceb5"
+  plus-empty-line-marker-style = syntax "#d3e1d1"
+  zero-style = syntax
+  whitespace-error-style = "#a84837" reverse
+  blame-palette = "#f3f5ee #eaebe3 #e1e3dc"
+  merge-conflict-begin-symbol = ~
+  merge-conflict-end-symbol = ~
+  merge-conflict-ours-diff-header-style = "#c3720f" bold
+  merge-conflict-theirs-diff-header-style = "#2f6da4" bold
+  map-styles = bold purple => syntax "#d3dfe3", bold cyan => syntax "#d3dfe3"

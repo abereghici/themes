@@ -1,0 +1,101 @@
+---
+output: themes/{{id}}.yml
+flavors: [dark, light, terminal]
+---
+# {{name}} for eza. Generated from abereghici/themes; do not edit.
+{{#isTerminal}}# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+{{/isTerminal}}colourful: true
+
+filekinds:
+  normal: {foreground: "{{colors.text.ref}}"}
+  directory: {foreground: "{{colors.blue.ref}}", is_bold: true}
+  symlink: {foreground: "{{colors.cyan.ref}}"}
+  pipe: {foreground: "{{colors.yellow.ref}}"}
+  block_device: {foreground: "{{colors.yellow.ref}}", is_bold: true}
+  char_device: {foreground: "{{colors.yellow.ref}}", is_bold: true}
+  socket: {foreground: "{{colors.magenta.ref}}"}
+  special: {foreground: "{{colors.yellow.ref}}"}
+  executable: {foreground: "{{colors.green.ref}}", is_bold: true}
+  mount_point: {foreground: "{{colors.blue.ref}}", is_bold: true}
+
+perms:
+  user_read: {foreground: "{{colors.yellow.ref}}"}
+  user_write: {foreground: "{{colors.red.ref}}"}
+  user_execute_file: {foreground: "{{colors.green.ref}}"}
+  user_execute_other: {foreground: "{{colors.green.ref}}"}
+  group_read: {foreground: "{{colors.yellow.ref}}"}
+  group_write: {foreground: "{{colors.red.ref}}"}
+  group_execute: {foreground: "{{colors.green.ref}}"}
+  other_read: {foreground: "{{colors.yellow.ref}}"}
+  other_write: {foreground: "{{colors.red.ref}}"}
+  other_execute: {foreground: "{{colors.green.ref}}"}
+  special_user_file: {foreground: "{{colors.magenta.ref}}"}
+  special_other: {foreground: "{{colors.magenta.ref}}"}
+  attribute: {foreground: "{{colors.textSubtlest.ref}}"}
+
+size:
+  major: {foreground: "{{colors.green.ref}}"}
+  minor: {foreground: "{{colors.green.ref}}"}
+  number_byte: {foreground: "{{colors.green.ref}}"}
+  number_kilo: {foreground: "{{colors.green.ref}}"}
+  number_mega: {foreground: "{{colors.cyan.ref}}"}
+  number_giga: {foreground: "{{colors.yellow.ref}}"}
+  number_huge: {foreground: "{{colors.red.ref}}"}
+  unit_byte: {foreground: "{{colors.textSubtlest.ref}}"}
+  unit_kilo: {foreground: "{{colors.textSubtlest.ref}}"}
+  unit_mega: {foreground: "{{colors.textSubtlest.ref}}"}
+  unit_giga: {foreground: "{{colors.textSubtlest.ref}}"}
+  unit_huge: {foreground: "{{colors.textSubtlest.ref}}"}
+
+users:
+  user_you: {foreground: "{{colors.yellow.ref}}"}
+  user_root: {foreground: "{{colors.red.ref}}"}
+  user_other: {foreground: "{{colors.textSubtle.ref}}"}
+  group_yours: {foreground: "{{colors.yellow.ref}}"}
+  group_other: {foreground: "{{colors.textSubtle.ref}}"}
+  group_root: {foreground: "{{colors.red.ref}}"}
+
+links:
+  normal: {foreground: "{{colors.cyan.ref}}"}
+  multi_link_file: {foreground: "{{colors.cyan.ref}}", is_bold: true}
+
+git:
+  new: {foreground: "{{colors.green.ref}}"}
+  modified: {foreground: "{{colors.yellow.ref}}"}
+  deleted: {foreground: "{{colors.red.ref}}"}
+  renamed: {foreground: "{{colors.cyan.ref}}"}
+  typechange: {foreground: "{{colors.magenta.ref}}"}
+  ignored: {foreground: "{{colors.textSubtlest.ref}}"}
+  conflicted: {foreground: "{{colors.red.ref}}"}
+
+git_repo:
+  branch_main: {foreground: "{{colors.green.ref}}"}
+  branch_other: {foreground: "{{colors.yellow.ref}}"}
+  git_clean: {foreground: "{{colors.green.ref}}"}
+  git_dirty: {foreground: "{{colors.yellow.ref}}"}
+
+file_type:
+  image: {foreground: "{{colors.magenta.ref}}"}
+  video: {foreground: "{{colors.magenta.ref}}"}
+  music: {foreground: "{{colors.cyan.ref}}"}
+  lossless: {foreground: "{{colors.cyan.ref}}"}
+  crypto: {foreground: "{{colors.yellow.ref}}"}
+  document: {foreground: "{{colors.text.ref}}"}
+  compressed: {foreground: "{{colors.red.ref}}"}
+  temp: {foreground: "{{colors.textSubtlest.ref}}"}
+  compiled: {foreground: "{{colors.textSubtlest.ref}}"}
+  build: {foreground: "{{colors.yellow.ref}}"}
+  source: {foreground: "{{colors.text.ref}}"}
+
+punctuation: {foreground: "{{colors.textSubtlest.ref}}"}
+date: {foreground: "{{colors.textSubtle.ref}}"}
+inode: {foreground: "{{colors.textSubtlest.ref}}"}
+blocks: {foreground: "{{colors.textSubtlest.ref}}"}
+header: {foreground: "{{colors.textSubtle.ref}}"}
+octal: {foreground: "{{colors.textSubtlest.ref}}"}
+flags: {foreground: "{{colors.textSubtlest.ref}}"}
+symlink_path: {foreground: "{{colors.cyan.ref}}"}
+control_char: {foreground: "{{colors.red.ref}}"}
+broken_symlink: {foreground: "{{colors.red.ref}}"}
+broken_path_overlay: {foreground: "{{colors.red.ref}}"}

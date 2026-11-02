@@ -1,0 +1,26 @@
+# Bereghici Terminal for Starship. Generated from abereghici/themes; do not edit.
+# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+# Paste this table into starship.toml, under `palette = "bereghici_terminal"`.
+# surface and surface_raised are the terminal's own background, so they aren't in it.
+[palettes.bereghici_terminal]
+surface_nested = "0"
+text_subtlest = "8"
+text_subtle = "7"
+text = "15"
+line_highlight = "0"
+selection = "0"
+border = "8"
+accent = "2"
+red = "1"
+yellow = "3"
+green = "2"
+cyan = "6"
+blue = "4"
+magenta = "5"
+red_bright = "9"
+yellow_bright = "11"
+green_bright = "10"
+cyan_bright = "14"
+blue_bright = "12"
+magenta_bright = "13"

@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Bereghici Light",
+  "version": "1.0.0",
+  "description": "Bereghici Light, generated from github.com/abereghici/themes.",
+  "theme": {
+    "colors": {
+      "frame": [243, 245, 238],
+      "frame_inactive": [243, 245, 238],
+      "frame_incognito": [243, 245, 238],
+      "frame_incognito_inactive": [243, 245, 238],
+      "background_tab": [243, 245, 238],
+      "background_tab_inactive": [243, 245, 238],
+      "tab_background_text": [104, 106, 100],
+      "tab_background_text_inactive": [104, 106, 100],
+      "toolbar": [234, 235, 227],
+      "tab_text": [46, 50, 41],
+      "toolbar_text": [46, 50, 41],
+      "toolbar_button_icon": [83, 87, 80],
+      "bookmark_text": [83, 87, 80],
+      "omnibox_background": [225, 227, 220],
+      "omnibox_text": [46, 50, 41],
+      "ntp_background": [243, 245, 238],
+      "ntp_header": [234, 235, 227],
+      "ntp_text": [46, 50, 41],
+      "ntp_link": [38, 51, 22]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom"
+    }
+  }
+}

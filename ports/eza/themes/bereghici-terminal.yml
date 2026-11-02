@@ -1,0 +1,97 @@
+# Bereghici Terminal for eza. Generated from abereghici/themes; do not edit.
+# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+colourful: true
+
+filekinds:
+  normal: {foreground: "15"}
+  directory: {foreground: "4", is_bold: true}
+  symlink: {foreground: "6"}
+  pipe: {foreground: "3"}
+  block_device: {foreground: "3", is_bold: true}
+  char_device: {foreground: "3", is_bold: true}
+  socket: {foreground: "5"}
+  special: {foreground: "3"}
+  executable: {foreground: "2", is_bold: true}
+  mount_point: {foreground: "4", is_bold: true}
+
+perms:
+  user_read: {foreground: "3"}
+  user_write: {foreground: "1"}
+  user_execute_file: {foreground: "2"}
+  user_execute_other: {foreground: "2"}
+  group_read: {foreground: "3"}
+  group_write: {foreground: "1"}
+  group_execute: {foreground: "2"}
+  other_read: {foreground: "3"}
+  other_write: {foreground: "1"}
+  other_execute: {foreground: "2"}
+  special_user_file: {foreground: "5"}
+  special_other: {foreground: "5"}
+  attribute: {foreground: "8"}
+
+size:
+  major: {foreground: "2"}
+  minor: {foreground: "2"}
+  number_byte: {foreground: "2"}
+  number_kilo: {foreground: "2"}
+  number_mega: {foreground: "6"}
+  number_giga: {foreground: "3"}
+  number_huge: {foreground: "1"}
+  unit_byte: {foreground: "8"}
+  unit_kilo: {foreground: "8"}
+  unit_mega: {foreground: "8"}
+  unit_giga: {foreground: "8"}
+  unit_huge: {foreground: "8"}
+
+users:
+  user_you: {foreground: "3"}
+  user_root: {foreground: "1"}
+  user_other: {foreground: "7"}
+  group_yours: {foreground: "3"}
+  group_other: {foreground: "7"}
+  group_root: {foreground: "1"}
+
+links:
+  normal: {foreground: "6"}
+  multi_link_file: {foreground: "6", is_bold: true}
+
+git:
+  new: {foreground: "2"}
+  modified: {foreground: "3"}
+  deleted: {foreground: "1"}
+  renamed: {foreground: "6"}
+  typechange: {foreground: "5"}
+  ignored: {foreground: "8"}
+  conflicted: {foreground: "1"}
+
+git_repo:
+  branch_main: {foreground: "2"}
+  branch_other: {foreground: "3"}
+  git_clean: {foreground: "2"}
+  git_dirty: {foreground: "3"}
+
+file_type:
+  image: {foreground: "5"}
+  video: {foreground: "5"}
+  music: {foreground: "6"}
+  lossless: {foreground: "6"}
+  crypto: {foreground: "3"}
+  document: {foreground: "15"}
+  compressed: {foreground: "1"}
+  temp: {foreground: "8"}
+  compiled: {foreground: "8"}
+  build: {foreground: "3"}
+  source: {foreground: "15"}
+
+punctuation: {foreground: "8"}
+date: {foreground: "7"}
+inode: {foreground: "8"}
+blocks: {foreground: "8"}
+header: {foreground: "7"}
+octal: {foreground: "8"}
+flags: {foreground: "8"}
+symlink_path: {foreground: "6"}
+control_char: {foreground: "1"}
+broken_symlink: {foreground: "1"}
+broken_path_overlay: {foreground: "1"}

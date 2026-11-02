@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1296" height="352" viewBox="0 0 1296 352" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">
+  <title>The Bereghici Dark and Light palettes</title>
+  <g>
+    <rect y="0" width="1296" height="176" fill="#12150f"/>
+    <text x="32" y="32" fill="#eeefe9" font-weight="600">Bereghici Dark</text>
+    <rect x="32" y="48" width="80" height="80" rx="8" fill="#12150f" stroke="#1e221a"/>
+    <text x="32" y="148" fill="#a2a69d">surface</text>
+    <rect x="128" y="48" width="80" height="80" rx="8" fill="#181b14" stroke="#1e221a"/>
+    <text x="128" y="148" fill="#a2a69d">surfaceRaised</text>
+    <rect x="224" y="48" width="80" height="80" rx="8" fill="#1e221a" stroke="#1e221a"/>
+    <text x="224" y="148" fill="#a2a69d">surfaceNested</text>
+    <rect x="320" y="48" width="80" height="80" rx="8" fill="#858a81" stroke="#1e221a"/>
+    <text x="320" y="148" fill="#a2a69d">textSubtlest</text>
+    <rect x="416" y="48" width="80" height="80" rx="8" fill="#a2a69d" stroke="#1e221a"/>
+    <text x="416" y="148" fill="#a2a69d">textSubtle</text>
+    <rect x="512" y="48" width="80" height="80" rx="8" fill="#eeefe9" stroke="#1e221a"/>
+    <text x="512" y="148" fill="#a2a69d">text</text>
+    <rect x="608" y="48" width="80" height="80" rx="8" fill="#eceac9" stroke="#1e221a"/>
+    <text x="608" y="148" fill="#a2a69d">accent</text>
+    <rect x="704" y="48" width="80" height="80" rx="8" fill="#e99989" stroke="#1e221a"/>
+    <text x="704" y="148" fill="#a2a69d">red</text>
+    <rect x="800" y="48" width="80" height="80" rx="8" fill="#fabc86" stroke="#1e221a"/>
+    <text x="800" y="148" fill="#a2a69d">yellow</text>
+    <rect x="896" y="48" width="80" height="80" rx="8" fill="#a6d1b0" stroke="#1e221a"/>
+    <text x="896" y="148" fill="#a2a69d">green</text>
+    <rect x="992" y="48" width="80" height="80" rx="8" fill="#87c8cb" stroke="#1e221a"/>
+    <text x="992" y="148" fill="#a2a69d">cyan</text>
+    <rect x="1088" y="48" width="80" height="80" rx="8" fill="#97bfe6" stroke="#1e221a"/>
+    <text x="1088" y="148" fill="#a2a69d">blue</text>
+    <rect x="1184" y="48" width="80" height="80" rx="8" fill="#d4acca" stroke="#1e221a"/>
+    <text x="1184" y="148" fill="#a2a69d">magenta</text>
+  </g>
+  <g>
+    <rect y="176" width="1296" height="176" fill="#f3f5ee"/>
+    <text x="32" y="208" fill="#2e3229" font-weight="600">Bereghici Light</text>
+    <rect x="32" y="224" width="80" height="80" rx="8" fill="#f3f5ee" stroke="#e1e3dc"/>
+    <text x="32" y="324" fill="#535750">surface</text>
+    <rect x="128" y="224" width="80" height="80" rx="8" fill="#eaebe3" stroke="#e1e3dc"/>
+    <text x="128" y="324" fill="#535750">surfaceRaised</text>
+    <rect x="224" y="224" width="80" height="80" rx="8" fill="#e1e3dc" stroke="#e1e3dc"/>
+    <text x="224" y="324" fill="#535750">surfaceNested</text>
+    <rect x="320" y="224" width="80" height="80" rx="8" fill="#686a64" stroke="#e1e3dc"/>
+    <text x="320" y="324" fill="#535750">textSubtlest</text>
+    <rect x="416" y="224" width="80" height="80" rx="8" fill="#535750" stroke="#e1e3dc"/>
+    <text x="416" y="324" fill="#535750">textSubtle</text>
+    <rect x="512" y="224" width="80" height="80" rx="8" fill="#2e3229" stroke="#e1e3dc"/>
+    <text x="512" y="324" fill="#535750">text</text>
+    <rect x="608" y="224" width="80" height="80" rx="8" fill="#263316" stroke="#e1e3dc"/>
+    <text x="608" y="324" fill="#535750">accent</text>
+    <rect x="704" y="224" width="80" height="80" rx="8" fill="#a84837" stroke="#e1e3dc"/>
+    <text x="704" y="324" fill="#535750">red</text>
+    <rect x="800" y="224" width="80" height="80" rx="8" fill="#c3720f" stroke="#e1e3dc"/>
+    <text x="800" y="324" fill="#535750">yellow</text>
+    <rect x="896" y="224" width="80" height="80" rx="8" fill="#1f7c44" stroke="#e1e3dc"/>
+    <text x="896" y="324" fill="#535750">green</text>
+    <rect x="992" y="224" width="80" height="80" rx="8" fill="#007a80" stroke="#e1e3dc"/>
+    <text x="992" y="324" fill="#535750">cyan</text>
+    <rect x="1088" y="224" width="80" height="80" rx="8" fill="#2f6da4" stroke="#e1e3dc"/>
+    <text x="1088" y="324" fill="#535750">blue</text>
+    <rect x="1184" y="224" width="80" height="80" rx="8" fill="#8b537f" stroke="#e1e3dc"/>
+    <text x="1184" y="324" fill="#535750">magenta</text>
+  </g>
+</svg>

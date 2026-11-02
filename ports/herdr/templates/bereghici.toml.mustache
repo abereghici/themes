@@ -1,0 +1,24 @@
+---
+output: themes/bereghici.toml
+---
+# Bereghici Dark and Light for herdr. Generated from abereghici/themes; do not edit.
+# herdr can't include files: paste this over the [theme] tables of config.toml.
+[theme]
+name = "terminal"
+auto_switch = true
+dark_name = "terminal"
+light_name = "terminal"
+
+[theme.custom]
+# The terminal's own (translucent) background shows through the panes
+panel_bg = "reset"
+
+[theme.custom.dark]
+{{#dark}}
+{{> colors}}
+{{/dark}}
+
+[theme.custom.light]
+{{#light}}
+{{> colors}}
+{{/light}}

@@ -1,0 +1,36 @@
+---
+output: themes/{{id}}/manifest.json
+flavors: [dark, light]
+---
+{
+  "manifest_version": 3,
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "{{name}}, generated from github.com/abereghici/themes.",
+  "theme": {
+    "colors": {
+      "frame": [{{colors.surface.rgb}}],
+      "frame_inactive": [{{colors.surface.rgb}}],
+      "frame_incognito": [{{colors.surface.rgb}}],
+      "frame_incognito_inactive": [{{colors.surface.rgb}}],
+      "background_tab": [{{colors.surface.rgb}}],
+      "background_tab_inactive": [{{colors.surface.rgb}}],
+      "tab_background_text": [{{colors.textSubtlest.rgb}}],
+      "tab_background_text_inactive": [{{colors.textSubtlest.rgb}}],
+      "toolbar": [{{colors.surfaceRaised.rgb}}],
+      "tab_text": [{{colors.text.rgb}}],
+      "toolbar_text": [{{colors.text.rgb}}],
+      "toolbar_button_icon": [{{colors.textSubtle.rgb}}],
+      "bookmark_text": [{{colors.textSubtle.rgb}}],
+      "omnibox_background": [{{colors.surfaceNested.rgb}}],
+      "omnibox_text": [{{colors.text.rgb}}],
+      "ntp_background": [{{colors.surface.rgb}}],
+      "ntp_header": [{{colors.surfaceRaised.rgb}}],
+      "ntp_text": [{{colors.text.rgb}}],
+      "ntp_link": [{{colors.accent.rgb}}]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom"
+    }
+  }
+}

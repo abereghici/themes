@@ -1,0 +1,58 @@
+---
+output: lua/bereghici/palette.lua
+---
+-- Bereghici Dark and Light. Generated from abereghici/themes; do not edit.
+-- Each require builds fresh tables, so on_colors can change them without touching the next load.
+
+---@class bereghici.Tints
+---@field added string
+---@field added_emphasis string
+---@field added_strong string
+---@field removed string
+---@field removed_emphasis string
+---@field removed_strong string
+---@field changed string
+---@field changed_emphasis string
+---@field search string
+
+---@class bereghici.Colors
+---@field surface string Editor background
+---@field surface_raised string Panels, sidebars, floats
+---@field surface_nested string Popups, the active tab on a raised surface
+---@field text string
+---@field text_subtle string Punctuation, operators, inactive items
+---@field text_subtlest string Comments, line numbers, ignored items
+---@field line_highlight string The cursor line
+---@field selection string The visual selection, with text on it
+---@field border string
+---@field accent string The brand moss: the cursor, focused borders, the prompt
+---@field red string
+---@field yellow string
+---@field green string
+---@field cyan string
+---@field blue string
+---@field magenta string
+---@field red_bright string
+---@field yellow_bright string
+---@field green_bright string
+---@field cyan_bright string
+---@field blue_bright string
+---@field magenta_bright string
+---@field tints bereghici.Tints Opaque diff and search backgrounds
+---@field ansi string[] ANSI 0–15
+
+---@type table<"dark"|"light", bereghici.Colors>
+local variants = {
+	dark = {
+{{#dark}}
+{{> variant}}
+{{/dark}}
+	},
+	light = {
+{{#light}}
+{{> variant}}
+{{/light}}
+	},
+}
+
+return vim.o.background == "light" and variants.light or variants.dark

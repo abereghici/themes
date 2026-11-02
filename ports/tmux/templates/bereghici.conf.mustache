@@ -1,0 +1,43 @@
+---
+output: themes/bereghici.conf
+---
+# Bereghici Dark and Light for tmux 3.8+. Generated from abereghici/themes; do not edit.
+# `source-file` it from tmux.conf. tmux asks the terminal for its background and switches
+# between the two sets of theme colours live, so the bar follows the system appearance.
+#
+# The theme colours are roles, as in ANSI light themes: themeblack is the bar's own
+# background and themewhite its text in either appearance.
+
+set -g theme detect
+{{#dark}}
+{{> colors}}
+{{/dark}}
+{{#light}}
+{{> colors}}
+{{/light}}
+
+# The bar sits on the terminal's own (translucent) background
+set -g status-style 'bg=default,fg=themelightgrey'
+set -g status-left-length 40
+set -g status-right-length 80
+set -g status-left '#[fg=themeblue,bold] #S #[default]'
+set -g status-right '#{?client_prefix,#[fg=themeyellow]prefix ,}#[fg=themelightgrey]#{user}@#h '
+setw -g window-status-format '#[fg=themelightgrey] #I #W '
+setw -g window-status-current-format '#[fg=themewhite,bold] #I #W#{?window_zoomed_flag, 󰊓,} '
+setw -g window-status-separator ''
+
+set -g pane-border-style 'fg=themedarkgrey'
+set -g pane-active-border-style 'fg=themeblue'
+set -g display-panes-colour 'themelightgrey'
+set -g display-panes-active-colour 'themeblue'
+set -g message-style 'bg=themeblack,fg=themewhite'
+set -g message-command-style 'bg=themeblack,fg=themeyellow'
+setw -g mode-style 'bg=themedarkgrey,fg=themewhite'
+setw -g copy-mode-match-style 'bg=themeblack,fg=themeyellow'
+setw -g copy-mode-current-match-style 'bg=themeyellow,fg=themeblack'
+set -g popup-style 'bg=default'
+set -g popup-border-style 'fg=themedarkgrey'
+set -g menu-style 'bg=default'
+set -g menu-border-style 'fg=themedarkgrey'
+set -g menu-selected-style 'bg=themeblack,fg=themewhite'
+setw -g clock-mode-colour 'themeblue'

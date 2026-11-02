@@ -1,0 +1,50 @@
+---
+output: themes/{{id}}.zsh
+flavors: [dark, light, terminal]
+---
+# {{name}} for zsh-syntax-highlighting and zsh-autosuggestions. Generated from abereghici/themes; do not edit.
+{{#isTerminal}}# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+{{/isTerminal}}# Source it before zsh-syntax-highlighting (its defaults keep the styles set here).
+typeset -gA ZSH_HIGHLIGHT_STYLES
+
+ZSH_HIGHLIGHT_STYLES[default]='fg={{colors.text.ref}}'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg={{colors.red.ref}}'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg={{colors.magenta.ref}}'
+ZSH_HIGHLIGHT_STYLES[alias]='fg={{colors.blue.ref}}'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg={{colors.blue.ref}}'
+ZSH_HIGHLIGHT_STYLES[global-alias]='fg={{colors.blue.ref}}'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg={{colors.blue.ref}}'
+ZSH_HIGHLIGHT_STYLES[function]='fg={{colors.blue.ref}}'
+ZSH_HIGHLIGHT_STYLES[command]='fg={{colors.blue.ref}}'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg={{colors.magenta.ref}}'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg={{colors.blue.ref}}'
+ZSH_HIGHLIGHT_STYLES[autodirectory]='fg={{colors.blue.ref}},underline'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg={{colors.blue.ref}}'
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg={{colors.textSubtlest.ref}}'
+ZSH_HIGHLIGHT_STYLES[redirection]='fg={{colors.textSubtlest.ref}}'
+ZSH_HIGHLIGHT_STYLES[named-fd]='fg={{colors.textSubtlest.ref}}'
+ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg={{colors.textSubtlest.ref}}'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg={{colors.cyan.ref}}'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg={{colors.cyan.ref}}'
+ZSH_HIGHLIGHT_STYLES[path]='fg={{colors.text.ref}},underline'
+ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg={{colors.textSubtlest.ref}},underline'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg={{colors.text.ref}},underline'
+ZSH_HIGHLIGHT_STYLES[globbing]='fg={{colors.magenta.ref}}'
+ZSH_HIGHLIGHT_STYLES[history-expansion]='fg={{colors.magenta.ref}}'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg={{colors.yellow.ref}}'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg={{colors.yellow.ref}}'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg={{colors.yellow.ref}}'
+ZSH_HIGHLIGHT_STYLES[rc-quote]='fg={{colors.yellow.ref}}'
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg={{colors.cyan.ref}}'
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg={{colors.cyan.ref}}'
+ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg={{colors.cyan.ref}}'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg={{colors.magenta.ref}}'
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg={{colors.textSubtlest.ref}}'
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg={{colors.textSubtlest.ref}}'
+ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg={{colors.textSubtlest.ref}}'
+ZSH_HIGHLIGHT_STYLES[assign]='fg={{colors.text.ref}}'
+ZSH_HIGHLIGHT_STYLES[comment]='fg={{colors.textSubtlest.ref}}'
+
+# zsh-autosuggestions: the suggested rest of the line
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg={{colors.textSubtlest.ref}}'

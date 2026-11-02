@@ -1,0 +1,86 @@
+# Bereghici Light for Yazi. Generated from abereghici/themes; do not edit.
+# Only the styles that carry the brand are set here; everything else is Yazi's preset, which
+# uses the terminal's ANSI colors (the Ghostty theme of the same name).
+#:schema https://yazi-rs.github.io/schemas/theme.json
+
+[mgr]
+cwd = { fg = "#2f6da4" }
+find_keyword = { fg = "#c3720f", bold = true, italic = true, underline = true }
+find_position = { fg = "#8b537f", bg = "reset", bold = true, italic = true }
+marker_copied = { fg = "#1f7c44", bg = "#1f7c44" }
+marker_cut = { fg = "#a84837", bg = "#a84837" }
+marker_marked = { fg = "#007a80", bg = "#007a80" }
+marker_selected = { fg = "#c3720f", bg = "#c3720f" }
+count_copied = { fg = "#f3f5ee", bg = "#1f7c44" }
+count_cut = { fg = "#f3f5ee", bg = "#a84837" }
+count_selected = { fg = "#f3f5ee", bg = "#c3720f" }
+border_style = { fg = "#a3a49e" }
+
+[tabs]
+active = { fg = "#f3f5ee", bg = "#263316", bold = true }
+inactive = { fg = "#535750", bg = "#e1e3dc" }
+
+[mode]
+normal_main = { fg = "#f3f5ee", bg = "#263316", bold = true }
+normal_alt = { fg = "#263316", bg = "#e1e3dc" }
+select_main = { fg = "#f3f5ee", bg = "#8b537f", bold = true }
+select_alt = { fg = "#8b537f", bg = "#e1e3dc" }
+unset_main = { fg = "#f3f5ee", bg = "#a84837", bold = true }
+unset_alt = { fg = "#a84837", bg = "#e1e3dc" }
+
+[indicator]
+parent = { fg = "#2e3229", bg = "#c1c3bc" }
+current = { fg = "#2e3229", bg = "#c1c3bc" }
+preview = { underline = true }
+
+[status]
+perm_sep = { fg = "#686a64" }
+perm_type = { fg = "#2f6da4" }
+perm_read = { fg = "#c3720f" }
+perm_write = { fg = "#a84837" }
+perm_exec = { fg = "#1f7c44" }
+progress_normal = { fg = "#263316", bg = "#e1e3dc" }
+progress_error = { fg = "#a84837", bg = "#e1e3dc" }
+
+[which]
+border = { fg = "#a3a49e" }
+cand = { fg = "#007a80" }
+rest = { fg = "#686a64" }
+desc = { fg = "#8b537f" }
+separator_style = { fg = "#686a64" }
+
+[confirm]
+border = { fg = "#a3a49e" }
+title = { fg = "#263316" }
+
+[spot]
+border = { fg = "#a3a49e" }
+title = { fg = "#263316" }
+tbl_col = { fg = "#2f6da4" }
+tbl_cell = { fg = "#c3720f", reversed = true }
+
+[notify]
+title_info = { fg = "#1f7c44" }
+title_warn = { fg = "#c3720f" }
+title_error = { fg = "#a84837" }
+
+[pick]
+border = { fg = "#a3a49e" }
+active = { fg = "#8b537f", bold = true }
+
+[input]
+border = { fg = "#a3a49e" }
+selected = { bg = "#c1c3bc" }
+
+[cmp]
+border = { fg = "#a3a49e" }
+active = { bg = "#c1c3bc" }
+
+[tasks]
+border = { fg = "#a3a49e" }
+hovered = { fg = "#8b537f", bold = true }
+
+[help]
+border = { fg = "#a3a49e" }
+chord = { fg = "#007a80" }
+hovered = { bg = "#c1c3bc", bold = true }

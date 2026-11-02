@@ -1,0 +1,296 @@
+# The ports, as Catppuccin keeps its registry: each tool, how it follows the macOS appearance,
+# where `install.sh` puts its themes (from the port's directory; `~` is the home directory), and
+# what to add to the tool's config. `pnpm build` generates the README's port table, each port's
+# README and install.sh from it.
+#
+# switches: live (the running tool changes) · on start (its next run picks the appearance's) ·
+# sync (install.sh sync repoints it, for tools with one theme setting) · manual
+#
+# Paths in `usage` are where install.sh links the repository: ~/.local/share/bereghici.
+
+bat:
+  name: bat
+  url: https://github.com/sharkdp/bat
+  category: cli
+  switches: on start
+  install:
+    - link: themes
+      to: ~/.config/bat/themes
+    - run: bat cache --build
+      when: bat
+  usage:
+    - "In bat's config (`bat --config-file`): `--theme=auto:system`, `--theme-dark=bereghici-dark`
+      and `--theme-light=bereghici-light`. `auto:system` reads the macOS appearance, so it holds
+      when bat's output is piped (fzf previews, delta), where plain `auto` can't ask the terminal."
+
+chrome:
+  name: Chrome
+  url: https://www.google.com/chrome
+  category: browser
+  switches: manual
+  usage:
+    - Open `chrome://extensions` and turn on Developer mode.
+    - "Load unpacked: `themes/bereghici-dark` or `themes/bereghici-light`."
+  notes: >-
+    A Chrome theme has one set of colors, so it stays put when macOS switches. To follow the
+    appearance instead, skip the theme and use Chrome's own color: New Tab → Customize Chrome →
+    custom color `#263316` (Bereghici's accent), Mode → Device. Chrome derives both palettes from
+    it, close to Bereghici rather than exact.
+
+claude-code:
+  name: Claude Code
+  url: https://claude.com/claude-code
+  category: cli
+  switches: sync
+  install:
+    - link: themes/bereghici-dark.json
+      to: ~/.claude/themes/bereghici-dark.json
+    - link: themes/bereghici-light.json
+      to: ~/.claude/themes/bereghici-light.json
+    - switch: themes/bereghici-{appearance}.json
+      to: ~/.claude/themes/bereghici.json
+  usage:
+    - '`/theme` → Bereghici (the `bereghici` custom theme), or `"theme": "custom:bereghici"`
+      in `~/.claude/settings.json`.'
+  notes: >-
+    Claude Code's custom themes have no light/dark pair, so `bereghici.json` links to the
+    appearance's, and Claude Code applies it live when `install.sh sync` repoints it. Its built-in
+    `dark-ansi` doesn't suit a Bereghici terminal: it draws messages on ANSI 8, which Bereghici
+    keeps for muted text.
+
+codex:
+  name: Codex
+  url: https://github.com/openai/codex
+  category: cli
+  switches: sync
+  install:
+    - link: themes/bereghici-dark.tmTheme
+      to: ~/.codex/themes/bereghici-dark.tmTheme
+    - link: themes/bereghici-light.tmTheme
+      to: ~/.codex/themes/bereghici-light.tmTheme
+    - switch: themes/bereghici-{appearance}.tmTheme
+      to: ~/.codex/themes/bereghici.tmTheme
+  usage:
+    - 'In `~/.codex/config.toml`: `[tui]` `theme = "bereghici"`.'
+  notes: >-
+    Codex has one syntax theme setting, so `bereghici.tmTheme` links to the appearance's, which
+    Codex picks up on start. The TextMate theme is the one bat and yazi use.
+
+delta:
+  name: delta
+  url: https://github.com/dandavison/delta
+  category: cli
+  switches: on start
+  usage:
+    - "In `~/.gitconfig`: `[include] path = ~/.local/share/bereghici/ports/delta/themes/bereghici.gitconfig`."
+    - 'Pick the feature for the appearance when git pages: `pager = delta --features=bereghici-$(appearance)`,
+      where `appearance` is a script of your own printing `dark` or `light`, such as
+      `[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" = Dark ] && echo dark || echo light`.'
+  notes: >-
+    delta has one syntax theme setting, not one per appearance, so each appearance is a feature:
+    `bereghici-dark` and `bereghici-light`, with the bat themes for syntax.
+
+eza:
+  name: eza
+  url: https://eza.rocks
+  category: cli
+  switches: live
+  install:
+    - link: themes/bereghici-terminal.yml
+      to: ~/.config/eza/theme.yml
+  usage:
+    - Nothing more. Link `bereghici-dark.yml` or `bereghici-light.yml` there instead for fixed colors.
+
+font:
+  name: Bereghici Symbols
+  url: https://github.com/abereghici/design-system
+  category: font
+  switches: live
+  install:
+    # macOS skips linked fonts
+    - copy: themes/BereghiciSymbols.otf
+      to: ~/Library/Fonts/BereghiciSymbols.otf
+  usage:
+    - "Have the terminal take the logo's code point from it. Ghostty:
+      `font-codepoint-map = U+100000=Bereghici Symbols`."
+    - Write it as `\U00100000` in TOML (Starship) or `$'\U00100000'` in zsh, followed by a space.
+  notes: >-
+    The Bereghici logo as a glyph at U+100000 (the first private-use code point of plane 16, which
+    Nerd Fonts leave free), so a prompt can show it: a terminal can only draw characters.
+    `pnpm font` draws it from the logo's SVG on MesloLGS Nerd Font's metrics, as tall as its
+    capitals; it overflows into the next cell, as Nerd Font icons do.
+
+fzf:
+  name: fzf
+  url: https://github.com/junegunn/fzf
+  category: cli
+  switches: live
+  usage:
+    - "In your shell's startup, after setting `FZF_DEFAULT_OPTS` (it adds the colors):
+      `source ~/.local/share/bereghici/ports/fzf/themes/bereghici-terminal.sh`."
+
+ghostty:
+  name: Ghostty
+  url: https://ghostty.org
+  category: terminal
+  switches: live
+  install:
+    - link: themes
+      to: ~/.config/ghostty/themes
+  usage:
+    - "In Ghostty's config: `theme = light:bereghici-light,dark:bereghici-dark`."
+
+glamour:
+  name: glamour (gh, glab, glow)
+  url: https://github.com/charmbracelet/glamour
+  category: cli
+  switches: live
+  usage:
+    - "In your shell's startup:
+      `export GLAMOUR_STYLE=~/.local/share/bereghici/ports/glamour/themes/bereghici-terminal.json`."
+  notes: >-
+    gh, glab and glow render Markdown with glamour, which reads `GLAMOUR_STYLE`.
+
+herdr:
+  name: herdr
+  url: https://github.com/ogulcancelik/herdr
+  category: terminal
+  switches: live
+  usage:
+    - "Paste `themes/bereghici.toml` into herdr's `config.toml` in place of its `[theme]` tables
+      (herdr has no includes), and again after the themes change."
+
+jq:
+  name: jq
+  url: https://jqlang.org
+  category: cli
+  switches: live
+  usage:
+    - "In your shell's startup: `source ~/.local/share/bereghici/ports/jq/themes/bereghici-terminal.sh`
+      (jq 1.7.1 or later, for the object key color)."
+
+lazydocker:
+  name: lazydocker
+  url: https://github.com/jesseduffield/lazydocker
+  category: cli
+  switches: live
+  usage:
+    - Paste the theme's `gui.theme` into lazydocker's `config.yml`, which can't include another file.
+
+lazygit:
+  name: lazygit
+  url: https://github.com/jesseduffield/lazygit
+  category: cli
+  switches: on start
+  usage:
+    - 'Add the theme after your config: `export LG_CONFIG_FILE="<your config.yml>,$HOME/.local/share/bereghici/ports/lazygit/themes/bereghici.yml"`.'
+  notes: >-
+    One file holds both appearances (`gui.colorScheme: auto`), which lazygit picks between on start.
+
+ls-colors:
+  name: LS_COLORS (fd, ls, zsh completion)
+  url: https://www.gnu.org/software/coreutils/manual/html_node/dircolors-invocation.html
+  category: shell
+  switches: live
+  usage:
+    - "In your shell's startup: `source ~/.local/share/bereghici/ports/ls-colors/themes/bereghici-terminal.sh`."
+    - "For zsh's completion menu: `zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}`."
+
+nvim:
+  name: Neovim
+  url: https://neovim.io
+  category: editor
+  switches: live
+  usage:
+    - 'With lazy.nvim: `{ dir = vim.fn.expand("~/.local/share/bereghici/ports/nvim"), name = "bereghici",
+      lazy = false, priority = 1000, opts = {} }`, then `colorscheme bereghici`.'
+  notes: >-
+    It follows `'background'`, which Neovim 0.12 sets from the terminal's appearance reports, so it
+    switches live. `setup()` takes `transparent`, `dim_inactive`, `italic`, `bold`, and
+    `on_colors` and `on_highlights` to adjust the palette or any group.
+
+obsidian:
+  name: Obsidian
+  url: https://obsidian.md
+  category: app
+  switches: live
+  usage:
+    - Copy `themes/Bereghici` into your vault's `.obsidian/themes`.
+    - Settings → Appearance → Themes → Bereghici, with the base color scheme on "Adapt to system".
+
+raycast:
+  name: Raycast
+  url: https://www.raycast.com
+  category: app
+  switches: live
+  usage:
+    - Open each link in `themes/IMPORT.md` to import the theme.
+    - Settings → Appearance → pick both, with "Follow system appearance" on.
+
+ripgrep:
+  name: ripgrep
+  url: https://github.com/BurntSushi/ripgrep
+  category: cli
+  switches: live
+  usage:
+    - Add the theme's lines to the file `RIPGREP_CONFIG_PATH` names (ripgrep reads only one).
+
+starship:
+  name: Starship
+  url: https://starship.rs
+  category: shell
+  switches: live
+  usage:
+    - Paste the palette's table into `~/.config/starship.toml`.
+    - 'Select it near the top: `palette = "bereghici_terminal"` (or `bereghici_dark`, `bereghici_light`).'
+    - 'Use the role names in styles: `style = "fg:magenta"`, `[](fg:surface_nested)`.'
+  notes: >-
+    Starship has no light/dark switch, so with a Bereghici terminal theme `bereghici_terminal` is
+    the palette that changes with the appearance. The logo (Bereghici Symbols) can stand in the
+    prompt as `\U00100000`.
+
+tmux:
+  name: tmux
+  url: https://github.com/tmux/tmux
+  category: terminal
+  switches: live
+  usage:
+    - "In `tmux.conf`: `source-file ~/.local/share/bereghici/ports/tmux/themes/bereghici.conf` (tmux 3.8
+      or later)."
+  notes: >-
+    It sets both appearances' colors and `theme detect`, so tmux follows the terminal's reports.
+
+vscode:
+  name: VS Code
+  url: https://code.visualstudio.com
+  category: editor
+  switches: live
+  install:
+    # VS Code only loads extensions it installed; --force replaces an older build of the same version
+    - run: cd "$ports/vscode" && npx --yes @vscode/vsce@4.1.0 package --no-dependencies --out "${TMPDIR:-/tmp}/bereghici-theme.vsix" && code --install-extension "${TMPDIR:-/tmp}/bereghici-theme.vsix" --force
+      when: code
+  usage:
+    - 'In `settings.json`: `"window.autoDetectColorScheme": true`, `"workbench.preferredDarkColorTheme": "Bereghici Dark"`,
+      `"workbench.preferredLightColorTheme": "Bereghici Light"`.'
+    - After the themes change, run `install.sh` again: VS Code keeps its own copy of the extension.
+
+yazi:
+  name: Yazi
+  url: https://yazi-rs.github.io
+  category: cli
+  switches: on start
+  install:
+    - link: themes/bereghici-dark.yazi
+      to: ~/.config/yazi/flavors/bereghici-dark.yazi
+    - link: themes/bereghici-light.yazi
+      to: ~/.config/yazi/flavors/bereghici-light.yazi
+  usage:
+    - 'In `~/.config/yazi/theme.toml`: `[flavor]` `dark = "bereghici-dark"`, `light = "bereghici-light"`.'
+
+zsh:
+  name: zsh-syntax-highlighting, zsh-autosuggestions
+  url: https://github.com/zsh-users/zsh-syntax-highlighting
+  category: shell
+  switches: live
+  usage:
+    - "In `.zshrc`, before the plugins: `source ~/.local/share/bereghici/ports/zsh/themes/bereghici-terminal.zsh`."

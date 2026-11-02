@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Bereghici Dark",
+  "version": "1.0.0",
+  "description": "Bereghici Dark, generated from github.com/abereghici/themes.",
+  "theme": {
+    "colors": {
+      "frame": [18, 21, 15],
+      "frame_inactive": [18, 21, 15],
+      "frame_incognito": [18, 21, 15],
+      "frame_incognito_inactive": [18, 21, 15],
+      "background_tab": [18, 21, 15],
+      "background_tab_inactive": [18, 21, 15],
+      "tab_background_text": [133, 138, 129],
+      "tab_background_text_inactive": [133, 138, 129],
+      "toolbar": [24, 27, 20],
+      "tab_text": [238, 239, 233],
+      "toolbar_text": [238, 239, 233],
+      "toolbar_button_icon": [162, 166, 157],
+      "bookmark_text": [162, 166, 157],
+      "omnibox_background": [30, 34, 26],
+      "omnibox_text": [238, 239, 233],
+      "ntp_background": [18, 21, 15],
+      "ntp_header": [24, 27, 20],
+      "ntp_text": [238, 239, 233],
+      "ntp_link": [236, 234, 201]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom"
+    }
+  }
+}

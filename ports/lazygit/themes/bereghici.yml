@@ -1,0 +1,30 @@
+# Bereghici Dark and Light for lazygit. Generated from abereghici/themes; do not edit.
+# Merge it after your own config: LG_CONFIG_FILE="<your config.yml>,<this file>"
+gui:
+  colorScheme: auto
+  darkTheme:
+    activeBorderColor: ['#eceac9', bold]
+    inactiveBorderColor: ['#696d63']
+    searchingActiveBorderColor: ['#fabc86', bold]
+    optionsTextColor: ['#97bfe6']
+    selectedLineBgColor: ['#4b4f45']
+    inactiveViewSelectedLineBgColor: ['#1e221a']
+    cherryPickedCommitFgColor: ['#12150f']
+    cherryPickedCommitBgColor: ['#87c8cb']
+    markedBaseCommitFgColor: ['#12150f']
+    markedBaseCommitBgColor: ['#fabc86']
+    unstagedChangesColor: ['#e99989']
+    defaultFgColor: ['#eeefe9']
+  lightTheme:
+    activeBorderColor: ['#263316', bold]
+    inactiveBorderColor: ['#a3a49e']
+    searchingActiveBorderColor: ['#c3720f', bold]
+    optionsTextColor: ['#2f6da4']
+    selectedLineBgColor: ['#c1c3bc']
+    inactiveViewSelectedLineBgColor: ['#eaebe3']
+    cherryPickedCommitFgColor: ['#f3f5ee']
+    cherryPickedCommitBgColor: ['#007a80']
+    markedBaseCommitFgColor: ['#f3f5ee']
+    markedBaseCommitBgColor: ['#c3720f']
+    unstagedChangesColor: ['#a84837']
+    defaultFgColor: ['#2e3229']

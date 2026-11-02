@@ -1,0 +1,13 @@
+---
+output: themes/{{id}}.ripgreprc
+flavors: [dark, light, terminal]
+---
+# {{name}} for ripgrep. Generated from abereghici/themes; do not edit.
+{{#isTerminal}}# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+{{/isTerminal}}# Add these lines to the file RIPGREP_CONFIG_PATH names.
+--colors=path:fg:{{#isTerminal}}{{colors.magenta.ref}}{{/isTerminal}}{{^isTerminal}}{{colors.magenta.rgbCsv}}{{/isTerminal}}
+--colors=line:fg:{{#isTerminal}}{{colors.green.ref}}{{/isTerminal}}{{^isTerminal}}{{colors.green.rgbCsv}}{{/isTerminal}}
+--colors=column:fg:{{#isTerminal}}{{colors.green.ref}}{{/isTerminal}}{{^isTerminal}}{{colors.green.rgbCsv}}{{/isTerminal}}
+--colors=match:fg:{{#isTerminal}}{{colors.red.ref}}{{/isTerminal}}{{^isTerminal}}{{colors.red.rgbCsv}}{{/isTerminal}}
+--colors=match:style:bold

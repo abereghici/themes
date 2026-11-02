@@ -1,0 +1,21 @@
+{
+  "author": "abereghici",
+  "authorUsername": "abereghici",
+  "version": "1",
+  "name": "Bereghici Light",
+  "appearance": "light",
+  "colors": {
+    "background": "#f3f5ee",
+    "backgroundSecondary": "#eaebe3",
+    "text": "#2e3229",
+    "selection": "#c1c3bc",
+    "loader": "#263316",
+    "red": "#a84837",
+    "orange": "#925613",
+    "yellow": "#c3720f",
+    "green": "#1f7c44",
+    "blue": "#2f6da4",
+    "purple": "#8b537f",
+    "magenta": "#6b3e62"
+  }
+}

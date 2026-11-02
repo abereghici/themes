@@ -1,0 +1,15 @@
+# Bereghici Terminal for lazydocker. Generated from abereghici/themes; do not edit.
+# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+# Paste it into lazydocker's config.yml.
+gui:
+  theme:
+    activeBorderColor:
+      - blue
+      - bold
+    inactiveBorderColor:
+      - white
+    selectedLineBgColor:
+      - black
+    optionsTextColor:
+      - blue

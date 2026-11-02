@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+# Chrome's cache of a loaded unpacked theme
+Cached Theme.pak
+*.vsix
+
+# deep-research output
+research_notes/
+reports/

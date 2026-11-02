@@ -1,0 +1,25 @@
+name: Bug report
+description: A port shows a wrong color, doesn't load, or doesn't switch with the appearance.
+labels: [bug, needs-triage]
+body:
+  - type: input
+    id: port
+    attributes:
+      label: Port and flavor
+      placeholder: lazygit, bereghici-light
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Tool version and OS
+      placeholder: lazygit 0.58.0, macOS 26.1
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened, and what did you expect?
+      description: A screenshot helps.
+    validations:
+      required: true

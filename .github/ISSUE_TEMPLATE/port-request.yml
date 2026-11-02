@@ -1,0 +1,23 @@
+name: Port request
+description: A tool that supports theming and has no Bereghici port yet.
+labels: [port, needs-triage]
+body:
+  - type: input
+    id: tool
+    attributes:
+      label: Tool
+      placeholder: Zed
+    validations:
+      required: true
+  - type: input
+    id: docs
+    attributes:
+      label: Theme documentation
+      description: Where the tool documents its theme format.
+    validations:
+      required: true
+  - type: textarea
+    id: switching
+    attributes:
+      label: Light and dark
+      description: Can it follow the system appearance, or does it take one theme?

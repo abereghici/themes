@@ -1,0 +1,9 @@
+---
+output: themes/{{id}}.sh
+flavors: [dark, light, terminal]
+---
+# {{name}} for LS_COLORS. Generated from abereghici/themes; do not edit.
+{{#isTerminal}}# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+{{/isTerminal}}# Directories blue, links cyan, executables green, archives red, media magenta, temporary files muted
+export LS_COLORS="di=1;{{colors.blue.sgr}}:ln={{colors.cyan.sgr}}:so={{colors.magenta.sgr}}:pi={{colors.yellow.sgr}}:ex=1;{{colors.green.sgr}}:bd=1;{{colors.yellow.sgr}}:cd=1;{{colors.yellow.sgr}}:or={{colors.red.sgr}}:mi={{colors.red.sgr}}:su=1;{{colors.red.sgr}}:sg=1;{{colors.red.sgr}}:tw=1;4;{{colors.blue.sgr}}:ow=4;{{colors.blue.sgr}}:st=1;{{colors.blue.sgr}}:*.zip={{colors.red.sgr}}:*.tar={{colors.red.sgr}}:*.gz={{colors.red.sgr}}:*.tgz={{colors.red.sgr}}:*.bz2={{colors.red.sgr}}:*.xz={{colors.red.sgr}}:*.zst={{colors.red.sgr}}:*.7z={{colors.red.sgr}}:*.rar={{colors.red.sgr}}:*.dmg={{colors.red.sgr}}:*.png={{colors.magenta.sgr}}:*.jpg={{colors.magenta.sgr}}:*.jpeg={{colors.magenta.sgr}}:*.gif={{colors.magenta.sgr}}:*.webp={{colors.magenta.sgr}}:*.svg={{colors.magenta.sgr}}:*.ico={{colors.magenta.sgr}}:*.heic={{colors.magenta.sgr}}:*.mp4={{colors.magenta.sgr}}:*.mov={{colors.magenta.sgr}}:*.mkv={{colors.magenta.sgr}}:*.webm={{colors.magenta.sgr}}:*.mp3={{colors.magenta.sgr}}:*.flac={{colors.magenta.sgr}}:*.wav={{colors.magenta.sgr}}:*.log={{colors.textSubtlest.sgr}}:*.tmp={{colors.textSubtlest.sgr}}:*.bak={{colors.textSubtlest.sgr}}:*.swp={{colors.textSubtlest.sgr}}:*~={{colors.textSubtlest.sgr}}:*.lock={{colors.textSubtlest.sgr}}"

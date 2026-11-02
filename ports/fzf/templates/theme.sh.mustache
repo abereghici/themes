@@ -1,0 +1,9 @@
+---
+output: themes/{{id}}.sh
+flavors: [dark, light, terminal]
+---
+# {{name}} for fzf. Generated from abereghici/themes; do not edit.
+{{#isTerminal}}# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+{{/isTerminal}}# Source it after setting FZF_DEFAULT_OPTS: it adds the colors.
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color=fg:{{colors.textSubtle.ref}},{{#colors.surface}}bg:{{colors.surface.ref}}{{/colors.surface}}{{^colors.surface}}bg:-1{{/colors.surface}},hl:{{colors.blue.ref}},fg+:{{colors.text.ref}},bg+:{{colors.surfaceNested.ref}},hl+:{{colors.blue.ref}},border:{{colors.textSubtlest.ref}},header:{{colors.cyan.ref}},{{#colors.surface}}gutter:{{colors.surface.ref}}{{/colors.surface}}{{^colors.surface}}gutter:-1{{/colors.surface}},spinner:{{colors.yellow.ref}},info:{{colors.cyan.ref}},pointer:{{colors.magenta.ref}},marker:{{colors.red.ref}},prompt:{{colors.textSubtle.ref}},label:{{colors.textSubtle.ref}},query:{{colors.text.ref}},selected-bg:{{colors.selection.ref}}"

@@ -1,0 +1,299 @@
+{
+  "terminal": {
+    "color-surface": {
+      "$type": "color",
+      "$value": "{primitive.palette-sage-50}",
+      "$description": "Primary background: the terminal and editor canvas",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{semantic.color-surface-default}"
+        }
+      }
+    },
+    "color-surface-raised": {
+      "$type": "color",
+      "$value": "{primitive.palette-sage-100}",
+      "$description": "Low-contrast background atop base: panels, sidebars, inputs",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{semantic.color-surface-raised}"
+        }
+      }
+    },
+    "color-surface-nested": {
+      "$type": "color",
+      "$value": "{primitive.palette-sage-200}",
+      "$description": "Medium-contrast background atop surface: popups, active tabs, status segments",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{semantic.color-surface-nested}"
+        }
+      }
+    },
+    "color-text-subtlest": {
+      "$type": "color",
+      "$value": "{primitive.palette-sage-600}",
+      "$description": "Low-contrast foreground: comments, ignored files, line numbers",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{semantic.color-text-subtlest}"
+        }
+      }
+    },
+    "color-text-subtle": {
+      "$type": "color",
+      "$value": "{primitive.palette-sage-700}",
+      "$description": "Medium-contrast foreground: punctuation, operators, inactive items",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{semantic.color-text-subtle}"
+        }
+      }
+    },
+    "color-text": {
+      "$type": "color",
+      "$value": "{primitive.palette-night-700}",
+      "$description": "High-contrast foreground: body text, variables, active items",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{semantic.color-text-default}"
+        }
+      }
+    },
+    "color-line-highlight": {
+      "$type": "color",
+      "$value": "{primitive.palette-sage-100}",
+      "$description": "Low-contrast highlight: the cursor line",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-night-800}"
+        }
+      }
+    },
+    "color-selection": {
+      "$type": "color",
+      "$value": "{primitive.palette-sage-300}",
+      "$description": "Medium-contrast highlight: the selection, with text on it",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-night-600}"
+        }
+      }
+    },
+    "color-border": {
+      "$type": "color",
+      "$value": "{primitive.palette-sage-400}",
+      "$description": "High-contrast highlight: borders, the matching bracket",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-night-500}"
+        }
+      }
+    },
+    "color-accent": {
+      "$type": "color",
+      "$value": "{semantic.color-text-accent}",
+      "$description": "The brand action color: the cursor, focused borders, the prompt"
+    },
+    "color-red": {
+      "$type": "color",
+      "$value": "{primitive.palette-clay-600}",
+      "$description": "Errors, deletions, invalid code",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-clay-300}"
+        }
+      }
+    },
+    "color-yellow": {
+      "$type": "color",
+      "$value": "{primitive.palette-ember-600}",
+      "$description": "Warnings, strings; its bright pair marks regular expressions",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-ember-200}"
+        }
+      }
+    },
+    "color-green": {
+      "$type": "color",
+      "$value": "{primitive.palette-fern-600}",
+      "$description": "Success, additions, functions",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-fern-300}"
+        }
+      }
+    },
+    "color-cyan": {
+      "$type": "color",
+      "$value": "{primitive.palette-spruce-600}",
+      "$description": "Types, constants, numbers, escapes, inline code",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-spruce-300}"
+        }
+      }
+    },
+    "color-blue": {
+      "$type": "color",
+      "$value": "{primitive.palette-lake-600}",
+      "$description": "Information, object keys, properties, attributes, Markdown headings",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-lake-300}"
+        }
+      }
+    },
+    "color-magenta": {
+      "$type": "color",
+      "$value": "{primitive.palette-heather-600}",
+      "$description": "Hints, links, keywords, tags; its bright pair marks parameters",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-heather-300}"
+        }
+      }
+    },
+    "color-red-bright": {
+      "$type": "color",
+      "$value": "{primitive.palette-clay-700}",
+      "$description": "ANSI bright red",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-clay-200}"
+        }
+      }
+    },
+    "color-yellow-bright": {
+      "$type": "color",
+      "$value": "{primitive.palette-ember-700}",
+      "$description": "ANSI bright yellow",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-ember-100}"
+        }
+      }
+    },
+    "color-green-bright": {
+      "$type": "color",
+      "$value": "{primitive.palette-fern-700}",
+      "$description": "ANSI bright green",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-fern-200}"
+        }
+      }
+    },
+    "color-cyan-bright": {
+      "$type": "color",
+      "$value": "{primitive.palette-spruce-700}",
+      "$description": "ANSI bright cyan",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-spruce-200}"
+        }
+      }
+    },
+    "color-blue-bright": {
+      "$type": "color",
+      "$value": "{primitive.palette-lake-700}",
+      "$description": "ANSI bright blue",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-lake-200}"
+        }
+      }
+    },
+    "color-magenta-bright": {
+      "$type": "color",
+      "$value": "{primitive.palette-heather-700}",
+      "$description": "ANSI bright magenta",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-heather-200}"
+        }
+      }
+    },
+    "color-ansi-0": {
+      "$type": "color",
+      "$value": "{terminal.color-surface-nested}",
+      "$description": "ANSI 0 (black)"
+    },
+    "color-ansi-1": {
+      "$type": "color",
+      "$value": "{terminal.color-red}",
+      "$description": "ANSI 1 (red)"
+    },
+    "color-ansi-2": {
+      "$type": "color",
+      "$value": "{terminal.color-green}",
+      "$description": "ANSI 2 (green)"
+    },
+    "color-ansi-3": {
+      "$type": "color",
+      "$value": "{terminal.color-yellow}",
+      "$description": "ANSI 3 (yellow)"
+    },
+    "color-ansi-4": {
+      "$type": "color",
+      "$value": "{terminal.color-blue}",
+      "$description": "ANSI 4 (blue)"
+    },
+    "color-ansi-5": {
+      "$type": "color",
+      "$value": "{terminal.color-magenta}",
+      "$description": "ANSI 5 (magenta)"
+    },
+    "color-ansi-6": {
+      "$type": "color",
+      "$value": "{terminal.color-cyan}",
+      "$description": "ANSI 6 (cyan)"
+    },
+    "color-ansi-7": {
+      "$type": "color",
+      "$value": "{terminal.color-text-subtle}",
+      "$description": "ANSI 7 (white)"
+    },
+    "color-ansi-8": {
+      "$type": "color",
+      "$value": "{terminal.color-text-subtlest}",
+      "$description": "ANSI 8 (bright black)"
+    },
+    "color-ansi-9": {
+      "$type": "color",
+      "$value": "{terminal.color-red-bright}",
+      "$description": "ANSI 9 (bright red)"
+    },
+    "color-ansi-10": {
+      "$type": "color",
+      "$value": "{terminal.color-green-bright}",
+      "$description": "ANSI 10 (bright green)"
+    },
+    "color-ansi-11": {
+      "$type": "color",
+      "$value": "{terminal.color-yellow-bright}",
+      "$description": "ANSI 11 (bright yellow)"
+    },
+    "color-ansi-12": {
+      "$type": "color",
+      "$value": "{terminal.color-blue-bright}",
+      "$description": "ANSI 12 (bright blue)"
+    },
+    "color-ansi-13": {
+      "$type": "color",
+      "$value": "{terminal.color-magenta-bright}",
+      "$description": "ANSI 13 (bright magenta)"
+    },
+    "color-ansi-14": {
+      "$type": "color",
+      "$value": "{terminal.color-cyan-bright}",
+      "$description": "ANSI 14 (bright cyan)"
+    },
+    "color-ansi-15": {
+      "$type": "color",
+      "$value": "{terminal.color-text}",
+      "$description": "ANSI 15 (bright white)"
+    }
+  }
+}

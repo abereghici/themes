@@ -1,0 +1,33 @@
+---
+output: themes/{{id}}.toml
+flavors: [dark, light, terminal]
+---
+# {{name}} for Starship. Generated from abereghici/themes; do not edit.
+{{#isTerminal}}# In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
+# Dark and Light.
+{{/isTerminal}}# Paste this table into starship.toml, under `palette = "bereghici_{{flavor}}"`.
+{{#isTerminal}}# surface and surface_raised are the terminal's own background, so they aren't in it.
+{{/isTerminal}}[palettes.bereghici_{{flavor}}]
+{{#colors.surface}}surface = "{{colors.surface.ref}}"
+{{/colors.surface}}{{#colors.surfaceRaised}}surface_raised = "{{colors.surfaceRaised.ref}}"
+{{/colors.surfaceRaised}}{{#colors.surfaceNested}}surface_nested = "{{colors.surfaceNested.ref}}"
+{{/colors.surfaceNested}}{{#colors.textSubtlest}}text_subtlest = "{{colors.textSubtlest.ref}}"
+{{/colors.textSubtlest}}{{#colors.textSubtle}}text_subtle = "{{colors.textSubtle.ref}}"
+{{/colors.textSubtle}}{{#colors.text}}text = "{{colors.text.ref}}"
+{{/colors.text}}{{#colors.lineHighlight}}line_highlight = "{{colors.lineHighlight.ref}}"
+{{/colors.lineHighlight}}{{#colors.selection}}selection = "{{colors.selection.ref}}"
+{{/colors.selection}}{{#colors.border}}border = "{{colors.border.ref}}"
+{{/colors.border}}{{#colors.accent}}accent = "{{colors.accent.ref}}"
+{{/colors.accent}}{{#colors.red}}red = "{{colors.red.ref}}"
+{{/colors.red}}{{#colors.yellow}}yellow = "{{colors.yellow.ref}}"
+{{/colors.yellow}}{{#colors.green}}green = "{{colors.green.ref}}"
+{{/colors.green}}{{#colors.cyan}}cyan = "{{colors.cyan.ref}}"
+{{/colors.cyan}}{{#colors.blue}}blue = "{{colors.blue.ref}}"
+{{/colors.blue}}{{#colors.magenta}}magenta = "{{colors.magenta.ref}}"
+{{/colors.magenta}}{{#colors.redBright}}red_bright = "{{colors.redBright.ref}}"
+{{/colors.redBright}}{{#colors.yellowBright}}yellow_bright = "{{colors.yellowBright.ref}}"
+{{/colors.yellowBright}}{{#colors.greenBright}}green_bright = "{{colors.greenBright.ref}}"
+{{/colors.greenBright}}{{#colors.cyanBright}}cyan_bright = "{{colors.cyanBright.ref}}"
+{{/colors.cyanBright}}{{#colors.blueBright}}blue_bright = "{{colors.blueBright.ref}}"
+{{/colors.blueBright}}{{#colors.magentaBright}}magenta_bright = "{{colors.magentaBright.ref}}"
+{{/colors.magentaBright}}

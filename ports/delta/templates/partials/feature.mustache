@@ -1,0 +1,30 @@
+[delta "{{id}}"]
+  {{appearance}} = true
+  syntax-theme = {{id}}
+  commit-decoration-style = "{{colors.magenta.hex}}" box
+  commit-style = "{{colors.magenta.hex}}"
+  file-style = "{{colors.yellow.hex}}" bold
+  file-decoration-style = "{{colors.border.hex}}" overline
+  hunk-header-style = file line-number syntax
+  hunk-header-decoration-style = "{{colors.border.hex}}" box
+  hunk-header-file-style = "{{colors.yellow.hex}}"
+  hunk-header-line-number-style = "{{colors.textSubtlest.hex}}"
+  line-numbers-left-style = "{{colors.border.hex}}"
+  line-numbers-right-style = "{{colors.border.hex}}"
+  line-numbers-minus-style = "{{colors.red.hex}}" bold
+  line-numbers-plus-style = "{{colors.green.hex}}" bold
+  line-numbers-zero-style = "{{colors.textSubtlest.hex}}"
+  minus-style = syntax "{{tints.removed.hex}}"
+  minus-emph-style = syntax "{{tints.removedEmphasis.hex}}"
+  minus-empty-line-marker-style = syntax "{{tints.removed.hex}}"
+  plus-style = syntax "{{tints.added.hex}}"
+  plus-emph-style = syntax "{{tints.addedEmphasis.hex}}"
+  plus-empty-line-marker-style = syntax "{{tints.added.hex}}"
+  zero-style = syntax
+  whitespace-error-style = "{{colors.red.hex}}" reverse
+  blame-palette = "{{colors.surface.hex}} {{colors.surfaceRaised.hex}} {{colors.surfaceNested.hex}}"
+  merge-conflict-begin-symbol = ~
+  merge-conflict-end-symbol = ~
+  merge-conflict-ours-diff-header-style = "{{colors.yellow.hex}}" bold
+  merge-conflict-theirs-diff-header-style = "{{colors.blue.hex}}" bold
+  map-styles = bold purple => syntax "{{tints.changed.hex}}", bold cyan => syntax "{{tints.changed.hex}}"
