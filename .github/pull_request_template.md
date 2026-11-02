@@ -4,13 +4,10 @@
 
 ## Evidence
 
-- **Before:**
-  **After:**
+<!-- A screenshot of each touched port in Dark and Light, and the tool version you checked it with. -->
 
-<!-- A screenshot of each touched port in Dark and Light. -->
+## Checklist
 
-## Merge Danger
-
-**Door:** <!-- one-way or two-way -->
-
-**Blast Radius:** <!-- what this can affect -->
+- [ ] `pnpm build` and the generated files are committed (`pnpm check` passes)
+- [ ] `pnpm lint`, `pnpm format`, `pnpm check-types` and `pnpm test` pass
+- [ ] A new claim in a README has a test behind it

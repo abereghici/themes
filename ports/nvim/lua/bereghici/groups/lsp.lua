@@ -20,7 +20,10 @@ return function(c, opts)
 		LspReferenceRead = { link = "LspReferenceText" },
 		LspReferenceWrite = { bg = c.surface_nested, underline = true, sp = c.border },
 		LspReferenceTarget = { link = "LspReferenceText" },
-		LspInlayHint = { fg = c.text_subtlest, bg = opts.transparent and "NONE" or mix(c.text_subtlest, c.surface, 0.08) },
+		LspInlayHint = {
+			fg = c.text_subtlest,
+			bg = opts.transparent and "NONE" or mix(c.text_subtlest, c.surface, 0.08),
+		},
 		LspCodeLens = { fg = c.text_subtlest },
 		LspCodeLensSeparator = { fg = c.border },
 		LspSignatureActiveParameter = { fg = c.accent, bold = opts.bold, underline = true },
@@ -62,7 +65,7 @@ return function(c, opts)
 		["@lsp.mod.documentation"] = {},
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
-		["@lsp.typemod.variable.defaultLibrary"] = { link = "@module.builtin" },
+		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
 		["@lsp.typemod.variable.global"] = { link = "@constant" },
 		["@lsp.typemod.variable.static"] = { link = "@constant" },
 		["@lsp.typemod.variable.readonly"] = { link = "@constant" },
@@ -75,7 +78,8 @@ return function(c, opts)
 
 	for severity, color in pairs(severities) do
 		groups["Diagnostic" .. severity] = { fg = color }
-		groups["DiagnosticVirtualText" .. severity] = { fg = color, bg = opts.transparent and "NONE" or mix(color, c.surface, 0.1) }
+		groups["DiagnosticVirtualText" .. severity] =
+			{ fg = color, bg = opts.transparent and "NONE" or mix(color, c.surface, 0.1) }
 		groups["DiagnosticVirtualLines" .. severity] = { fg = color }
 		groups["DiagnosticUnderline" .. severity] = { undercurl = true, sp = color }
 		groups["DiagnosticSign" .. severity] = { fg = color }

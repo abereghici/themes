@@ -151,7 +151,15 @@ return function(c, opts)
 		groups["Notify" .. level .. "Body"] = { fg = c.text, bg = bg_panel }
 	end
 
-	local todos = { FIX = c.red, TODO = c.magenta, HACK = c.yellow, WARN = c.yellow, PERF = c.cyan, NOTE = c.blue, TEST = c.green }
+	local todos = {
+		FIX = c.red,
+		TODO = c.magenta,
+		HACK = c.yellow,
+		WARN = c.yellow,
+		PERF = c.cyan,
+		NOTE = c.blue,
+		TEST = c.green,
+	}
 	for keyword, color in pairs(todos) do
 		groups["TodoBg" .. keyword] = { fg = c.surface, bg = color, bold = opts.bold }
 		groups["TodoFg" .. keyword] = { fg = color }

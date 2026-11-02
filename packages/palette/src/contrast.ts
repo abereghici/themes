@@ -1,8 +1,7 @@
 import { contrastRatio } from "./color.ts";
-import { APPEARANCES, TINTS } from "./index.ts";
+import { APPEARANCES, HUES, TINTS } from "./index.ts";
 import type { Appearance, Palette, Role, Tint } from "./index.ts";
 
-const HUES = ["red", "yellow", "green", "cyan", "blue", "magenta"] as const;
 const BRIGHT_HUES = HUES.map((hue) => `${hue}Bright` as const);
 const PANELS = ["surfaceRaised", "surfaceNested"] as const;
 

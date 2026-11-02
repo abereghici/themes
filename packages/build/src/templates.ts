@@ -57,11 +57,15 @@ const parseTemplate = (path: string): Template => {
   return { ...meta, output: meta.output, path, body: source.slice(match[0].length) };
 };
 
-/** Every directory under `portsDir` with templates (`_shared` holds what they share). */
-export const loadPorts = (portsDir: string): Port[] =>
+/** Every port's directory: those under `portsDir` but `_shared`, which holds what they share. */
+export const portDirs = (portsDir: string): string[] =>
   readdirSync(portsDir, { withFileTypes: true })
     .filter((entry) => entry.isDirectory() && !entry.name.startsWith("_"))
-    .map((entry) => join(portsDir, entry.name))
+    .map((entry) => join(portsDir, entry.name));
+
+/** Every port with templates. */
+export const loadPorts = (portsDir: string): Port[] =>
+  portDirs(portsDir)
     .filter((dir) => existsSync(join(dir, "templates")))
     .map((dir) => ({
       id: basename(dir),

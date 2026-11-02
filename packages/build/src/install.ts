@@ -22,7 +22,7 @@ export const installScript = (registry: Registry): string => {
 
       if (step.link !== undefined) installs.push(`  link ${from(step.link)} ${to}`);
       if (step.copy !== undefined) installs.push(`  copy ${from(step.copy)} ${to}`);
-      if (step.run !== undefined) installs.push(`  run_if ${step.when ?? "true"} '${step.run}'`);
+      if (step.run !== undefined) installs.push(`  run_if '${step.when ?? "true"}' '${step.run}'`);
       if (step.switch !== undefined) {
         switches.push(`  link ${from(step.switch.replaceAll("{appearance}", "$1"))} ${to}`);
       }

@@ -2,11 +2,14 @@
  * `pnpm build` renders every port into its committed files.
  * `pnpm check` renders without writing and fails when a committed file is out of date (CI).
  */
-import { styleText } from "node:util";
+import { parseArgs, styleText } from "node:util";
 
 import { build } from "./index.ts";
 
-const check = process.argv.includes("--check");
+const { check } = parseArgs({
+  options: { check: { type: "boolean", default: false } },
+  strict: true,
+}).values;
 const { written, removed } = await build({ check });
 
 if (written.length + removed.length === 0) {

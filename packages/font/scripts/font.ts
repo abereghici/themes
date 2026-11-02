@@ -14,12 +14,12 @@ const LOGO = {
   strokeWidth: 3,
 };
 
-export const CODE_POINT = 0x10_00_00;
+const CODE_POINT = 0x10_00_00;
 
 const OUTPUT = join(import.meta.dirname, "../../../ports/font/themes/BereghiciSymbols.otf");
 
 // MesloLGS Nerd Font Mono's metrics (2048 units per em, a 1233-unit cell), so the logo sits on
-// the text's line: as tall as the capitals (1493), centred on them. It overflows into the next
+// the text's line: centred on the capitals (1493 high) and a little taller (1550), as icons are. It overflows into the next
 // cell, which the prompt leaves blank, as Nerd Font icons do.
 const UNITS_PER_EM = 2048;
 const ASCENDER = 2001;

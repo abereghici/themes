@@ -4,13 +4,26 @@
 
 Bereghici for [Obsidian](https://obsidian.md). It follows the macOS appearance live.
 
-## Themes
-
-| Theme | |
-| --- | --- |
-| [Bereghici](themes/Bereghici) | Bereghici Dark and Light |
-
 ## Usage
 
-1. Copy `themes/Bereghici` into your vault's `.obsidian/themes`.
-2. Settings → Appearance → Themes → Bereghici, with the base color scheme on "Adapt to system".
+1. Copy the theme into your vault:
+
+   ```sh
+   cp -R ~/.local/share/bereghici/ports/obsidian/themes/Bereghici <vault>/.obsidian/themes/
+   ```
+
+2. Settings → Appearance → Themes → Bereghici, with Base color scheme on Adapt to system.
+
+See Obsidian's [documentation](https://docs.obsidian.md/Themes/App+themes/Build+a+theme).
+
+## Files
+
+| File                          | Flavor                   |
+| ----------------------------- | ------------------------ |
+| [Bereghici](themes/Bereghici) | Bereghici Dark and Light |
+
+## Verification
+
+`pnpm test` checks this port on every push to `main` and every pull request ([CI](../../.github/workflows/ci.yml)):
+
+- Every `.json` file parses as JSON: [`outputs.test.ts`](../../packages/build/src/outputs.test.ts)

@@ -840,7 +840,12 @@
     },
     {
       "name": "Built-in variables",
-      "scope": ["variable.language", "support.variable.self", "variable.parameter.function.language.special.self"],
+      "scope": [
+        "variable.language",
+        "support.variable",
+        "support.class.console",
+        "variable.parameter.function.language.special.self"
+      ],
       "settings": { "foreground": "#8b537f", "fontStyle": "italic" }
     },
     {
@@ -1116,7 +1121,7 @@
     "decorator": "#1f7c44",
     "parameter": "#6b3e62",
     "variable": "#2e3229",
-    "variable.defaultLibrary": "#007a80",
+    "variable.defaultLibrary": { "foreground": "#8b537f", "italic": true },
     "property": "#2f6da4",
     "event": "#2f6da4",
     "label": "#535750",

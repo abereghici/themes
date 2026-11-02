@@ -844,7 +844,12 @@ flavors: [dark, light]
     },
     {
       "name": "Built-in variables",
-      "scope": ["variable.language", "support.variable.self", "variable.parameter.function.language.special.self"],
+      "scope": [
+        "variable.language",
+        "support.variable",
+        "support.class.console",
+        "variable.parameter.function.language.special.self"
+      ],
       "settings": { "foreground": "{{colors.magenta.hex}}", "fontStyle": "italic" }
     },
     {
@@ -1120,7 +1125,7 @@ flavors: [dark, light]
     "decorator": "{{colors.green.hex}}",
     "parameter": "{{colors.magentaBright.hex}}",
     "variable": "{{colors.text.hex}}",
-    "variable.defaultLibrary": "{{colors.cyan.hex}}",
+    "variable.defaultLibrary": { "foreground": "{{colors.magenta.hex}}", "italic": true },
     "property": "{{colors.blue.hex}}",
     "event": "{{colors.blue.hex}}",
     "label": "{{colors.textSubtle.hex}}",

@@ -7,8 +7,6 @@ import type { Dictionary, TransformedToken } from "style-dictionary/types";
 
 import { hexToRgb, mixOklab } from "./color.ts";
 
-export { contrastRatio } from "./color.ts";
-
 /** Where a themed token keeps its dark value; the light value is its `$value`. */
 const THEME_EXTENSION = "com.bereghici.theme";
 
@@ -157,6 +155,15 @@ export const TERMINAL_COLORS = {
   cyanBright: 14,
 } as const satisfies Partial<Record<Role, number>>;
 
+/** The ANSI color the terminal flavor gives a role, or undefined for a role it leaves out. */
+export const terminalIndex = (role: Role): number | undefined =>
+  Object.hasOwn(TERMINAL_COLORS, role)
+    ? TERMINAL_COLORS[role as keyof typeof TERMINAL_COLORS]
+    : undefined;
+
+/** The six hues, each with a bright pair (`redBright`…). */
+export const HUES = ["red", "yellow", "green", "cyan", "blue", "magenta"] as const;
+
 const ANSI_NAMES = ["black", "red", "green", "yellow", "blue", "magenta", "cyan", "white"];
 
 /**
@@ -188,7 +195,7 @@ const TERMINAL: TerminalFlavor = {
   isTerminal: true,
   colors: Object.fromEntries(
     ROLES.map((role) => {
-      const index: number | undefined = Reflect.get(TERMINAL_COLORS, role);
+      const index = terminalIndex(role);
 
       return [role, index === undefined ? null : terminalColor(index)];
     }),
@@ -251,9 +258,9 @@ export interface Palette {
 }
 
 /** Resolves the terminal tier of the token source into both variants. */
-export async function loadPalette(source: readonly string[] = SOURCES): Promise<Palette> {
+export async function loadPalette(): Promise<Palette> {
   const sd = new StyleDictionary({
-    source: [...source],
+    source: SOURCES,
     log: { verbosity: "silent", warnings: "error" },
     platforms: { terminal: { transforms: ["name/kebab", "color/hex"] } },
   });

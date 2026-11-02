@@ -1,0 +1,7 @@
+# Rendered by `pnpm build`: collapsed in diffs, and left out of GitHub's language statistics
+ports/*/themes/** linguist-generated
+ports/*/README.md linguist-generated
+ports/nvim/lua/bereghici/palette.lua linguist-generated
+install.sh linguist-generated
+.github/assets/palette.svg linguist-generated
+mise.lock linguist-generated

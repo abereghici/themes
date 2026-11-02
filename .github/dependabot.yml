@@ -1,6 +1,6 @@
 version: 2
 updates:
-  # Keeps the SHA-pinned actions current; the repository requires full-SHA pins.
+  # Keeps the actions current: CI pins each to a full commit SHA, which Dependabot updates.
   - package-ecosystem: github-actions
     directory: /
     schedule:

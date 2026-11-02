@@ -8,9 +8,15 @@ on:
 permissions:
   contents: read
 
+# A newer push to the same branch or pull request supersedes the run in progress
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -19,21 +25,26 @@ jobs:
         with:
           require-lockfile: true
           cache: true
+      # bat, delta, eza, fzf, jq, Neovim, ripgrep, Starship and StyLua, at mise.lock's versions and checksums
+      - uses: jdx/mise-action@6612f0ef07ed2a736cd1e00a94a065522dd41195 # v5.2.5
+      # zsh syntax-checks the zsh ports
+      - run: sudo apt-get update && sudo apt-get install --yes --no-install-recommends zsh
+      # tmux publishes no binaries; 3.8 is the first with the `theme` option the port uses
+      - name: Build tmux
+        env:
+          TMUX_VERSION: "3.8"
+          TMUX_SHA256: e79c699c7e949dccd0a4a125e17b8d1261e311b16979dbc8eb34542f3966d82e
+        run: |
+          sudo apt-get install --yes --no-install-recommends bison libevent-dev libncurses-dev pkg-config
+          curl --fail --location --silent --show-error --output tmux.tar.gz \
+            "https://github.com/tmux/tmux/releases/download/$TMUX_VERSION/tmux-$TMUX_VERSION.tar.gz"
+          echo "$TMUX_SHA256  tmux.tar.gz" | sha256sum --check
+          tar --extract --gzip --file tmux.tar.gz
+          (cd "tmux-$TMUX_VERSION" && ./configure --prefix="$RUNNER_TEMP/tmux" && make --jobs="$(nproc)" && make install)
+          echo "$RUNNER_TEMP/tmux/bin" >> "$GITHUB_PATH"
       - run: pnpm lint
       - run: pnpm format
       - run: pnpm check-types
-      # The tests syntax-check the generated zsh files and load the Neovim port
-      - run: sudo apt-get install --yes --no-install-recommends zsh
-      - name: Install Neovim
-        env:
-          NVIM_VERSION: v0.12.6
-          NVIM_SHA256: 474430d53e6264f6d6dd18db42d6dc9df3a1b56ca9e88a325bbf860e1a811d87
-        run: |
-          curl --fail --location --silent --show-error --output nvim.tar.gz \
-            "https://github.com/neovim/neovim/releases/download/$NVIM_VERSION/nvim-linux-x86_64.tar.gz"
-          echo "$NVIM_SHA256  nvim.tar.gz" | sha256sum --check
-          sudo tar --extract --gzip --file nvim.tar.gz --directory /opt
-          echo /opt/nvim-linux-x86_64/bin >> "$GITHUB_PATH"
       - run: pnpm test
       # The generated themes are committed: fail when a template or token changed without `pnpm build`
       - run: pnpm check

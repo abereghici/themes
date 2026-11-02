@@ -21,27 +21,36 @@ git clone https://github.com/abereghici/themes ~/.local/share/bereghici
 ~/.local/share/bereghici/install.sh
 ```
 
-[`install.sh`](install.sh) is for macOS: it reads the appearance with `defaults` and puts the font in `~/Library/Fonts`. The theme files themselves work on any system, from each port's `themes/`.
+[`install.sh`](install.sh) is for macOS: it reads the appearance with `defaults` and puts the font in `~/Library/Fonts`. The theme files themselves work on any system, from each port's `themes/`. Each port's README lists what `install.sh` does for it and what to add to the tool's config.
 
-`install.sh` links each theme where its tool reads it, so a `git pull` updates those tools without installing again; VS Code and the font keep a copy, so run `install.sh` again after pulling. It replaces only links of its own or broken ones, never a file or link of yours, and copies the font only over an older copy of itself. A step that fails is reported without stopping the others, and the script then exits non-zero. `pnpm test` runs it against a scratch home to check each of these. A clone elsewhere is linked at `~/.local/share/bereghici`, the one path every port's usage names. Each port's README says what to add to the tool's config.
+`install.sh`:
+
+- links each theme where its tool reads it, so a `git pull` updates those tools without installing again. VS Code and the font keep a copy: run `install.sh` again after pulling.
+- replaces only its own links and broken ones, never a file or link of yours, and replaces the font file in `~/Library/Fonts` when it differs from the repository's.
+- reports a step that fails, installs the rest, and then exits non-zero.
+- links a clone kept elsewhere at `~/.local/share/bereghici`, the one path every port's usage names.
+
+`pnpm test` runs it in an empty home folder to check each of these ([`outputs.test.ts`](packages/build/src/outputs.test.ts)).
 
 Claude Code and Codex take one theme rather than one per appearance: run `install.sh sync dark` or `install.sh sync light` from whatever switches the appearance.
 
+To uninstall, delete the links `install.sh` made (each port's README lists them), `~/Library/Fonts/BereghiciSymbols.otf`, the VS Code extension (`code --uninstall-extension abereghici.bereghici-theme`) and the clone.
+
 ## Flavors
 
-Each port ships the flavors its tool can use, as `themes/bereghici-<flavor>.<ext>`:
+Each port ships the flavors its tool can use, most as `themes/bereghici-<flavor>.<ext>` (each port's README lists its files):
 
 - **dark** and **light**: Bereghici Dark and Light in their own colors.
-- **terminal**: each role as the ANSI color a Bereghici terminal theme gives it. A tool in this flavor switches with the terminal, live, even when it has no light/dark setting of its own (fzf, Starship, eza, zsh). Its `surface` and `surfaceRaised` are the terminal's own background.
+- **terminal**: each role as the nearest of the 16 ANSI colors a Bereghici terminal theme defines (Ghostty's, for one). In a terminal running one, a tool in this flavor switches with the terminal, live, even when it has no light/dark setting of its own, such as fzf, Starship, eza or zsh. Its `surface` and `surfaceRaised` are the terminal's own background.
 
 ## Transparency
 
-The terminal ports leave the background to the terminal, so a translucent one (Ghostty's `background-opacity`) shows through. They color only selections, badges, code blocks and diff lines. `pnpm test` checks the ones that would otherwise cover the screen:
+The terminal ports leave the background to the terminal, so a translucent one (Ghostty's `background-opacity`) shows through. `pnpm test` checks the ones that would otherwise cover the screen ([`outputs.test.ts`](packages/build/src/outputs.test.ts), [`editors.test.ts`](packages/build/src/editors.test.ts)):
 
 - tmux draws its status bar, popups and menus with `bg=default`.
 - herdr's sidebar uses `sidebar_bg = "reset"`.
 - fzf's terminal flavor sets `bg:-1` and `gutter:-1`; its dark and light flavors paint Bereghici's background, for a terminal in other colors.
-- Neovim clears its backgrounds with `setup({ transparent = true })`, except the completion menu's, which stays solid to read over code, and nvim-notify's, which its fade needs.
+- Neovim's `setup({ transparent = true })` clears the editor, floats, sign column, status and tab lines, folds, inlay hints and diagnostics. The completion menu stays solid, to read over code.
 
 Desktop apps (VS Code, Chrome, Obsidian, Raycast) draw their own windows.
 
@@ -49,7 +58,7 @@ Desktop apps (VS Code, Chrome, Obsidian, Raycast) draw their own windows.
 
 <img src=".github/assets/palette.svg" alt="The Bereghici Dark and Light swatches">
 
-Every value comes from [`@abereghici/tokens`](https://www.npmjs.com/package/@abereghici/tokens): the design system's primitives and semantic colors, mapped to these roles in [`terminal.tokens.json`](packages/palette/src/tokens/terminal.tokens.json). The roles take the design system's names: surfaces, text, the line highlight, selection and border, `accent`, and the six ANSI hues with their bright pairs. Generated by `pnpm build`:
+Every value comes from [`@abereghici/tokens`](https://www.npmjs.com/package/@abereghici/tokens): the design system's primitives and semantic colors, mapped to these roles in [`terminal.tokens.json`](packages/palette/src/tokens/terminal.tokens.json). The roles take the design system's names: surfaces, text, the line highlight, selection and border, `accent`, and the six ANSI hues with their bright pairs. The Terminal column is the ANSI color the terminal flavor uses: the same color for the hues, and the nearest one for the others. Generated by `pnpm build`:
 
 <!-- generated:palette -->
 
@@ -84,7 +93,7 @@ Every value comes from [`@abereghici/tokens`](https://www.npmjs.com/package/@abe
 
 `pnpm test` holds every pair below to its minimum, in both variants, with the WCAG 2.2 contrast ratio ([Color.js](https://colorjs.io/docs/contrast) `WCAG21`, the formula 2.2 keeps). 4.5 is AA for text ([SC 1.4.3](https://www.w3.org/TR/WCAG22/#contrast-minimum)) and 3 is AA for large text and interface marks ([SC 1.4.11](https://www.w3.org/TR/WCAG22/#non-text-contrast)).
 
-Yellow, and the hues on panels and the selection, sit below AA by design, as in Catppuccin Latte: a yellow dark enough for 4.5 on a light background reads as brown, and six hues can't stay apart at 4.5 on every background. Those minimums are lower in the tables, not hidden. WCAG 3 doesn't settle a successor yet: its [working draft](https://www.w3.org/TR/wcag-3.0/) says its contrast algorithm "is yet to be determined", so these are WCAG 2 ratios. Generated by `pnpm build` from the same pairs the tests check:
+Yellow, and the hues on panels and the selection, sit below AA by design, as in Catppuccin Latte, whose [yellow](https://catppuccin.com/palette) is 2.31:1 on its base: a yellow dark enough for 4.5 on a light background reads as brown, and six hues can't stay apart at 4.5 on every background. Those minimums are lower in the tables, not hidden. WCAG 3 doesn't settle a successor yet: its [working draft](https://www.w3.org/TR/wcag-3.0/) says its contrast algorithm "is yet to be determined", so these are WCAG 2 ratios. Generated by `pnpm build` from the same pairs the tests check:
 
 <!-- generated:contrast -->
 
@@ -181,36 +190,68 @@ Yellow, and the hues on panels and the selection, sit below AA by design, as in 
 
 <!-- generated:ports -->
 
-| Port                                                      | For          | Switches                  |
-| --------------------------------------------------------- | ------------ | ------------------------- |
-| [Ghostty](ports/ghostty)                                  | Terminal     | live                      |
-| [herdr](ports/herdr)                                      | Terminal     | live                      |
-| [tmux](ports/tmux)                                        | Terminal     | live                      |
-| [Neovim](ports/nvim)                                      | Editors      | live                      |
-| [VS Code](ports/vscode)                                   | Editors      | live                      |
-| [bat](ports/bat)                                          | Command line | on start                  |
-| [Claude Code](ports/claude-code)                          | Command line | through `install.sh sync` |
-| [Codex](ports/codex)                                      | Command line | through `install.sh sync` |
-| [delta](ports/delta)                                      | Command line | on start                  |
-| [eza](ports/eza)                                          | Command line | live                      |
-| [fzf](ports/fzf)                                          | Command line | live                      |
-| [glamour (gh, glab, glow)](ports/glamour)                 | Command line | live                      |
-| [jq](ports/jq)                                            | Command line | live                      |
-| [lazydocker](ports/lazydocker)                            | Command line | live                      |
-| [lazygit](ports/lazygit)                                  | Command line | on start                  |
-| [ripgrep](ports/ripgrep)                                  | Command line | live                      |
-| [Yazi](ports/yazi)                                        | Command line | on start                  |
-| [LS_COLORS (fd, ls, zsh completion)](ports/ls-colors)     | Shell        | live                      |
-| [Starship](ports/starship)                                | Shell        | live                      |
-| [zsh-syntax-highlighting, zsh-autosuggestions](ports/zsh) | Shell        | live                      |
-| [Obsidian](ports/obsidian)                                | Apps         | live                      |
-| [Raycast](ports/raycast)                                  | Apps         | live                      |
-| [Chrome](ports/chrome)                                    | Browser      | by hand                   |
-| [Bereghici Symbols](ports/font)                           | Font         | live                      |
+| Port                                                           | For          | Switches                  |
+| -------------------------------------------------------------- | ------------ | ------------------------- |
+| [Ghostty](ports/ghostty)                                       | Terminal     | live                      |
+| [herdr](ports/herdr)                                           | Terminal     | live                      |
+| [tmux](ports/tmux)                                             | Terminal     | live                      |
+| [Neovim](ports/nvim)                                           | Editors      | live                      |
+| [VS Code](ports/vscode)                                        | Editors      | live                      |
+| [bat](ports/bat)                                               | Command line | on start                  |
+| [Claude Code](ports/claude-code)                               | Command line | through `install.sh sync` |
+| [Codex](ports/codex)                                           | Command line | through `install.sh sync` |
+| [delta](ports/delta)                                           | Command line | on start                  |
+| [eza](ports/eza)                                               | Command line | live                      |
+| [fzf](ports/fzf)                                               | Command line | live                      |
+| [glamour (gh, glow)](ports/glamour)                            | Command line | live                      |
+| [jq](ports/jq)                                                 | Command line | live                      |
+| [lazydocker](ports/lazydocker)                                 | Command line | live                      |
+| [lazygit](ports/lazygit)                                       | Command line | live                      |
+| [ripgrep](ports/ripgrep)                                       | Command line | live                      |
+| [Yazi](ports/yazi)                                             | Command line | on start                  |
+| [LS_COLORS (GNU ls, fd, eza, zsh completion)](ports/ls-colors) | Shell        | live                      |
+| [Starship](ports/starship)                                     | Shell        | live                      |
+| [zsh-syntax-highlighting, zsh-autosuggestions](ports/zsh)      | Shell        | live                      |
+| [Obsidian](ports/obsidian)                                     | Apps         | live                      |
+| [Raycast](ports/raycast)                                       | Apps         | live                      |
+| [Chrome](ports/chrome)                                         | Browser      | by hand                   |
+| [Bereghici Symbols](ports/font)                                | Font         | —                         |
 
 <!-- /generated:ports -->
 
-htop and the GitHub and GitLab CLIs' own output use the 16 ANSI colors, so the terminal theme covers them.
+Tools that draw with the 16 ANSI colors, such as htop, take the terminal theme's.
+
+## Verification
+
+`pnpm test` runs each tool below on the port's themes, at the version [`mise.toml`](mise.toml) pins and [`mise.lock`](mise.lock) checksums, and fails when the tool rejects a theme or draws a color other than the palette's ([`tools.test.ts`](packages/build/src/tools.test.ts), [`checks.ts`](packages/build/src/checks.ts)). CI installs every tool but Ghostty and herdr, whose checks run on the maintainer's Mac only.
+
+<!-- generated:verification -->
+
+| Port                                                           | Tool                                                 | Proves                                                                                                                                        |
+| -------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| [bat](ports/bat)                                               | bat 0.26.1                                           | bat builds its cache from both themes without a warning and highlights TypeScript with them                                                   |
+| [Codex](ports/codex)                                           | bat 0.26.1                                           | bat, which reads TextMate themes with the same library as Codex (syntect), loads both themes and highlights TypeScript with them              |
+| [Yazi](ports/yazi)                                             | bat 0.26.1                                           | bat, which reads TextMate themes with the same library as Yazi (syntect), loads each flavor's `tmtheme.xml` and highlights TypeScript with it |
+| [delta](ports/delta)                                           | delta 0.20.1                                         | delta renders a diff with each feature, and its output carries the feature's added and removed line backgrounds                               |
+| [eza](ports/eza)                                               | eza 0.23.5                                           | eza reads each theme as its `theme.yml` and draws directories in the theme's blue                                                             |
+| [LS_COLORS (GNU ls, fd, eza, zsh completion)](ports/ls-colors) | eza 0.23.5                                           | eza reads each `LS_COLORS` and draws directories in the theme's blue                                                                          |
+| [fzf](ports/fzf)                                               | fzf 0.74.5                                           | fzf accepts every theme's `--color` (it exits with an error on an unknown color name or value)                                                |
+| [jq](ports/jq)                                                 | jq 1.8.2                                             | jq accepts every theme's `JQ_COLORS` (it warns on an invalid one) and colors object keys with the theme's blue                                |
+| [ripgrep](ports/ripgrep)                                       | ripgrep 15.2.0                                       | ripgrep accepts every theme's `--colors` (it exits with an error on an invalid one) and marks matches in the theme's red                      |
+| [Starship](ports/starship)                                     | starship 1.27.0                                      | Starship draws each palette's colors by role name exactly as it draws their values (it ignores a name it doesn't know)                        |
+| [tmux](ports/tmux)                                             | tmux 3.8, built from source in CI                    | tmux sources the theme without an error, and the status bar keeps the terminal's background                                                   |
+| [Ghostty](ports/ghostty)                                       | Ghostty on the maintainer's Mac; CI can't install it | `ghostty +validate-config` accepts a config that sets each theme                                                                              |
+| [herdr](ports/herdr)                                           | herdr on the maintainer's Mac; CI can't install it   | `herdr config check` reports no issue with the theme as `config.toml` (it reports unknown keys)                                               |
+| [VS Code](ports/vscode)                                        | @vscode/vsce 4.1.0, from pnpm-workspace.yaml         | `vsce package` packages the extension, and the package holds every theme the manifest contributes                                             |
+
+<!-- /generated:verification -->
+
+The other tests:
+
+- parse every generated JSON, YAML, TOML and XML file, and run `bash -n`, `zsh -n` and `git config --list` on the shell and git ones ([`outputs.test.ts`](packages/build/src/outputs.test.ts)).
+- load the Neovim port in both appearances, with and without `transparent`, and check that every highlight link has a target and every color is a hex color ([`editors.test.ts`](packages/build/src/editors.test.ts)).
+- compare a sample of each item of [CONTRIBUTING's syntax table](CONTRIBUTING.md#syntax) across Neovim, VS Code and the TextMate theme ([`editors.test.ts`](packages/build/src/editors.test.ts)).
+- hold every contrast pair above to its minimum ([`palette.test.ts`](packages/palette/src/palette.test.ts)), and check the font's logo glyph ([`font.test.ts`](packages/font/scripts/font.test.ts)).
 
 ## Wallpapers
 
@@ -219,12 +260,12 @@ htop and the GitHub and GitLab CLIs' own output use the 16 ANSI colors, so the t
 ## How it works
 
 - [`packages/palette`](packages/palette) resolves the design system's DTCG source (`@abereghici/tokens/source/*.tokens.json`) and the terminal roles with Style Dictionary, into the three flavors every template reads.
-- [`packages/build`](packages/build) renders each port's `templates/*.mustache`, as Catppuccin's Whiskers does. A template's frontmatter names its output and the flavors it renders in. A tag the view doesn't have fails the build, so a typo can't ship an empty color.
-- [`ports.yml`](ports.yml) registers every port: its tool, how it switches and where it installs. The tables in this README, each port's README and `install.sh` are generated from it.
-- `pnpm check` renders everything without writing and fails when a committed file differs, so what's in the repository is what the tokens produce. CI runs it on every push.
-- `pnpm test` also parses every generated JSON, YAML, TOML and XML file, and runs `bash -n` on the bash files, `zsh -n` on the zsh ones and `git config --list` on the git one.
-- It loads the Neovim port in both appearances, with and without `transparent`, and checks that every link has a target. It then compares a sample of each syntax role across Neovim, VS Code and the TextMate theme, against [CONTRIBUTING](CONTRIBUTING.md#syntax)'s table.
+- [`packages/build`](packages/build) renders each port's `templates/*.mustache`. A template's frontmatter names its output and the flavors it renders in, as the frontmatter of Catppuccin's [Whiskers](https://github.com/catppuccin/whiskers) templates does. A tag the view doesn't have fails the build, so a typo can't ship an empty color.
+- [`ports.yml`](ports.yml) registers every port: its tool, its documentation, the oldest version it supports, how it switches, where it installs and what to add to the tool's config. The ports table in this README, each port's README and `install.sh` are generated from it, and the build fails on an entry it can't use.
+- `pnpm check` renders everything without writing and fails when a committed file differs, so what's in the repository is what the tokens produce.
 - [`packages/font`](packages/font) draws the Bereghici logo into a font, for prompts.
+
+CI runs `pnpm lint`, `pnpm format`, `pnpm check-types`, `pnpm test` and `pnpm check` on every push to `main` and every pull request.
 
 ## Contributing
 

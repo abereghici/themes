@@ -306,17 +306,6 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Library global</string>
-			<key>scope</key>
-			<string>support.variable, support.constant.dom, support.class.builtin</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#87c8cb</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
 			<string>Parameter</string>
 			<key>scope</key>
 			<string>variable.parameter, entity.name.variable.parameter</string>
@@ -330,7 +319,7 @@
 			<key>name</key>
 			<string>Language variable</string>
 			<key>scope</key>
-			<string>variable.language, variable.language.this, variable.language.self, variable.language.super, variable.parameter.function.language.special.self, variable.parameter.function.language.special.cls</string>
+			<string>variable.language, variable.language.this, variable.language.self, variable.language.super, variable.parameter.function.language.special.self, variable.parameter.function.language.special.cls, support.variable, support.class.console</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>

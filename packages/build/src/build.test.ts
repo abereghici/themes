@@ -1,8 +1,8 @@
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, onTestFinished } from "vitest";
 
 import { build, loadPorts, PORTS_DIR, ROOT } from "./index.ts";
 import { loadRegistry } from "./registry.ts";
@@ -10,9 +10,11 @@ import { loadRegistry } from "./registry.ts";
 const template = (output: string, body: string, flavors?: string): string =>
   `---\noutput: ${output}\n${flavors === undefined ? "" : `flavors: [${flavors}]\n`}---\n${body}`;
 
-/** A repository with one port, `example`, registered in ports.yml. */
+/** A repository with one port, `example`, registered in ports.yml, removed when the test ends. */
 const fixture = (): string => {
   const root = mkdtempSync(join(tmpdir(), "bereghici-"));
+
+  onTestFinished(() => rmSync(root, { recursive: true, force: true }));
   const port = join(root, "ports/example");
 
   mkdirSync(join(port, "templates/partials"), { recursive: true });
@@ -34,18 +36,19 @@ const fixture = (): string => {
       "example:",
       "  name: Example",
       "  url: https://example.com",
+      "  docs: https://example.com/docs",
       "  category: cli",
       "  switches: live",
       "  install:",
       "    - link: themes",
       "      to: ~/.config/example/themes",
       "  usage:",
-      "    - Select it.",
+      "    - text: Select it.",
     ].join("\n"),
   );
   writeFileSync(
     join(root, "README.md"),
-    ["palette", "contrast", "ports"]
+    ["palette", "contrast", "ports", "verification"]
       .map((name) => `<!-- generated:${name} -->\n<!-- /generated:${name} -->\n`)
       .join("\n"),
   );
@@ -173,7 +176,28 @@ describe("build", () => {
     expect(withStep('    - link: themes\n      to: "~/.config/$USER"')).toThrow(/can't quote/v);
     expect(withStep("    - link: themes\n      to: ~/.config/`x`")).toThrow(/can't quote/v);
     expect(withStep("    - run: echo 'done'\n      when: echo")).toThrow(/can't hold a '/v);
-    expect(withStep("    - run: echo\n      when: echo two")).toThrow(/names one command/v);
+    expect(withStep("    - run: echo\n      when: echo $(two)")).toThrow(/names commands/v);
+  });
+
+  it("rejects an entry the READMEs couldn't be generated from", () => {
+    const root = fixture();
+    const path = join(root, "ports.yml");
+    const registry = read(root, "ports.yml");
+    const load = (yaml: string) => () => {
+      writeFileSync(path, yaml);
+      loadRegistry(path, ["example"]);
+    };
+
+    expect(load(registry.replace("category: cli", "category: toString"))).toThrow(
+      /unknown category/v,
+    );
+    expect(load(registry.replace("  url: https://example.com\n", ""))).toThrow(/url isn't a URL/v);
+    expect(load(registry.replace("    - text: Select it.", "    - Select it."))).toThrow(
+      /needs text/v,
+    );
+    expect(
+      load(registry.replace("    - text: Select it.", "    - text: Select it.\n      code: x")),
+    ).toThrow(/needs a lang/v);
   });
 
   it("registers every port in the repository", () => {

@@ -8,23 +8,31 @@ import {
   rmSync,
   writeFileSync,
 } from "node:fs";
-import { dirname, join, relative } from "node:path";
+import { basename, dirname, extname, join, relative } from "node:path";
 
 import { loadPalette } from "@repo/palette";
 
+import { evidenceFor } from "./checks.ts";
 import { installScript } from "./install.ts";
-import { contrastTables, paletteTable, portReadme, portsTable, withSections } from "./readme.ts";
+import {
+  contrastTables,
+  paletteTable,
+  portReadme,
+  portsTable,
+  verificationTable,
+  withSections,
+} from "./readme.ts";
 import type { ThemeFile } from "./readme.ts";
 import { loadRegistry } from "./registry.ts";
 import { swatchesSvg } from "./swatches.ts";
-import { loadPorts, partialsIn, renderPort } from "./templates.ts";
+import { loadPorts, partialsIn, portDirs, renderPort } from "./templates.ts";
 import type { RenderedFile } from "./templates.ts";
 
 export { loadPorts } from "./templates.ts";
-export type { Port, Template } from "./templates.ts";
 
-export const ROOT = join(import.meta.dirname, "../../..");
-export const PORTS_DIR = join(ROOT, "ports");
+import { ROOT } from "./paths.ts";
+
+export { PORTS_DIR, ROOT } from "./paths.ts";
 
 /** Files other programs leave in `themes/` (gitignored): Finder's, and Chrome's in a loaded theme. */
 const FOREIGN = new Set([".DS_Store", "Cached Theme.pak"]);
@@ -53,10 +61,9 @@ export async function build({ check = false, root = ROOT } = {}): Promise<BuildR
   const palette = await loadPalette();
   const ports = loadPorts(portsDir);
   // Every port directory, with templates or not (the font is built by `pnpm font`)
-  const portIds = readdirSync(portsDir, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory() && !entry.name.startsWith("_"))
-    .map((entry) => entry.name);
+  const portIds = portDirs(portsDir).map((dir) => basename(dir));
   const registry = loadRegistry(join(root, "ports.yml"), portIds);
+  const entry = (id: string) => registry[id] ?? missingEntry(id);
   const shared = partialsIn(join(portsDir, "_shared/partials"));
   const written: string[] = [];
   const removed: string[] = [];
@@ -96,7 +103,12 @@ export async function build({ check = false, root = ROOT } = {}): Promise<BuildR
     }
     write({
       path: join(port.dir, "README.md"),
-      content: portReadme(registry[port.id] ?? missingEntry(port.id), [...listed.values()]),
+      content: portReadme(
+        port.id,
+        entry(port.id),
+        [...listed.values()],
+        evidenceFor(port.id, entry(port.id), new Set(rendered.map((file) => extname(file.path)))),
+      ),
     });
 
     const themes = join(port.dir, "themes");
@@ -117,7 +129,7 @@ export async function build({ check = false, root = ROOT } = {}): Promise<BuildR
   }
 
   // A port without templates (the font, built by `pnpm font`) lists what its themes/ holds
-  for (const id of portIds.filter((id) => !ports.some((port) => port.id === id))) {
+  for (const id of portIds.filter((portId) => !ports.some((port) => port.id === portId))) {
     const names = existsSync(join(portsDir, id, "themes"))
       ? readdirSync(join(portsDir, id, "themes"))
       : [];
@@ -125,8 +137,10 @@ export async function build({ check = false, root = ROOT } = {}): Promise<BuildR
     write({
       path: join(portsDir, id, "README.md"),
       content: portReadme(
-        registry[id] ?? missingEntry(id),
+        id,
+        entry(id),
         names.filter((name) => !FOREIGN.has(name)).map((name) => ({ name })),
+        evidenceFor(id, entry(id), new Set(names.map((name) => extname(name)))),
       ),
     });
   }
@@ -139,6 +153,7 @@ export async function build({ check = false, root = ROOT } = {}): Promise<BuildR
       palette: paletteTable(palette),
       contrast: contrastTables(palette),
       ports: portsTable(registry),
+      verification: verificationTable(registry),
     }),
   });
   write({ path: join(root, ".github/assets/palette.svg"), content: swatchesSvg(palette) });

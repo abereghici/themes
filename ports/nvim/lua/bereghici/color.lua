@@ -6,7 +6,8 @@ local function channels(hex)
 	return tonumber(hex:sub(2, 3), 16), tonumber(hex:sub(4, 5), 16), tonumber(hex:sub(6, 7), 16)
 end
 
----Mix `fg` over `bg`, for tinted backgrounds the palette has no tint for.
+---Mix `fg` over `bg` in sRGB, as alpha blending does, for tinted backgrounds the palette has no tint
+---for. The palette's own tints (`tints`) are mixed in OKLab by packages/palette, so prefer those.
 ---@param fg string
 ---@param bg string
 ---@param amount number 0 gives `bg`, 1 gives `fg`

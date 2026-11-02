@@ -1,0 +1,18 @@
+# The tools `pnpm test` runs the themes through, and StyLua for `pnpm format`, at the versions
+# CI uses.
+# `mise install` puts the same versions on your machine; mise.lock holds their checksums.
+# tmux has no release binaries: CI builds 3.8 from source (.github/workflows/ci.yml).
+[tools]
+"aqua:sharkdp/bat" = "0.26.1"
+"aqua:dandavison/delta" = "0.20.1"
+"aqua:junegunn/fzf" = "0.74.5"
+"aqua:jqlang/jq" = "1.8.2"
+"aqua:neovim/neovim" = "0.12.6"
+"aqua:BurntSushi/ripgrep" = "15.2.0"
+"aqua:starship/starship" = "1.27.0"
+"aqua:JohnnyMorganz/StyLua" = "2.6.0"
+# eza publishes Linux binaries only: on macOS, install it with Homebrew
+"github:eza-community/eza" = { version = "0.23.5", os = ["linux"] }
+
+[settings]
+lockfile = true

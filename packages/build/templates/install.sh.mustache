@@ -34,7 +34,7 @@ link() {
   fi
 }
 
-# Copies $1 to $2, over an older copy of itself
+# Copies $1 to $2, replacing the file there when it differs
 copy() {
   cmp -s "$1" "$2" && return
   if mkdir -p "$(dirname "$2")" && cp "$1" "$2"; then
@@ -45,9 +45,12 @@ copy() {
   fi
 }
 
-# Runs $2 when the command $1 exists; a failure is reported and the other ports still install
+# Runs $2 when every command $1 names exists; a failure is reported and the other ports still install
 run_if() {
-  command -v "$1" > /dev/null || return 0
+  local command
+  for command in $1; do
+    command -v "$command" > /dev/null || return 0
+  done
   echo "running $2"
   if ! (eval "$2"); then
     echo "failed: $2" >&2

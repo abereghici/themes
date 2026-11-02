@@ -34,7 +34,7 @@ link() {
   fi
 }
 
-# Copies $1 to $2, over an older copy of itself
+# Copies $1 to $2, replacing the file there when it differs
 copy() {
   cmp -s "$1" "$2" && return
   if mkdir -p "$(dirname "$2")" && cp "$1" "$2"; then
@@ -45,9 +45,12 @@ copy() {
   fi
 }
 
-# Runs $2 when the command $1 exists; a failure is reported and the other ports still install
+# Runs $2 when every command $1 names exists; a failure is reported and the other ports still install
 run_if() {
-  command -v "$1" > /dev/null || return 0
+  local command
+  for command in $1; do
+    command -v "$command" > /dev/null || return 0
+  done
   echo "running $2"
   if ! (eval "$2"); then
     echo "failed: $2" >&2
@@ -76,14 +79,10 @@ install() {
   fi
 
   link "$ports/ghostty/themes" "$HOME/.config/ghostty/themes"
-  run_if code 'cd "$ports/vscode" && npx --yes @vscode/vsce@4.1.0 package --no-dependencies --out "${TMPDIR:-/tmp}/bereghici-theme.vsix" && code --install-extension "${TMPDIR:-/tmp}/bereghici-theme.vsix" --force'
+  run_if 'code npx' 'vsix="$(mktemp -d)/bereghici-theme.vsix" && cd "$ports/vscode" && npx --yes @vscode/vsce@4.1.0 package --no-dependencies --out "$vsix" && code --install-extension "$vsix" --force'
   link "$ports/bat/themes" "$HOME/.config/bat/themes"
-  run_if bat 'bat cache --build'
-  link "$ports/claude-code/themes/bereghici-dark.json" "$HOME/.claude/themes/bereghici-dark.json"
-  link "$ports/claude-code/themes/bereghici-light.json" "$HOME/.claude/themes/bereghici-light.json"
-  link "$ports/codex/themes/bereghici-dark.tmTheme" "$HOME/.codex/themes/bereghici-dark.tmTheme"
-  link "$ports/codex/themes/bereghici-light.tmTheme" "$HOME/.codex/themes/bereghici-light.tmTheme"
-  link "$ports/eza/themes/bereghici-terminal.yml" "$HOME/.config/eza/theme.yml"
+  run_if 'bat' 'bat cache --build'
+  link "$ports/eza/themes/bereghici-terminal.yml" "$HOME/Library/Application Support/eza/theme.yml"
   link "$ports/yazi/themes/bereghici-dark.yazi" "$HOME/.config/yazi/flavors/bereghici-dark.yazi"
   link "$ports/yazi/themes/bereghici-light.yazi" "$HOME/.config/yazi/flavors/bereghici-light.yazi"
   copy "$ports/font/themes/BereghiciSymbols.otf" "$HOME/Library/Fonts/BereghiciSymbols.otf"

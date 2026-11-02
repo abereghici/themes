@@ -12,9 +12,8 @@
     "test": "vitest run",
     "check-types": "tsc",
     "lint": "oxlint",
-    "format": "oxfmt --check",
-    "format:fix": "oxfmt",
-    "package:vscode": "cd ports/vscode && vsce package --no-dependencies --out bereghici-theme.vsix"
+    "format": "oxfmt --check && stylua --check .",
+    "format:fix": "oxfmt && stylua ."
   },
   "devDependencies": {
     "@types/node": "catalog:",

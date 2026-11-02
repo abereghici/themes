@@ -4,6 +4,3 @@ node_modules
 Cached Theme.pak
 *.vsix
 
-# deep-research output
-research_notes/
-reports/

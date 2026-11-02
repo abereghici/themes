@@ -117,7 +117,66 @@ const SAMPLES: readonly Sample[] = [
     scope: "variable.parameter.ts",
     role: "magentaBright",
   },
+  {
+    code: "throw",
+    nvim: "@keyword.exception",
+    scope: "keyword.control.trycatch.ts",
+    role: "magenta",
+  },
+  {
+    code: "self",
+    nvim: "@variable.builtin",
+    scope: "variable.language.special.self.python",
+    role: "magenta",
+    italic: true,
+  },
+  {
+    code: "globals",
+    nvim: "@variable.builtin",
+    scope: "support.class.console.ts",
+    role: "magenta",
+    italic: true,
+  },
   { code: "functions", nvim: "@function", scope: "entity.name.function.ts", role: "green" },
+  { code: "methods", nvim: "@function.method", scope: "entity.name.function.ts", role: "green" },
+  {
+    code: "decorators",
+    nvim: "@attribute",
+    scope: "entity.name.function.decorator.python",
+    role: "green",
+  },
+  {
+    code: "macros",
+    nvim: "@function.macro",
+    scope: "entity.name.function.preprocessor.c",
+    role: "green",
+  },
+  {
+    code: "built-in classes",
+    nvim: "@type.builtin",
+    scope: "support.class.promise.ts",
+    role: "cyan",
+  },
+  { code: "constants", nvim: "@constant", scope: "variable.other.constant.ts", role: "cyan" },
+  {
+    code: "built-in constants",
+    nvim: "@constant.builtin",
+    scope: "constant.language.boolean.true.ts",
+    role: "cyan",
+  },
+  {
+    code: "object keys",
+    nvim: "@property",
+    scope: "meta.object-literal.key.ts",
+    role: "blue",
+  },
+  {
+    code: "punctuation",
+    nvim: "@punctuation.delimiter",
+    scope: "punctuation.separator.comma.ts",
+    role: "textSubtle",
+  },
+  { code: "invalid code", nvim: "Error", scope: "invalid.illegal.ts", role: "red" },
   { code: "strings", nvim: "@string", scope: "string.quoted.double.ts", role: "yellow" },
   {
     code: "regular expressions",
@@ -238,20 +297,24 @@ describe.each(APPEARANCES)("the editors color %s code the same way", (appearance
   const vscode = vscodeRules(appearance);
   const textMate = textMateRules(appearance);
 
-  it.each(SAMPLES)("$code", ({ nvim: group, scope, role, italic = false }) => {
+  it.each(SAMPLES)("$code", ({ nvim: group, scope, role }) => {
     const expected = palette[appearance].colors[role].hex;
-    const neovim = nvim[appearance]?.groups[group];
 
     expect({
-      nvim: neovim?.fg,
+      nvim: nvim[appearance]?.groups[group]?.fg,
       vscode: ruleFor(vscode, scope)?.foreground,
       textMate: ruleFor(textMate, scope)?.foreground,
     }).toEqual({ nvim: expected, vscode: expected, textMate: expected });
-
-    if (italic) {
-      expect(neovim?.italic).toBe(true);
-      expect(ruleFor(vscode, scope)?.italic).toBe(true);
-      expect(ruleFor(textMate, scope)?.italic).toBe(true);
-    }
   });
+
+  it.each(SAMPLES.filter((sample) => sample.italic))(
+    "$code is italic",
+    ({ nvim: group, scope }) => {
+      expect({
+        nvim: nvim[appearance]?.groups[group]?.italic,
+        vscode: ruleFor(vscode, scope)?.italic,
+        textMate: ruleFor(textMate, scope)?.italic,
+      }).toEqual({ nvim: true, vscode: true, textMate: true });
+    },
+  );
 });

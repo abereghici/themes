@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "import", "oxc", "node", "vitest"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "perf": "error"
+  },
+  "env": { "node": true, "es2024": true },
+  "rules": {
+    // Vitest's expect takes a message as its second argument
+    "vitest/valid-expect": ["error", { "maxArgs": 2 }],
+    // It flags building a new object in map, which is what map is for; it's after in-place edits
+    "oxc/no-map-spread": "off"
+  },
+  "overrides": [
+    {
+      // opentype.js is CommonJS: its types declare named exports Node only gives as the default's
+      "files": ["packages/font/scripts/*.ts"],
+      "rules": { "import/default": "off", "import/no-named-as-default-member": "off" }
+    }
+  ]
+}

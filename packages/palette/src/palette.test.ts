@@ -1,12 +1,10 @@
 import { describe, expect, it } from "vitest";
 
 import { CONTRAST, measure } from "./contrast.ts";
-import { APPEARANCES, loadPalette, ROLES, TERMINAL_COLORS } from "./index.ts";
+import { APPEARANCES, HUES, loadPalette, ROLES, TERMINAL_COLORS } from "./index.ts";
 import type { Role } from "./index.ts";
 
 const palette = await loadPalette();
-
-const HUES = ["red", "yellow", "green", "cyan", "blue", "magenta"] as const;
 
 describe.each(APPEARANCES)("Bereghici %s", (appearance) => {
   const variant = palette[appearance];

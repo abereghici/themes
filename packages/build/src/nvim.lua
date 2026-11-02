@@ -27,7 +27,8 @@ for _, appearance in ipairs({ "dark", "light" }) do
 		vim.cmd.colorscheme("bereghici")
 
 		-- Linking creates its target, so a link is sound when the theme or Neovim defines the target
-		local defined = require("bereghici.groups").build(require("bereghici").colors(), require("bereghici.config").options)
+		local defined =
+			require("bereghici.groups").build(require("bereghici").colors(), require("bereghici.config").options)
 		local broken = {}
 		for name, spec in pairs(defined) do
 			if spec.link and not defined[spec.link] and not next(vim.api.nvim_get_hl(0, { name = spec.link })) then
