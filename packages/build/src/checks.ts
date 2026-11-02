@@ -85,9 +85,18 @@ const fg = (hex: string): string => {
   return `38;2;${(value >> 16) & 255};${(value >> 8) & 255};${value & 255}`;
 };
 
-/** NO_COLOR, set in some CI environments, would turn off the colors under test. */
-const withoutNoColor = (env: NodeJS.ProcessEnv): NodeJS.ProcessEnv =>
-  Object.fromEntries(Object.entries(env).filter(([name]) => name !== "NO_COLOR"));
+/**
+ * What a check runs with: PATH and HOME (which mise's shims need), a 24-bit color terminal as the
+ * themes target, and the variables naming each tool's config, which every check sets. Nothing else
+ * of the machine's (FZF_DEFAULT_OPTS, NO_COLOR, the shell Starship detects) reaches a tool.
+ */
+const isolated = (env: Record<string, string> = {}): NodeJS.ProcessEnv => ({
+  PATH: process.env["PATH"] ?? "/usr/bin:/bin",
+  HOME: process.env["HOME"] ?? scratch(),
+  TERM: "xterm-256color",
+  COLORTERM: "truecolor",
+  ...env,
+});
 
 interface Result {
   readonly stdout: string;
@@ -104,8 +113,7 @@ const run = (
     encoding: "utf8",
     input: options.input,
     cwd: options.cwd,
-    // A 24-bit color terminal, as the themes target: without it, tools round colors to 256
-    env: withoutNoColor({ ...process.env, COLORTERM: "truecolor", ...options.env }),
+    env: isolated(options.env),
   });
 
   if (result.error !== undefined) throw result.error;
@@ -216,11 +224,8 @@ export const CHECKS: readonly ToolCheck[] = [
           config.split(`[delta "bereghici-${appearance}"]`)[1]?.split("[delta")[0] ?? "";
         const { stdout } = run(
           "delta",
-          ["--features", `bereghici-${appearance}`, "--true-color", "always"],
-          {
-            env: { ...env, GIT_CONFIG_GLOBAL: join(dir, "gitconfig") },
-            input: diff,
-          },
+          ["--config", join(dir, "gitconfig"), "--features", `bereghici-${appearance}`],
+          { env, input: diff },
         );
 
         for (const key of ["minus-style", "plus-style"]) {
@@ -358,7 +363,7 @@ export const CHECKS: readonly ToolCheck[] = [
             writeFileSync(join(dir, "starship.toml"), `format = "${format}"\n${extra}`);
 
             return run("starship", ["prompt"], {
-              env: { STARSHIP_CONFIG: join(dir, "starship.toml") },
+              env: { STARSHIP_CONFIG: join(dir, "starship.toml"), STARSHIP_SHELL: "zsh" },
             }).stdout;
           };
           const byRole = Object.keys(colors).map((role) => `[${role}](fg:${role})`);
