@@ -1,7 +1,5 @@
 -- nvim-dap, nvim-dap-ui, nvim-dap-virtual-text and neotest
 
-local mix = require("bereghici.color").mix
-
 ---@param c bereghici.Colors
 ---@param opts bereghici.Config
 ---@return bereghici.Highlights
@@ -14,7 +12,7 @@ return function(c, opts)
 		DapBreakpointRejected = { fg = c.text_subtlest },
 		DapLogPoint = { fg = c.blue },
 		DapStopped = { fg = c.green },
-		DapStoppedLine = { bg = mix(c.green, c.surface, 0.14) },
+		DapStoppedLine = { bg = c.tints.added },
 
 		DapUINormal = { fg = c.text, bg = bg_panel },
 		DapUIEndOfBuffer = { fg = bg_panel == "NONE" and c.surface_nested or c.surface_raised },

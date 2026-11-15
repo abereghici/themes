@@ -1,5 +1,3 @@
-local mix = require("bereghici.color").mix
-
 ---@param c bereghici.Colors
 ---@param opts bereghici.Config
 ---@return bereghici.Highlights
@@ -105,7 +103,7 @@ return function(c, opts)
 		SpellRare = { sp = c.magenta, undercurl = true },
 
 		-- Snippet placeholders and other virtual text the editor itself shows
-		SnippetTabstop = { bg = mix(c.blue, c.surface, 0.12) },
+		SnippetTabstop = { bg = c.tints.changed },
 		SnippetTabstopActive = { link = "SnippetTabstop" },
 		healthError = { fg = c.red },
 		healthSuccess = { fg = c.green },

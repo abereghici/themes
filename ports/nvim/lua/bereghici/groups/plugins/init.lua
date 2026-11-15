@@ -1,4 +1,4 @@
-local modules = { "snacks", "completion", "git", "interface", "files", "markdown", "debug" }
+local modules = { "snacks", "completion", "git", "interface", "files", "editing", "markdown", "debug" }
 
 ---@param c bereghici.Colors
 ---@param opts bereghici.Config

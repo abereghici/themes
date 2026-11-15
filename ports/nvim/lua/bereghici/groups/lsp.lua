@@ -1,5 +1,3 @@
-local mix = require("bereghici.color").mix
-
 ---@param c bereghici.Colors
 ---@param opts bereghici.Config
 ---@return bereghici.Highlights
@@ -11,6 +9,15 @@ return function(c, opts)
 		Hint = c.magenta,
 		Ok = c.green,
 	}
+	-- Virtual text sits on its severity's diff/search tint; magenta has none, so hints go without
+	local tints = {
+		Error = c.tints.removed,
+		Warn = c.tints.search,
+		Info = c.tints.changed,
+		Ok = c.tints.added,
+	}
+	-- Light yellow on the search tint falls short of 4.5:1; its brighter step holds it in both
+	local virtual_fg = { Warn = c.yellow_bright }
 
 	local groups = {
 		DiagnosticUnnecessary = { fg = c.text_subtlest },
@@ -20,10 +27,7 @@ return function(c, opts)
 		LspReferenceRead = { link = "LspReferenceText" },
 		LspReferenceWrite = { bg = c.selection, underline = true, sp = c.border },
 		LspReferenceTarget = { link = "LspReferenceText" },
-		LspInlayHint = {
-			fg = c.text_subtlest,
-			bg = opts.transparent and "NONE" or mix(c.text_subtlest, c.surface, 0.08),
-		},
+		LspInlayHint = { fg = c.text_subtlest, bg = opts.transparent and "NONE" or c.surface_raised },
 		LspCodeLens = { fg = c.text_subtlest },
 		LspCodeLensSeparator = { fg = c.border },
 		LspSignatureActiveParameter = { fg = c.accent, bold = opts.bold, underline = true },
@@ -78,8 +82,10 @@ return function(c, opts)
 
 	for severity, color in pairs(severities) do
 		groups["Diagnostic" .. severity] = { fg = color }
-		groups["DiagnosticVirtualText" .. severity] =
-			{ fg = color, bg = opts.transparent and "NONE" or mix(color, c.surface, 0.1) }
+		groups["DiagnosticVirtualText" .. severity] = {
+			fg = virtual_fg[severity] or color,
+			bg = (opts.transparent or not tints[severity]) and "NONE" or tints[severity],
+		}
 		groups["DiagnosticVirtualLines" .. severity] = { fg = color }
 		groups["DiagnosticUnderline" .. severity] = { undercurl = true, sp = color }
 		groups["DiagnosticSign" .. severity] = { fg = color }

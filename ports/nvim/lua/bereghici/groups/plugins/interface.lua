@@ -1,5 +1,5 @@
--- Windows and overlays: bufferline, which-key, noice, nvim-notify, trouble, flash, mini,
--- todo-comments, treesitter-context, lazy.nvim and mason
+-- Windows and overlays: bufferline, which-key, noice, nvim-notify, trouble, flash, mini (icons,
+-- statusline, tabline, pick, clue, notify, starter), todo-comments, treesitter-context, lazy.nvim and mason
 
 ---@param c bereghici.Colors
 ---@param opts bereghici.Config
@@ -99,6 +99,49 @@ return function(c, opts)
 		MiniTablineModifiedHidden = { fg = c.yellow, bg = c.surface_raised },
 		MiniTablineFill = { link = "TabLineFill" },
 		MiniTablineTabpagesection = { fg = c.surface, bg = c.accent },
+
+		-- mini.pick follows the snacks picker
+		MiniPickNormal = { link = "SnacksPicker" },
+		MiniPickBorder = { link = "SnacksPickerBorder" },
+		MiniPickBorderBusy = { fg = c.yellow, bg = bg_panel },
+		MiniPickBorderText = { link = "SnacksPickerTitle" },
+		MiniPickCursor = { link = "Cursor" },
+		MiniPickHeader = { fg = c.accent, bold = opts.bold },
+		MiniPickIconDirectory = { link = "Directory" },
+		MiniPickIconFile = { link = "MiniPickNormal" },
+		MiniPickMatchCurrent = { link = "SnacksPickerListCursorLine" },
+		MiniPickMatchMarked = { bg = c.selection },
+		MiniPickMatchRanges = { link = "SnacksPickerMatch" },
+		MiniPickPreviewLine = { link = "CursorLine" },
+		MiniPickPreviewRegion = { link = "Search" },
+		MiniPickPrompt = { fg = c.text, bg = bg_panel },
+		MiniPickPromptCaret = { fg = c.accent, bg = bg_panel },
+		MiniPickPromptPrefix = { fg = c.accent, bg = bg_panel },
+
+		-- mini.clue follows which-key
+		MiniClueBorder = { link = "WhichKeyBorder" },
+		MiniClueTitle = { link = "WhichKeyTitle" },
+		MiniClueDescGroup = { link = "WhichKeyGroup" },
+		MiniClueDescSingle = { link = "WhichKeyDesc" },
+		MiniClueNextKey = { link = "WhichKey" },
+		MiniClueNextKeyWithPostkeys = { fg = c.magenta, bold = opts.bold },
+		MiniClueSeparator = { link = "WhichKeySeparator" },
+
+		MiniNotifyNormal = { link = "NormalFloat" },
+		MiniNotifyBorder = { link = "FloatBorder" },
+		MiniNotifyTitle = { link = "FloatTitle" },
+		MiniNotifyLspProgress = { link = "NoiceLspProgressTitle" },
+
+		-- mini.starter follows the snacks dashboard
+		MiniStarterCurrent = {},
+		MiniStarterHeader = { link = "SnacksDashboardHeader" },
+		MiniStarterFooter = { link = "SnacksDashboardFooter" },
+		MiniStarterSection = { link = "SnacksDashboardTitle" },
+		MiniStarterItem = { link = "SnacksDashboardDesc" },
+		MiniStarterItemBullet = { fg = c.border },
+		MiniStarterItemPrefix = { link = "SnacksDashboardKey" },
+		MiniStarterInactive = { fg = c.text_subtlest },
+		MiniStarterQuery = { fg = c.accent, bold = opts.bold },
 
 		TreesitterContext = { bg = c.surface_raised },
 		TreesitterContextLineNumber = { fg = c.text_subtle, bg = c.surface_raised },
