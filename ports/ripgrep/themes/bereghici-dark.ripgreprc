@@ -3,5 +3,5 @@
 --colors=path:fg:188,141,177
 --colors=line:fg:121,181,137
 --colors=column:fg:121,181,137
---colors=match:fg:211,126,109
+--colors=match:fg:245,172,105
 --colors=match:style:bold

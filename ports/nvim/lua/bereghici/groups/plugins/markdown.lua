@@ -10,7 +10,7 @@ return function(c, opts)
 		RenderMarkdownCode = { bg = c.surface_raised },
 		RenderMarkdownCodeBorder = { bg = c.surface_nested },
 		RenderMarkdownCodeInfo = { fg = c.text_subtle },
-		RenderMarkdownCodeInline = { fg = c.cyan, bg = c.surface_raised },
+		RenderMarkdownCodeInline = { fg = c.cyan, bg = c.line_highlight },
 		RenderMarkdownInlineHighlight = { link = "Search" },
 		RenderMarkdownBullet = { fg = c.text_subtle },
 		RenderMarkdownDash = { fg = c.border },

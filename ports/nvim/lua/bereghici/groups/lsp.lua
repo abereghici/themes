@@ -16,9 +16,9 @@ return function(c, opts)
 		DiagnosticUnnecessary = { fg = c.text_subtlest },
 		DiagnosticDeprecated = { strikethrough = true, sp = c.text_subtle },
 
-		LspReferenceText = { bg = c.surface_nested },
+		LspReferenceText = { bg = c.selection },
 		LspReferenceRead = { link = "LspReferenceText" },
-		LspReferenceWrite = { bg = c.surface_nested, underline = true, sp = c.border },
+		LspReferenceWrite = { bg = c.selection, underline = true, sp = c.border },
 		LspReferenceTarget = { link = "LspReferenceText" },
 		LspInlayHint = {
 			fg = c.text_subtlest,

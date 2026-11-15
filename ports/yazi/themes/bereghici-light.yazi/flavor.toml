@@ -39,8 +39,8 @@ perm_type = { fg = "#2f6da4" }
 perm_read = { fg = "#925613" }
 perm_write = { fg = "#a84837" }
 perm_exec = { fg = "#1f7c44" }
-progress_normal = { fg = "#4e5c40", bg = "#e1e3dc" }
-progress_error = { fg = "#a84837", bg = "#e1e3dc" }
+progress_normal = { fg = "#4e5c40", bg = "#c1c3bc" }
+progress_error = { fg = "#a84837", bg = "#c1c3bc" }
 
 [which]
 border = { fg = "#858680" }

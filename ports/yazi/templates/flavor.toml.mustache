@@ -22,15 +22,15 @@ border_style = { fg = "{{colors.border.hex}}" }
 
 [tabs]
 active = { fg = "{{colors.surface.hex}}", bg = "{{colors.accent.hex}}", bold = true }
-inactive = { fg = "{{colors.textSubtle.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+inactive = { fg = "{{colors.textSubtle.hex}}", bg = "{{colors.lineHighlight.hex}}" }
 
 [mode]
 normal_main = { fg = "{{colors.surface.hex}}", bg = "{{colors.accent.hex}}", bold = true }
-normal_alt = { fg = "{{colors.accent.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+normal_alt = { fg = "{{colors.accent.hex}}", bg = "{{colors.lineHighlight.hex}}" }
 select_main = { fg = "{{colors.surface.hex}}", bg = "{{colors.magenta.hex}}", bold = true }
-select_alt = { fg = "{{colors.magenta.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+select_alt = { fg = "{{colors.magenta.hex}}", bg = "{{colors.lineHighlight.hex}}" }
 unset_main = { fg = "{{colors.surface.hex}}", bg = "{{colors.red.hex}}", bold = true }
-unset_alt = { fg = "{{colors.red.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+unset_alt = { fg = "{{colors.red.hex}}", bg = "{{colors.lineHighlight.hex}}" }
 
 [indicator]
 parent = { fg = "{{colors.text.hex}}", bg = "{{colors.selection.hex}}" }
@@ -43,8 +43,8 @@ perm_type = { fg = "{{colors.blue.hex}}" }
 perm_read = { fg = "{{colors.yellow.hex}}" }
 perm_write = { fg = "{{colors.red.hex}}" }
 perm_exec = { fg = "{{colors.green.hex}}" }
-progress_normal = { fg = "{{colors.accent.hex}}", bg = "{{colors.surfaceNested.hex}}" }
-progress_error = { fg = "{{colors.red.hex}}", bg = "{{colors.surfaceNested.hex}}" }
+progress_normal = { fg = "{{colors.accent.hex}}", bg = "{{colors.selection.hex}}" }
+progress_error = { fg = "{{colors.red.hex}}", bg = "{{colors.selection.hex}}" }
 
 [which]
 border = { fg = "{{colors.border.hex}}" }

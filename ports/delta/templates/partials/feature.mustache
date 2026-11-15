@@ -22,9 +22,16 @@
   plus-empty-line-marker-style = syntax "{{tints.added.hex}}"
   zero-style = syntax
   whitespace-error-style = "{{colors.red.hex}}" reverse
-  blame-palette = "{{colors.surface.hex}} {{colors.surfaceRaised.hex}} {{colors.surfaceNested.hex}}"
+  blame-palette = "{{colors.surface.hex}} {{colors.lineHighlight.hex}}"
   merge-conflict-begin-symbol = ~
   merge-conflict-end-symbol = ~
   merge-conflict-ours-diff-header-style = "{{colors.yellow.hex}}" bold
   merge-conflict-theirs-diff-header-style = "{{colors.blue.hex}}" bold
-  map-styles = bold purple => syntax "{{tints.changed.hex}}", bold cyan => syntax "{{tints.changed.hex}}"
+  merge-conflict-ours-diff-header-decoration-style = "{{colors.border.hex}}" box
+  merge-conflict-theirs-diff-header-decoration-style = "{{colors.border.hex}}" box
+  inline-hint-style = "{{colors.textSubtlest.hex}}"
+  grep-file-style = "{{colors.yellow.hex}}"
+  grep-line-number-style = "{{colors.textSubtlest.hex}}"
+  grep-match-line-style = syntax
+  grep-match-word-style = syntax "{{tints.search.hex}}"
+  map-styles = bold purple => syntax "{{tints.changed.hex}}", bold cyan => syntax "{{tints.changed.hex}}", bold blue => syntax "{{tints.changedEmphasis.hex}}", bold yellow => syntax "{{tints.changedEmphasis.hex}}"

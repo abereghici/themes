@@ -18,7 +18,7 @@ return function(c, opts)
 		NeoTreeDirectoryIcon = { fg = c.blue },
 		NeoTreeFileName = { fg = c.text },
 		NeoTreeFileNameOpened = { fg = c.accent },
-		NeoTreeIndentMarker = { fg = c.surface_nested },
+		NeoTreeIndentMarker = { fg = c.selection },
 		NeoTreeExpander = { fg = c.text_subtlest },
 		NeoTreeDimText = { fg = c.text_subtlest },
 		NeoTreeDotfile = { fg = c.text_subtlest },

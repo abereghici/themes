@@ -30,4 +30,7 @@ flavors: [dark, light, terminal]
 {{/colors.greenBright}}{{#colors.cyanBright}}cyan_bright = "{{colors.cyanBright.ref}}"
 {{/colors.cyanBright}}{{#colors.blueBright}}blue_bright = "{{colors.blueBright.ref}}"
 {{/colors.blueBright}}{{#colors.magentaBright}}magenta_bright = "{{colors.magentaBright.ref}}"
-{{/colors.magentaBright}}
+{{/colors.magentaBright}}# Starship's default module styles name purple and white, which the hues above don't override
+{{#colors.magenta}}purple = "{{colors.magenta.ref}}"
+{{/colors.magenta}}{{#colors.text}}white = "{{colors.text.ref}}"
+{{/colors.text}}

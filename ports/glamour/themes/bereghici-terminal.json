@@ -16,7 +16,7 @@
   },
   "heading": {
     "block_suffix": "\n",
-    "color": "2",
+    "color": "4",
     "bold": true
   },
   "h1": {
@@ -67,11 +67,11 @@
     "unticked": "[ ] "
   },
   "link": {
-    "color": "4",
+    "color": "5",
     "underline": true
   },
   "link_text": {
-    "color": "6",
+    "color": "5",
     "bold": true
   },
   "image": {
@@ -84,7 +84,7 @@
   "code": {
     "prefix": " ",
     "suffix": " ",
-    "color": "1",
+    "color": "6",
     "background_color": "0"
   },
   "code_block": {
@@ -116,7 +116,7 @@
         "color": "6"
       },
       "operator": {
-        "color": "8"
+        "color": "7"
       },
       "punctuation": {
         "color": "7"
@@ -125,28 +125,28 @@
         "color": "15"
       },
       "name_builtin": {
-        "color": "1"
+        "color": "10"
       },
       "name_tag": {
-        "color": "4"
-      },
-      "name_attribute": {
-        "color": "6"
-      },
-      "name_class": {
-        "color": "3"
-      },
-      "name_constant": {
-        "color": "3"
-      },
-      "name_decorator": {
         "color": "5"
       },
-      "name_function": {
+      "name_attribute": {
         "color": "4"
       },
+      "name_class": {
+        "color": "6"
+      },
+      "name_constant": {
+        "color": "6"
+      },
+      "name_decorator": {
+        "color": "2"
+      },
+      "name_function": {
+        "color": "2"
+      },
       "literal_number": {
-        "color": "1"
+        "color": "6"
       },
       "literal_string": {
         "color": "3"

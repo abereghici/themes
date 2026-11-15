@@ -7,7 +7,7 @@ local fill = opts.transparent and "NONE" or c.surface_raised
 local function mode(color)
 	return {
 		a = { fg = c.surface, bg = color, gui = opts.bold and "bold" or nil },
-		b = { fg = c.text, bg = c.surface_nested },
+		b = { fg = c.text, bg = c.selection },
 		c = { fg = c.text_subtle, bg = fill },
 	}
 end

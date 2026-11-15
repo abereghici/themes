@@ -9,11 +9,14 @@ flavors: [dark, light, terminal]
 gui:
   theme:
     activeBorderColor:
-      - {{#isTerminal}}{{colors.blue.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.blue.hex}}"{{/isTerminal}}
+      - {{#isTerminal}}{{colors.accent.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.accent.hex}}"{{/isTerminal}}
       - bold
+    # lazydocker knows only the 8 basic names (no bright-black), so the terminal flavor keeps white
     inactiveBorderColor:
-      - {{#isTerminal}}{{colors.textSubtle.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.textSubtle.hex}}"{{/isTerminal}}
+      - {{#isTerminal}}{{colors.textSubtle.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.border.hex}}"{{/isTerminal}}
+    # The background is the selected row's only cue. In ANSI every selection-like role is colour 0,
+    # which barely differs from the terminal background, so the terminal flavor reverses the row.
     selectedLineBgColor:
-      - {{#isTerminal}}{{colors.surfaceNested.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.surfaceNested.hex}}"{{/isTerminal}}
+      - {{#isTerminal}}reverse{{/isTerminal}}{{^isTerminal}}"{{colors.selection.hex}}"{{/isTerminal}}
     optionsTextColor:
       - {{#isTerminal}}{{colors.blue.name}}{{/isTerminal}}{{^isTerminal}}"{{colors.blue.hex}}"{{/isTerminal}}

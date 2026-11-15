@@ -86,7 +86,7 @@ return function(c, opts)
 		SnacksNotifierHistoryTitle = { fg = c.accent, bold = opts.bold },
 		SnacksNotifierHistoryDateTime = { fg = c.text_subtlest },
 
-		SnacksIndent = { fg = c.surface_nested },
+		SnacksIndent = { fg = c.line_highlight },
 		SnacksIndentBlank = { link = "SnacksIndent" },
 		SnacksIndentScope = { fg = c.border },
 		SnacksIndentChunk = { link = "SnacksIndentScope" },

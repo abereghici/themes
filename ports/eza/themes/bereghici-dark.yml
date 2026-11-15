@@ -11,7 +11,7 @@ filekinds:
   socket: {foreground: "#bc8db1"}
   special: {foreground: "#f5ac69"}
   executable: {foreground: "#79b589", is_bold: true}
-  mount_point: {foreground: "#74a3d1", is_bold: true}
+  mount_point: {foreground: "#97bfe6", is_bold: true}
 
 perms:
   user_read: {foreground: "#f5ac69"}

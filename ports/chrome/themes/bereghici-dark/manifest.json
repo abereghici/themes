@@ -7,23 +7,25 @@
     "colors": {
       "frame": [18, 21, 15],
       "frame_inactive": [18, 21, 15],
-      "frame_incognito": [18, 21, 15],
-      "frame_incognito_inactive": [18, 21, 15],
+      "frame_incognito": [75, 79, 69],
+      "frame_incognito_inactive": [75, 79, 69],
       "background_tab": [18, 21, 15],
       "background_tab_inactive": [18, 21, 15],
       "tab_background_text": [162, 166, 157],
       "tab_background_text_inactive": [162, 166, 157],
-      "toolbar": [24, 27, 20],
+      "tab_background_text_incognito": [187, 190, 182],
+      "toolbar": [46, 50, 41],
       "tab_text": [238, 239, 233],
       "toolbar_text": [238, 239, 233],
       "toolbar_button_icon": [187, 190, 182],
       "bookmark_text": [187, 190, 182],
-      "omnibox_background": [30, 34, 26],
+      "omnibox_background": [18, 21, 15],
       "omnibox_text": [238, 239, 233],
       "ntp_background": [18, 21, 15],
       "ntp_header": [24, 27, 20],
       "ntp_text": [238, 239, 233],
-      "ntp_link": [166, 209, 176]
+      "ntp_link": [166, 209, 176],
+      "button_background": [18, 21, 15]
     },
     "properties": {
       "ntp_background_alignment": "bottom"
