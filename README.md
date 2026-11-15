@@ -67,8 +67,8 @@ Every value comes from [`@abereghici/tokens`](https://www.npmjs.com/package/@abe
 | `surface`       | `#12150f` | `#f3f5ee` | background |
 | `surfaceRaised` | `#181b14` | `#eaebe3` | background |
 | `surfaceNested` | `#1e221a` | `#e1e3dc` | ANSI 0     |
-| `textSubtlest`  | `#858a81` | `#686a64` | ANSI 8     |
-| `textSubtle`    | `#a2a69d` | `#535750` | ANSI 7     |
+| `textSubtlest`  | `#a2a69d` | `#686a64` | ANSI 8     |
+| `textSubtle`    | `#bbbeb6` | `#535750` | ANSI 7     |
 | `text`          | `#eeefe9` | `#2e3229` | ANSI 15    |
 | `lineHighlight` | `#1e221a` | `#eaebe3` | ANSI 0     |
 | `selection`     | `#4b4f45` | `#c1c3bc` | ANSI 0     |
@@ -103,10 +103,10 @@ Yellow, and the hues on panels and the selection, sit below AA by design, as in 
 | -------------- | --------------- | ------- | ----- | ----- |
 | `text`         | `surface`       | 4.50    | 15.93 | 11.91 |
 | `text`         | `surfaceRaised` | 4.50    | 15.06 | 10.90 |
-| `textSubtle`   | `surface`       | 4.50    | 7.44  | 6.71  |
-| `textSubtle`   | `surfaceRaised` | 4.50    | 7.03  | 6.14  |
-| `textSubtlest` | `surface`       | 4.50    | 5.22  | 4.98  |
-| `textSubtlest` | `surfaceRaised` | 4.50    | 4.93  | 4.56  |
+| `textSubtle`   | `surface`       | 4.50    | 9.79  | 6.71  |
+| `textSubtle`   | `surfaceRaised` | 4.50    | 9.25  | 6.14  |
+| `textSubtlest` | `surface`       | 4.50    | 7.44  | 4.98  |
+| `textSubtlest` | `surfaceRaised` | 4.50    | 7.03  | 4.56  |
 | `accent`       | `surface`       | 4.50    | 15.07 | 12.19 |
 | `accent`       | `surfaceRaised` | 4.50    | 14.25 | 11.16 |
 | `text`         | `surfaceNested` | 4.50    | 13.98 | 10.11 |
@@ -174,15 +174,26 @@ Yellow, and the hues on panels and the selection, sit below AA by design, as in 
 
 | Foreground | Background        | Minimum | Dark  | Light |
 | ---------- | ----------------- | ------- | ----- | ----- |
-| `text`     | `added`           | 4.50    | 12.11 | 9.64  |
-| `text`     | `addedEmphasis`   | 4.50    | 8.12  | 7.74  |
-| `text`     | `removed`         | 4.50    | 12.56 | 9.55  |
-| `text`     | `removedEmphasis` | 4.50    | 9.06  | 7.51  |
-| `text`     | `addedStrong`     | 4.50    | 5.28  | 6.06  |
-| `text`     | `removedStrong`   | 4.50    | 6.21  | 5.86  |
-| `text`     | `changed`         | 4.50    | 12.34 | 9.62  |
-| `text`     | `changedEmphasis` | 4.50    | 8.56  | 7.66  |
+| `text`     | `added`           | 4.50    | 12.71 | 9.64  |
+| `text`     | `addedEmphasis`   | 4.50    | 9.46  | 7.74  |
+| `text`     | `removed`         | 4.50    | 13.37 | 9.55  |
+| `text`     | `removedEmphasis` | 4.50    | 10.10 | 7.51  |
+| `text`     | `addedStrong`     | 4.50    | 6.69  | 6.06  |
+| `text`     | `removedStrong`   | 4.50    | 7.31  | 5.86  |
+| `text`     | `changed`         | 4.50    | 13.02 | 9.62  |
+| `text`     | `changedEmphasis` | 4.50    | 9.74  | 7.66  |
 | `text`     | `search`          | 4.50    | 9.93  | 9.27  |
+
+**Comments on diff backgrounds**
+
+| Foreground     | Background        | Minimum | Dark | Light |
+| -------------- | ----------------- | ------- | ---- | ----- |
+| `textSubtlest` | `added`           | 3.50    | 5.93 | 4.03  |
+| `textSubtlest` | `removed`         | 3.50    | 6.24 | 4.00  |
+| `textSubtlest` | `changed`         | 3.50    | 6.08 | 4.03  |
+| `textSubtlest` | `addedEmphasis`   | 3.00    | 4.42 | 3.24  |
+| `textSubtlest` | `removedEmphasis` | 3.00    | 4.72 | 3.14  |
+| `textSubtlest` | `changedEmphasis` | 3.00    | 4.55 | 3.20  |
 
 <!-- /generated:contrast -->
 

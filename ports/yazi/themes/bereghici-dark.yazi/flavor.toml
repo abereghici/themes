@@ -18,7 +18,7 @@ border_style = { fg = "#696d63" }
 
 [tabs]
 active = { fg = "#12150f", bg = "#eceac9", bold = true }
-inactive = { fg = "#a2a69d", bg = "#1e221a" }
+inactive = { fg = "#bbbeb6", bg = "#1e221a" }
 
 [mode]
 normal_main = { fg = "#12150f", bg = "#eceac9", bold = true }
@@ -34,7 +34,7 @@ current = { fg = "#eeefe9", bg = "#4b4f45" }
 preview = { underline = true }
 
 [status]
-perm_sep = { fg = "#858a81" }
+perm_sep = { fg = "#a2a69d" }
 perm_type = { fg = "#97bfe6" }
 perm_read = { fg = "#fabc86" }
 perm_write = { fg = "#e99989" }
@@ -45,9 +45,9 @@ progress_error = { fg = "#e99989", bg = "#1e221a" }
 [which]
 border = { fg = "#696d63" }
 cand = { fg = "#87c8cb" }
-rest = { fg = "#858a81" }
+rest = { fg = "#a2a69d" }
 desc = { fg = "#d4acca" }
-separator_style = { fg = "#858a81" }
+separator_style = { fg = "#a2a69d" }
 
 [confirm]
 border = { fg = "#696d63" }

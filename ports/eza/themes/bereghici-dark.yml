@@ -26,7 +26,7 @@ perms:
   other_execute: {foreground: "#a6d1b0"}
   special_user_file: {foreground: "#d4acca"}
   special_other: {foreground: "#d4acca"}
-  attribute: {foreground: "#858a81"}
+  attribute: {foreground: "#a2a69d"}
 
 size:
   major: {foreground: "#a6d1b0"}
@@ -36,18 +36,18 @@ size:
   number_mega: {foreground: "#87c8cb"}
   number_giga: {foreground: "#fabc86"}
   number_huge: {foreground: "#e99989"}
-  unit_byte: {foreground: "#858a81"}
-  unit_kilo: {foreground: "#858a81"}
-  unit_mega: {foreground: "#858a81"}
-  unit_giga: {foreground: "#858a81"}
-  unit_huge: {foreground: "#858a81"}
+  unit_byte: {foreground: "#a2a69d"}
+  unit_kilo: {foreground: "#a2a69d"}
+  unit_mega: {foreground: "#a2a69d"}
+  unit_giga: {foreground: "#a2a69d"}
+  unit_huge: {foreground: "#a2a69d"}
 
 users:
   user_you: {foreground: "#fabc86"}
   user_root: {foreground: "#e99989"}
-  user_other: {foreground: "#a2a69d"}
+  user_other: {foreground: "#bbbeb6"}
   group_yours: {foreground: "#fabc86"}
-  group_other: {foreground: "#a2a69d"}
+  group_other: {foreground: "#bbbeb6"}
   group_root: {foreground: "#e99989"}
 
 links:
@@ -60,7 +60,7 @@ git:
   deleted: {foreground: "#e99989"}
   renamed: {foreground: "#87c8cb"}
   typechange: {foreground: "#d4acca"}
-  ignored: {foreground: "#858a81"}
+  ignored: {foreground: "#a2a69d"}
   conflicted: {foreground: "#e99989"}
 
 git_repo:
@@ -77,18 +77,18 @@ file_type:
   crypto: {foreground: "#fabc86"}
   document: {foreground: "#eeefe9"}
   compressed: {foreground: "#e99989"}
-  temp: {foreground: "#858a81"}
-  compiled: {foreground: "#858a81"}
+  temp: {foreground: "#a2a69d"}
+  compiled: {foreground: "#a2a69d"}
   build: {foreground: "#fabc86"}
   source: {foreground: "#eeefe9"}
 
-punctuation: {foreground: "#858a81"}
-date: {foreground: "#a2a69d"}
-inode: {foreground: "#858a81"}
-blocks: {foreground: "#858a81"}
-header: {foreground: "#a2a69d"}
-octal: {foreground: "#858a81"}
-flags: {foreground: "#858a81"}
+punctuation: {foreground: "#a2a69d"}
+date: {foreground: "#bbbeb6"}
+inode: {foreground: "#a2a69d"}
+blocks: {foreground: "#a2a69d"}
+header: {foreground: "#bbbeb6"}
+octal: {foreground: "#a2a69d"}
+flags: {foreground: "#a2a69d"}
 symlink_path: {foreground: "#87c8cb"}
 control_char: {foreground: "#e99989"}
 broken_symlink: {foreground: "#e99989"}

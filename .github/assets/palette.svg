@@ -4,31 +4,31 @@
     <rect y="0" width="1296" height="176" fill="#12150f"/>
     <text x="32" y="32" fill="#eeefe9" font-weight="600">Bereghici Dark</text>
     <rect x="32" y="48" width="80" height="80" rx="8" fill="#12150f" stroke="#1e221a"/>
-    <text x="32" y="148" fill="#a2a69d">surface</text>
+    <text x="32" y="148" fill="#bbbeb6">surface</text>
     <rect x="128" y="48" width="80" height="80" rx="8" fill="#181b14" stroke="#1e221a"/>
-    <text x="128" y="148" fill="#a2a69d">surfaceRaised</text>
+    <text x="128" y="148" fill="#bbbeb6">surfaceRaised</text>
     <rect x="224" y="48" width="80" height="80" rx="8" fill="#1e221a" stroke="#1e221a"/>
-    <text x="224" y="148" fill="#a2a69d">surfaceNested</text>
-    <rect x="320" y="48" width="80" height="80" rx="8" fill="#858a81" stroke="#1e221a"/>
-    <text x="320" y="148" fill="#a2a69d">textSubtlest</text>
-    <rect x="416" y="48" width="80" height="80" rx="8" fill="#a2a69d" stroke="#1e221a"/>
-    <text x="416" y="148" fill="#a2a69d">textSubtle</text>
+    <text x="224" y="148" fill="#bbbeb6">surfaceNested</text>
+    <rect x="320" y="48" width="80" height="80" rx="8" fill="#a2a69d" stroke="#1e221a"/>
+    <text x="320" y="148" fill="#bbbeb6">textSubtlest</text>
+    <rect x="416" y="48" width="80" height="80" rx="8" fill="#bbbeb6" stroke="#1e221a"/>
+    <text x="416" y="148" fill="#bbbeb6">textSubtle</text>
     <rect x="512" y="48" width="80" height="80" rx="8" fill="#eeefe9" stroke="#1e221a"/>
-    <text x="512" y="148" fill="#a2a69d">text</text>
+    <text x="512" y="148" fill="#bbbeb6">text</text>
     <rect x="608" y="48" width="80" height="80" rx="8" fill="#eceac9" stroke="#1e221a"/>
-    <text x="608" y="148" fill="#a2a69d">accent</text>
+    <text x="608" y="148" fill="#bbbeb6">accent</text>
     <rect x="704" y="48" width="80" height="80" rx="8" fill="#e99989" stroke="#1e221a"/>
-    <text x="704" y="148" fill="#a2a69d">red</text>
+    <text x="704" y="148" fill="#bbbeb6">red</text>
     <rect x="800" y="48" width="80" height="80" rx="8" fill="#fabc86" stroke="#1e221a"/>
-    <text x="800" y="148" fill="#a2a69d">yellow</text>
+    <text x="800" y="148" fill="#bbbeb6">yellow</text>
     <rect x="896" y="48" width="80" height="80" rx="8" fill="#a6d1b0" stroke="#1e221a"/>
-    <text x="896" y="148" fill="#a2a69d">green</text>
+    <text x="896" y="148" fill="#bbbeb6">green</text>
     <rect x="992" y="48" width="80" height="80" rx="8" fill="#87c8cb" stroke="#1e221a"/>
-    <text x="992" y="148" fill="#a2a69d">cyan</text>
+    <text x="992" y="148" fill="#bbbeb6">cyan</text>
     <rect x="1088" y="48" width="80" height="80" rx="8" fill="#97bfe6" stroke="#1e221a"/>
-    <text x="1088" y="148" fill="#a2a69d">blue</text>
+    <text x="1088" y="148" fill="#bbbeb6">blue</text>
     <rect x="1184" y="48" width="80" height="80" rx="8" fill="#d4acca" stroke="#1e221a"/>
-    <text x="1184" y="148" fill="#a2a69d">magenta</text>
+    <text x="1184" y="148" fill="#bbbeb6">magenta</text>
   </g>
   <g>
     <rect y="176" width="1296" height="176" fill="#f3f5ee"/>
