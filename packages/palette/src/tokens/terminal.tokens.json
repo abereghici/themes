@@ -32,7 +32,7 @@
     },
     "color-text-subtlest": {
       "$type": "color",
-      "$value": "{primitive.palette-sage-600}",
+      "$value": "{primitive.palette-sage-700}",
       "$description": "Low-contrast foreground: comments, ignored files, line numbers",
       "$extensions": {
         "com.bereghici.theme": {
@@ -42,7 +42,7 @@
     },
     "color-text-subtle": {
       "$type": "color",
-      "$value": "{primitive.palette-sage-700}",
+      "$value": "{primitive.palette-sage-800}",
       "$description": "Medium-contrast foreground: punctuation, operators, inactive items",
       "$extensions": {
         "com.bereghici.theme": {
@@ -52,7 +52,7 @@
     },
     "color-text": {
       "$type": "color",
-      "$value": "{primitive.palette-night-700}",
+      "$value": "{primitive.palette-sage-950}",
       "$description": "High-contrast foreground: body text, variables, active items",
       "$extensions": {
         "com.bereghici.theme": {
@@ -62,11 +62,11 @@
     },
     "color-line-highlight": {
       "$type": "color",
-      "$value": "{primitive.palette-sage-100}",
+      "$value": "{primitive.palette-sage-200}",
       "$description": "Low-contrast highlight: the cursor line",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-night-800}"
+          "dark": "{primitive.palette-night-700}"
         }
       }
     },
@@ -82,7 +82,7 @@
     },
     "color-border": {
       "$type": "color",
-      "$value": "{primitive.palette-sage-400}",
+      "$value": "{primitive.palette-sage-500}",
       "$description": "High-contrast highlight: borders, the matching bracket",
       "$extensions": {
         "com.bereghici.theme": {
@@ -93,7 +93,12 @@
     "color-accent": {
       "$type": "color",
       "$value": "{semantic.color-text-accent}",
-      "$description": "The brand action color: the cursor, focused borders, the prompt"
+      "$description": "The brand action color: the cursor, focused borders, the prompt",
+      "$extensions": {
+        "com.bereghici.theme": {
+          "dark": "{primitive.palette-fern-300}"
+        }
+      }
     },
     "color-red": {
       "$type": "color",
@@ -101,17 +106,17 @@
       "$description": "Errors, deletions, invalid code",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-clay-300}"
+          "dark": "{primitive.palette-clay-400}"
         }
       }
     },
     "color-yellow": {
       "$type": "color",
-      "$value": "{primitive.palette-ember-600}",
+      "$value": "{primitive.palette-ember-700}",
       "$description": "Warnings, strings; its bright pair marks regular expressions",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-ember-200}"
+          "dark": "{primitive.palette-ember-300}"
         }
       }
     },
@@ -121,7 +126,7 @@
       "$description": "Success, additions, functions",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-fern-300}"
+          "dark": "{primitive.palette-fern-400}"
         }
       }
     },
@@ -131,7 +136,7 @@
       "$description": "Types, constants, numbers, escapes, inline code",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-spruce-300}"
+          "dark": "{primitive.palette-spruce-400}"
         }
       }
     },
@@ -141,7 +146,7 @@
       "$description": "Information, object keys, properties, attributes, Markdown headings",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-lake-300}"
+          "dark": "{primitive.palette-lake-400}"
         }
       }
     },
@@ -151,7 +156,7 @@
       "$description": "Hints, links, keywords, tags; its bright pair marks parameters",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-heather-300}"
+          "dark": "{primitive.palette-heather-400}"
         }
       }
     },
@@ -161,17 +166,17 @@
       "$description": "ANSI bright red",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-clay-200}"
+          "dark": "{primitive.palette-clay-300}"
         }
       }
     },
     "color-yellow-bright": {
       "$type": "color",
-      "$value": "{primitive.palette-ember-700}",
+      "$value": "{primitive.palette-ember-800}",
       "$description": "ANSI bright yellow",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-ember-100}"
+          "dark": "{primitive.palette-ember-200}"
         }
       }
     },
@@ -181,7 +186,7 @@
       "$description": "ANSI bright green",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-fern-200}"
+          "dark": "{primitive.palette-fern-300}"
         }
       }
     },
@@ -191,7 +196,7 @@
       "$description": "ANSI bright cyan",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-spruce-200}"
+          "dark": "{primitive.palette-spruce-300}"
         }
       }
     },
@@ -201,7 +206,7 @@
       "$description": "ANSI bright blue",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-lake-200}"
+          "dark": "{primitive.palette-lake-300}"
         }
       }
     },
@@ -211,7 +216,7 @@
       "$description": "ANSI bright magenta",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{primitive.palette-heather-200}"
+          "dark": "{primitive.palette-heather-300}"
         }
       }
     },

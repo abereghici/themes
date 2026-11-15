@@ -20,7 +20,7 @@
 				<key>background</key>
 				<string>#f3f5ee</string>
 				<key>foreground</key>
-				<string>#2e3229</string>
+				<string>#171914</string>
 				<key>caret</key>
 				<string>#263316</string>
 				<key>selection</key>
@@ -30,30 +30,30 @@
 				<key>inactiveSelection</key>
 				<string>#e1e3dc</string>
 				<key>lineHighlight</key>
-				<string>#eaebe3</string>
+				<string>#e1e3dc</string>
 				<key>invisibles</key>
-				<string>#a3a49e</string>
+				<string>#858680</string>
 				<key>gutter</key>
 				<string>#f3f5ee</string>
 				<key>gutterForeground</key>
-				<string>#686a64</string>
+				<string>#535750</string>
 				<key>findHighlight</key>
-				<string>#ead6bf</string>
+				<string>#ddcebb</string>
 				<key>findHighlightForeground</key>
-				<string>#2e3229</string>
+				<string>#171914</string>
 				<!-- Inactive indent guides sit at border strength so they recede; the active one steps up to the line-number color -->
 				<key>guide</key>
-				<string>#a3a49e</string>
+				<string>#858680</string>
 				<key>activeGuide</key>
-				<string>#686a64</string>
+				<string>#535750</string>
 				<key>stackGuide</key>
-				<string>#a3a49e</string>
+				<string>#858680</string>
 				<key>bracketsForeground</key>
 				<string>#263316</string>
 				<key>bracketsOptions</key>
 				<string>underline</string>
 				<key>bracketContentsForeground</key>
-				<string>#535750</string>
+				<string>#3e413b</string>
 				<key>bracketContentsOptions</key>
 				<string>underline</string>
 				<key>tagsOptions</key>
@@ -74,7 +74,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#686a64</string>
+				<string>#535750</string>
 				<key>fontStyle</key>
 				<string>italic</string>
 			</dict>
@@ -87,7 +87,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#535750</string>
+				<string>#3e413b</string>
 				<key>fontStyle</key>
 				<string>bold italic</string>
 			</dict>
@@ -102,7 +102,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#c3720f</string>
+				<string>#925613</string>
 			</dict>
 		</dict>
 		<dict>
@@ -124,7 +124,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#925613</string>
+				<string>#6b3c03</string>
 			</dict>
 		</dict>
 		<!-- Interpolation brackets (${ } in templates, { } in f-strings) open code, not string, so they take the keyword hue -->
@@ -147,7 +147,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#2e3229</string>
+				<string>#171914</string>
 			</dict>
 		</dict>
 
@@ -212,7 +212,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#535750</string>
+				<string>#3e413b</string>
 			</dict>
 		</dict>
 		<dict>
@@ -223,7 +223,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#535750</string>
+				<string>#3e413b</string>
 			</dict>
 		</dict>
 
@@ -301,7 +301,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#2e3229</string>
+				<string>#171914</string>
 			</dict>
 		</dict>
 		<dict>
@@ -384,7 +384,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#535750</string>
+				<string>#3e413b</string>
 			</dict>
 		</dict>
 		<dict>
@@ -531,7 +531,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#2e3229</string>
+				<string>#171914</string>
 			</dict>
 		</dict>
 		<dict>
@@ -542,7 +542,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#535750</string>
+				<string>#3e413b</string>
 			</dict>
 		</dict>
 		<dict>
@@ -601,7 +601,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#535750</string>
+				<string>#3e413b</string>
 				<key>fontStyle</key>
 				<string>italic</string>
 			</dict>
@@ -614,7 +614,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#686a64</string>
+				<string>#535750</string>
 			</dict>
 		</dict>
 
@@ -660,7 +660,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#2e3229</string>
+				<string>#171914</string>
 				<key>fontStyle</key>
 				<string>bold</string>
 			</dict>
@@ -727,7 +727,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#c3720f</string>
+				<string>#925613</string>
 				<key>fontStyle</key>
 				<string>underline</string>
 			</dict>

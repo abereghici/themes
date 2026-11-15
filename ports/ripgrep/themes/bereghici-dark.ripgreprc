@@ -1,7 +1,7 @@
 # Bereghici Dark for ripgrep. Generated from abereghici/themes; do not edit.
 # Add these lines to the file RIPGREP_CONFIG_PATH names.
---colors=path:fg:212,172,202
---colors=line:fg:166,209,176
---colors=column:fg:166,209,176
---colors=match:fg:233,153,137
+--colors=path:fg:188,141,177
+--colors=line:fg:121,181,137
+--colors=column:fg:121,181,137
+--colors=match:fg:211,126,109
 --colors=match:style:bold

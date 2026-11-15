@@ -28,9 +28,9 @@ const pairs = (
 
 /**
  * The pairs every port relies on. 4.5 is WCAG 2.2 AA for text (SC 1.4.3) and 3 for large text and
- * user-interface marks (SC 1.4.11). Yellow and the accents on panels and the selection sit below
- * that by design, as in Catppuccin Latte: a light yellow dark enough for 4.5
- * reads as brown, and six hues can't all stay distinct at 4.5 on every background.
+ * user-interface marks (SC 1.4.11). Light yellow takes ember-700, dark enough for 4.5 at the cost of
+ * reading as amber-brown, as in GitHub Primer. Only the selection sits below 3 for the hues: six
+ * hues can't all stay distinct and reach 3 on a background that must also stand out from the canvas.
  */
 export const CONTRAST: readonly ContrastGroup[] = [
   {
@@ -41,20 +41,20 @@ export const CONTRAST: readonly ContrastGroup[] = [
         ["surface", "surfaceRaised"],
         () => 4.5,
       ),
-      ...pairs(["text", "accent"], ["surfaceNested"], () => 4.5),
+      ...pairs(["text", "textSubtle", "textSubtlest", "accent"], ["surfaceNested"], () => 4.5),
     ],
   },
   {
     title: "Syntax and ANSI colors on the background",
-    pairs: pairs([...HUES, ...BRIGHT_HUES], ["surface"], (hue) => (hue === "yellow" ? 3 : 4.5)),
+    pairs: pairs([...HUES, ...BRIGHT_HUES], ["surface"], () => 4.5),
   },
   {
     title: "Syntax and ANSI colors on panels",
-    pairs: pairs([...HUES, ...BRIGHT_HUES], PANELS, (hue) => (hue === "yellow" ? 2.5 : 3)),
+    pairs: pairs([...HUES, ...BRIGHT_HUES], PANELS, () => 3),
   },
   {
     title: "Text and syntax colors on the selection",
-    pairs: [...pairs(["text"], ["selection"], () => 4.5), ...pairs(HUES, ["selection"], () => 2)],
+    pairs: [...pairs(["text"], ["selection"], () => 4.5), ...pairs(HUES, ["selection"], () => 2.5)],
   },
   {
     title: "Text on diff and search backgrounds",

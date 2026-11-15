@@ -18,3 +18,9 @@ export const contrastRatio = (foreground: string, background: string): number =>
 /** `amount` (0–1) of `to` mixed into `from`, in OKLab, as an opaque hex color. */
 export const mixOklab = (from: string, to: string, amount: number): string =>
   toHex(Color.mix(from, to, amount, { space: "oklab", outputSpace: "srgb" }));
+
+/** The OKLab distance (ΔE OK) between two colors: about 0.02 is a just-noticeable difference. */
+export const distance = (a: string, b: string): number => new Color(a).deltaE(b, "OK");
+
+/** OKLCH lightness, 0–1. */
+export const lightness = (hex: string): number => new Color(hex).to("oklch").coords[0] ?? 0;
