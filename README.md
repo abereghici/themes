@@ -73,7 +73,7 @@ Every value comes from [`@abereghici/tokens`](https://www.npmjs.com/package/@abe
 | `lineHighlight` | `#2e3229` | `#e1e3dc` | ANSI 0     |
 | `selection`     | `#4b4f45` | `#c1c3bc` | ANSI 0     |
 | `border`        | `#696d63` | `#858680` | ANSI 8     |
-| `accent`        | `#a6d1b0` | `#263316` | ANSI 2     |
+| `accent`        | `#a6d1b0` | `#4e5c40` | ANSI 2     |
 | `red`           | `#d37e6d` | `#a84837` | ANSI 1     |
 | `yellow`        | `#f5ac69` | `#925613` | ANSI 3     |
 | `green`         | `#79b589` | `#1f7c44` | ANSI 2     |
@@ -107,12 +107,12 @@ Yellow, and the hues on panels and the selection, sit below AA by design, as in 
 | `textSubtle`   | `surfaceRaised` | 4.50    | 9.25  | 8.64  |
 | `textSubtlest` | `surface`       | 4.50    | 7.44  | 6.71  |
 | `textSubtlest` | `surfaceRaised` | 4.50    | 7.03  | 6.14  |
-| `accent`       | `surface`       | 4.50    | 10.85 | 12.19 |
-| `accent`       | `surfaceRaised` | 4.50    | 10.26 | 11.16 |
+| `accent`       | `surface`       | 4.50    | 10.85 | 6.52  |
+| `accent`       | `surfaceRaised` | 4.50    | 10.26 | 5.97  |
 | `text`         | `surfaceNested` | 4.50    | 13.98 | 10.90 |
 | `textSubtle`   | `surfaceNested` | 4.50    | 8.59  | 8.01  |
 | `textSubtlest` | `surfaceNested` | 4.50    | 6.53  | 5.70  |
-| `accent`       | `surfaceNested` | 4.50    | 9.52  | 10.35 |
+| `accent`       | `surfaceNested` | 4.50    | 9.52  | 5.54  |
 
 **Syntax and ANSI colors on the background**
 

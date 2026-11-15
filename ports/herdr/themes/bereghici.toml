@@ -31,7 +31,7 @@ blue = "#74a3d1"
 mauve = "#bc8db1"
 
 [theme.custom.light]
-accent = "#263316"
+accent = "#4e5c40"
 sidebar_bg = "reset"
 active_row_bg = "#e1e3dc"
 selection_bg = "#c1c3bc"

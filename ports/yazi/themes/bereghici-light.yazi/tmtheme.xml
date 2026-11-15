@@ -22,7 +22,7 @@
 				<key>foreground</key>
 				<string>#2a2c27</string>
 				<key>caret</key>
-				<string>#263316</string>
+				<string>#4e5c40</string>
 				<key>selection</key>
 				<string>#c1c3bc</string>
 				<key>selectionBorder</key>
@@ -49,7 +49,7 @@
 				<key>stackGuide</key>
 				<string>#858680</string>
 				<key>bracketsForeground</key>
-				<string>#263316</string>
+				<string>#4e5c40</string>
 				<key>bracketsOptions</key>
 				<string>underline</string>
 				<key>bracketContentsForeground</key>
@@ -61,7 +61,7 @@
 				<key>misspelling</key>
 				<string>#a84837</string>
 				<key>accent</key>
-				<string>#263316</string>
+				<string>#4e5c40</string>
 			</dict>
 		</dict>
 

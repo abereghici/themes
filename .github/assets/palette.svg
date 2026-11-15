@@ -45,7 +45,7 @@
     <text x="416" y="324" fill="#3e413b">textSubtle</text>
     <rect x="512" y="224" width="80" height="80" rx="8" fill="#2a2c27" stroke="#e1e3dc"/>
     <text x="512" y="324" fill="#3e413b">text</text>
-    <rect x="608" y="224" width="80" height="80" rx="8" fill="#263316" stroke="#e1e3dc"/>
+    <rect x="608" y="224" width="80" height="80" rx="8" fill="#4e5c40" stroke="#e1e3dc"/>
     <text x="608" y="324" fill="#3e413b">accent</text>
     <rect x="704" y="224" width="80" height="80" rx="8" fill="#a84837" stroke="#e1e3dc"/>
     <text x="704" y="324" fill="#3e413b">red</text>

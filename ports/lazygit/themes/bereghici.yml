@@ -16,7 +16,7 @@ gui:
     unstagedChangesColor: ['#d37e6d']
     defaultFgColor: ['#eeefe9']
   lightTheme:
-    activeBorderColor: ['#263316', bold]
+    activeBorderColor: ['#4e5c40', bold]
     inactiveBorderColor: ['#858680']
     searchingActiveBorderColor: ['#925613', bold]
     optionsTextColor: ['#2f6da4']

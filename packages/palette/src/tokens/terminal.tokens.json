@@ -92,7 +92,7 @@
     },
     "color-accent": {
       "$type": "color",
-      "$value": "{semantic.color-text-accent}",
+      "$value": "{primitive.palette-moss-700}",
       "$description": "The brand action color: the cursor, focused borders, the prompt",
       "$extensions": {
         "com.bereghici.theme": {

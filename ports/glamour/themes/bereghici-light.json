@@ -16,14 +16,14 @@
   },
   "heading": {
     "block_suffix": "\n",
-    "color": "#263316",
+    "color": "#4e5c40",
     "bold": true
   },
   "h1": {
     "prefix": " ",
     "suffix": " ",
     "color": "#e1e3dc",
-    "background_color": "#263316",
+    "background_color": "#4e5c40",
     "bold": true
   },
   "h2": {

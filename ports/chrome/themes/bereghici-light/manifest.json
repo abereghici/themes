@@ -23,7 +23,7 @@
       "ntp_background": [243, 245, 238],
       "ntp_header": [234, 235, 227],
       "ntp_text": [42, 44, 39],
-      "ntp_link": [38, 51, 22]
+      "ntp_link": [78, 92, 64]
     },
     "properties": {
       "ntp_background_alignment": "bottom"

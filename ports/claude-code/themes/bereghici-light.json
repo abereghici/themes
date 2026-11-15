@@ -2,9 +2,9 @@
   "name": "Bereghici Light",
   "base": "light",
   "overrides": {
-    "claude": "#263316",
+    "claude": "#4e5c40",
     "claudeShimmer": "#1f7c44",
-    "briefLabelClaude": "#263316",
+    "briefLabelClaude": "#4e5c40",
     "clawd_body": "#a84837",
     "text": "#2a2c27",
     "inverseText": "#f3f5ee",
