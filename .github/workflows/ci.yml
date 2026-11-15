@@ -26,7 +26,7 @@ jobs:
           require-lockfile: true
           cache: true
       # bat, delta, eza, fzf, jq, Neovim, ripgrep, Starship and StyLua, at mise.lock's versions and checksums
-      - uses: jdx/mise-action@6612f0ef07ed2a736cd1e00a94a065522dd41195 # v5.2.5
+      - uses: jdx/mise-action@b44d12e7d0d8ee7461bb893e1b1993500433185b # v5.2.7
       # zsh syntax-checks the zsh ports
       - run: sudo apt-get update && sudo apt-get install --yes --no-install-recommends zsh
       # tmux publishes no binaries; 3.8 is the first with the `theme` option the port uses
