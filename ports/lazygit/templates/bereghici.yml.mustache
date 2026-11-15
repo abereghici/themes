@@ -5,6 +5,10 @@ output: themes/bereghici.yml
 # Merge it after your own config: LG_CONFIG_FILE="<your config.yml>,<this file>"
 gui:
   colorScheme: auto
+  # One color for every author instead of a hash of each name, which lands outside the palette.
+  # authorColors can't follow the appearance, so it names the terminal's blue, which does
+  authorColors:
+    "*": blue
   darkTheme:
 {{#dark}}
 {{> theme}}

@@ -30,7 +30,7 @@ unset_alt = { fg = "#a84837", bg = "#e1e3dc" }
 
 [indicator]
 parent = { fg = "#2a2c27", bg = "#c1c3bc" }
-current = { fg = "#2a2c27", bg = "#c1c3bc" }
+current = { fg = "#f3f5ee", bg = "#4e5c40" }
 preview = { underline = true }
 
 [status]

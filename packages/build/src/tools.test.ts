@@ -12,11 +12,18 @@ const palette = await loadPalette();
 
 afterAll(cleanUp);
 
+/** Each check starts the real tool, sometimes several times; delta alone can take ~8s on a busy machine */
+const TOOL_TIMEOUT_MS = 30_000;
+
 describe("the tools accept the themes", () => {
   for (const check of CHECKS) {
-    it.skipIf(!installed(check.tool))(`${check.port}: ${check.claim}`, () => {
-      expect(() => check.run(palette)).not.toThrow();
-    });
+    it.skipIf(!installed(check.tool))(
+      `${check.port}: ${check.claim}`,
+      () => {
+        expect(() => check.run(palette)).not.toThrow();
+      },
+      TOOL_TIMEOUT_MS,
+    );
   }
 
   // CI installs every tool it can (mise.toml, and tmux from source), so none may be skipped there
