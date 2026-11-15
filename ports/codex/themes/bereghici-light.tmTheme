@@ -20,7 +20,7 @@
 				<key>background</key>
 				<string>#f3f5ee</string>
 				<key>foreground</key>
-				<string>#171914</string>
+				<string>#2a2c27</string>
 				<key>caret</key>
 				<string>#263316</string>
 				<key>selection</key>
@@ -40,7 +40,7 @@
 				<key>findHighlight</key>
 				<string>#ddcebb</string>
 				<key>findHighlightForeground</key>
-				<string>#171914</string>
+				<string>#2a2c27</string>
 				<!-- Inactive indent guides sit at border strength so they recede; the active one steps up to the line-number color -->
 				<key>guide</key>
 				<string>#858680</string>
@@ -147,7 +147,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#171914</string>
+				<string>#2a2c27</string>
 			</dict>
 		</dict>
 
@@ -301,7 +301,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#171914</string>
+				<string>#2a2c27</string>
 			</dict>
 		</dict>
 		<dict>
@@ -531,7 +531,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#171914</string>
+				<string>#2a2c27</string>
 			</dict>
 		</dict>
 		<dict>
@@ -660,7 +660,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#171914</string>
+				<string>#2a2c27</string>
 				<key>fontStyle</key>
 				<string>bold</string>
 			</dict>
@@ -714,7 +714,7 @@
 				<key>foreground</key>
 				<string>#a84837</string>
 				<key>background</key>
-				<string>#ead9cf</string>
+				<string>#ffe0d9</string>
 				<key>fontStyle</key>
 				<string>underline</string>
 			</dict>

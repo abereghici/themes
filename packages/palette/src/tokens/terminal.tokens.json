@@ -52,7 +52,7 @@
     },
     "color-text": {
       "$type": "color",
-      "$value": "{primitive.palette-sage-950}",
+      "$value": "{primitive.palette-sage-900}",
       "$description": "High-contrast foreground: body text, variables, active items",
       "$extensions": {
         "com.bereghici.theme": {

@@ -2,7 +2,7 @@
 colourful: true
 
 filekinds:
-  normal: {foreground: "#171914"}
+  normal: {foreground: "#2a2c27"}
   directory: {foreground: "#2f6da4", is_bold: true}
   symlink: {foreground: "#007a80"}
   pipe: {foreground: "#925613"}
@@ -75,12 +75,12 @@ file_type:
   music: {foreground: "#007a80"}
   lossless: {foreground: "#007a80"}
   crypto: {foreground: "#925613"}
-  document: {foreground: "#171914"}
+  document: {foreground: "#2a2c27"}
   compressed: {foreground: "#a84837"}
   temp: {foreground: "#535750"}
   compiled: {foreground: "#535750"}
   build: {foreground: "#925613"}
-  source: {foreground: "#171914"}
+  source: {foreground: "#2a2c27"}
 
 punctuation: {foreground: "#535750"}
 date: {foreground: "#3e413b"}

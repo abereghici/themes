@@ -69,7 +69,7 @@ Every value comes from [`@abereghici/tokens`](https://www.npmjs.com/package/@abe
 | `surfaceNested` | `#1e221a` | `#e1e3dc` | ANSI 0     |
 | `textSubtlest`  | `#a2a69d` | `#535750` | ANSI 8     |
 | `textSubtle`    | `#bbbeb6` | `#3e413b` | ANSI 7     |
-| `text`          | `#eeefe9` | `#171914` | ANSI 15    |
+| `text`          | `#eeefe9` | `#2a2c27` | ANSI 15    |
 | `lineHighlight` | `#2e3229` | `#e1e3dc` | ANSI 0     |
 | `selection`     | `#4b4f45` | `#c1c3bc` | ANSI 0     |
 | `border`        | `#696d63` | `#858680` | ANSI 8     |
@@ -101,15 +101,15 @@ Yellow, and the hues on panels and the selection, sit below AA by design, as in 
 
 | Foreground     | Background      | Minimum | Dark  | Light |
 | -------------- | --------------- | ------- | ----- | ----- |
-| `text`         | `surface`       | 4.50    | 15.93 | 16.12 |
-| `text`         | `surfaceRaised` | 4.50    | 15.06 | 14.75 |
+| `text`         | `surface`       | 4.50    | 15.93 | 12.84 |
+| `text`         | `surfaceRaised` | 4.50    | 15.06 | 11.75 |
 | `textSubtle`   | `surface`       | 4.50    | 9.79  | 9.44  |
 | `textSubtle`   | `surfaceRaised` | 4.50    | 9.25  | 8.64  |
 | `textSubtlest` | `surface`       | 4.50    | 7.44  | 6.71  |
 | `textSubtlest` | `surfaceRaised` | 4.50    | 7.03  | 6.14  |
 | `accent`       | `surface`       | 4.50    | 10.85 | 12.19 |
 | `accent`       | `surfaceRaised` | 4.50    | 10.26 | 11.16 |
-| `text`         | `surfaceNested` | 4.50    | 13.98 | 13.68 |
+| `text`         | `surfaceNested` | 4.50    | 13.98 | 10.90 |
 | `textSubtle`   | `surfaceNested` | 4.50    | 8.59  | 8.01  |
 | `textSubtlest` | `surfaceNested` | 4.50    | 6.53  | 5.70  |
 | `accent`       | `surfaceNested` | 4.50    | 9.52  | 10.35 |
@@ -164,7 +164,7 @@ Yellow, and the hues on panels and the selection, sit below AA by design, as in 
 
 | Foreground | Background  | Minimum | Dark | Light |
 | ---------- | ----------- | ------- | ---- | ----- |
-| `text`     | `selection` | 4.50    | 7.25 | 9.95  |
+| `text`     | `selection` | 4.50    | 7.25 | 7.93  |
 | `red`      | `selection` | 2.50    | 2.79 | 3.24  |
 | `yellow`   | `selection` | 2.50    | 4.39 | 3.31  |
 | `green`    | `selection` | 2.50    | 3.51 | 2.93  |
@@ -176,26 +176,26 @@ Yellow, and the hues on panels and the selection, sit below AA by design, as in 
 
 | Foreground | Background        | Minimum | Dark  | Light |
 | ---------- | ----------------- | ------- | ----- | ----- |
-| `text`     | `added`           | 4.50    | 12.71 | 13.04 |
-| `text`     | `addedEmphasis`   | 4.50    | 9.46  | 10.47 |
-| `text`     | `removed`         | 4.50    | 13.37 | 12.93 |
-| `text`     | `removedEmphasis` | 4.50    | 10.10 | 10.17 |
-| `text`     | `addedStrong`     | 4.50    | 6.69  | 8.21  |
-| `text`     | `removedStrong`   | 4.50    | 7.31  | 7.92  |
-| `text`     | `changed`         | 4.50    | 13.02 | 13.02 |
-| `text`     | `changedEmphasis` | 4.50    | 9.74  | 10.36 |
-| `text`     | `search`          | 4.50    | 10.33 | 11.49 |
+| `text`     | `added`           | 4.50    | 12.71 | 12.34 |
+| `text`     | `addedEmphasis`   | 4.50    | 9.46  | 10.63 |
+| `text`     | `removed`         | 4.50    | 13.37 | 11.37 |
+| `text`     | `removedEmphasis` | 4.50    | 10.10 | 8.97  |
+| `text`     | `addedStrong`     | 4.50    | 6.69  | 8.31  |
+| `text`     | `removedStrong`   | 4.50    | 7.31  | 6.31  |
+| `text`     | `changed`         | 4.50    | 13.02 | 11.84 |
+| `text`     | `changedEmphasis` | 4.50    | 9.74  | 9.86  |
+| `text`     | `search`          | 4.50    | 10.33 | 9.15  |
 
 **Comments on diff backgrounds**
 
 | Foreground     | Background        | Minimum | Dark | Light |
 | -------------- | ----------------- | ------- | ---- | ----- |
-| `textSubtlest` | `added`           | 3.50    | 5.93 | 5.43  |
-| `textSubtlest` | `removed`         | 3.50    | 6.24 | 5.38  |
-| `textSubtlest` | `changed`         | 3.50    | 6.08 | 5.42  |
-| `textSubtlest` | `addedEmphasis`   | 3.00    | 4.42 | 4.36  |
-| `textSubtlest` | `removedEmphasis` | 3.00    | 4.72 | 4.23  |
-| `textSubtlest` | `changedEmphasis` | 3.00    | 4.55 | 4.32  |
+| `textSubtlest` | `added`           | 3.50    | 5.93 | 6.45  |
+| `textSubtlest` | `removed`         | 3.50    | 6.24 | 5.94  |
+| `textSubtlest` | `changed`         | 3.50    | 6.08 | 6.19  |
+| `textSubtlest` | `addedEmphasis`   | 3.00    | 4.42 | 5.56  |
+| `textSubtlest` | `removedEmphasis` | 3.00    | 4.72 | 4.69  |
+| `textSubtlest` | `changedEmphasis` | 3.00    | 4.55 | 5.16  |
 
 <!-- /generated:contrast -->
 

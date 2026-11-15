@@ -50,12 +50,12 @@
   line-numbers-minus-style = "#a84837" bold
   line-numbers-plus-style = "#1f7c44" bold
   line-numbers-zero-style = "#535750"
-  minus-style = syntax "#ead9cf"
-  minus-emph-style = syntax "#dfbdb1"
-  minus-empty-line-marker-style = syntax "#ead9cf"
-  plus-style = syntax "#d3e1d1"
-  plus-emph-style = syntax "#b3ceb5"
-  plus-empty-line-marker-style = syntax "#d3e1d1"
+  minus-style = syntax "#ffe0d9"
+  minus-emph-style = syntax "#ffbfb2"
+  minus-empty-line-marker-style = syntax "#ffe0d9"
+  plus-style = syntax "#e0f5e5"
+  plus-emph-style = syntax "#c9e7d0"
+  plus-empty-line-marker-style = syntax "#e0f5e5"
   zero-style = syntax
   whitespace-error-style = "#a84837" reverse
   blame-palette = "#f3f5ee #eaebe3 #e1e3dc"
@@ -63,4 +63,4 @@
   merge-conflict-end-symbol = ~
   merge-conflict-ours-diff-header-style = "#925613" bold
   merge-conflict-theirs-diff-header-style = "#2f6da4" bold
-  map-styles = bold purple => syntax "#d3dfe3", bold cyan => syntax "#d3dfe3"
+  map-styles = bold purple => syntax "#ddedfe", bold cyan => syntax "#ddedfe"

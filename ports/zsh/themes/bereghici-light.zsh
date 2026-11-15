@@ -2,7 +2,7 @@
 # Source it before zsh-syntax-highlighting (its defaults keep the styles set here).
 typeset -gA ZSH_HIGHLIGHT_STYLES
 
-ZSH_HIGHLIGHT_STYLES[default]='fg=#171914'
+ZSH_HIGHLIGHT_STYLES[default]='fg=#2a2c27'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#a84837'
 ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#8b537f'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=#2f6da4'
@@ -21,9 +21,9 @@ ZSH_HIGHLIGHT_STYLES[named-fd]='fg=#535750'
 ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=#535750'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#007a80'
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#007a80'
-ZSH_HIGHLIGHT_STYLES[path]='fg=#171914,underline'
+ZSH_HIGHLIGHT_STYLES[path]='fg=#2a2c27,underline'
 ZSH_HIGHLIGHT_STYLES[path_pathseparator]='fg=#535750,underline'
-ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#171914,underline'
+ZSH_HIGHLIGHT_STYLES[path_prefix]='fg=#2a2c27,underline'
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=#8b537f'
 ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=#8b537f'
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=#925613'
@@ -37,7 +37,7 @@ ZSH_HIGHLIGHT_STYLES[back-quoted-argument]='fg=#8b537f'
 ZSH_HIGHLIGHT_STYLES[back-quoted-argument-delimiter]='fg=#535750'
 ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=#535750'
 ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=#535750'
-ZSH_HIGHLIGHT_STYLES[assign]='fg=#171914'
+ZSH_HIGHLIGHT_STYLES[assign]='fg=#2a2c27'
 ZSH_HIGHLIGHT_STYLES[comment]='fg=#535750'
 
 # zsh-autosuggestions: the suggested rest of the line
