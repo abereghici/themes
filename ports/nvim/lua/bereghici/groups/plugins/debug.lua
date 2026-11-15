@@ -76,7 +76,7 @@ return function(c, opts)
 		NeotestFocused = { bold = opts.bold, underline = true },
 		NeotestMarked = { fg = c.accent, bold = opts.bold },
 		NeotestTarget = { fg = c.red },
-		NeotestIndent = { fg = c.surface_nested },
+		NeotestIndent = { fg = c.selection },
 		NeotestExpandMarker = { fg = c.text_subtlest },
 		NeotestBorder = { link = "FloatBorder" },
 		NeotestWinSelect = { fg = c.accent, bold = opts.bold },

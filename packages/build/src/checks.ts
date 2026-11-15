@@ -332,7 +332,7 @@ export const CHECKS: readonly ToolCheck[] = [
     tool: "rg",
     command: "rg --colors",
     claim:
-      "ripgrep accepts every theme's `--colors` (it exits with an error on an invalid one) and marks matches in the theme's red",
+      "ripgrep accepts every theme's `--colors` (it exits with an error on an invalid one) and marks matches in the theme's yellow, like every other search highlight",
     run: (palette) => {
       const dir = scratch();
 
@@ -345,7 +345,7 @@ export const CHECKS: readonly ToolCheck[] = [
         });
 
         if (appearance !== undefined) {
-          expectIn(stdout, fg(palette[appearance].colors.red.hex), `${name}'s match color`);
+          expectIn(stdout, fg(palette[appearance].colors.yellow.hex), `${name}'s match color`);
         }
       }
     },

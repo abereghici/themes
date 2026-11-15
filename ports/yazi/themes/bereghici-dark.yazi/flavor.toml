@@ -18,15 +18,15 @@ border_style = { fg = "#696d63" }
 
 [tabs]
 active = { fg = "#12150f", bg = "#a6d1b0", bold = true }
-inactive = { fg = "#bbbeb6", bg = "#1e221a" }
+inactive = { fg = "#bbbeb6", bg = "#2e3229" }
 
 [mode]
 normal_main = { fg = "#12150f", bg = "#a6d1b0", bold = true }
-normal_alt = { fg = "#a6d1b0", bg = "#1e221a" }
+normal_alt = { fg = "#a6d1b0", bg = "#2e3229" }
 select_main = { fg = "#12150f", bg = "#bc8db1", bold = true }
-select_alt = { fg = "#bc8db1", bg = "#1e221a" }
+select_alt = { fg = "#bc8db1", bg = "#2e3229" }
 unset_main = { fg = "#12150f", bg = "#d37e6d", bold = true }
-unset_alt = { fg = "#d37e6d", bg = "#1e221a" }
+unset_alt = { fg = "#d37e6d", bg = "#2e3229" }
 
 [indicator]
 parent = { fg = "#eeefe9", bg = "#4b4f45" }
@@ -39,8 +39,8 @@ perm_type = { fg = "#74a3d1" }
 perm_read = { fg = "#f5ac69" }
 perm_write = { fg = "#d37e6d" }
 perm_exec = { fg = "#79b589" }
-progress_normal = { fg = "#a6d1b0", bg = "#1e221a" }
-progress_error = { fg = "#d37e6d", bg = "#1e221a" }
+progress_normal = { fg = "#a6d1b0", bg = "#4b4f45" }
+progress_error = { fg = "#d37e6d", bg = "#4b4f45" }
 
 [which]
 border = { fg = "#696d63" }

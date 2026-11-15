@@ -23,9 +23,9 @@ return function(c, opts)
 		GitSignsAddPreview = { link = "DiffAdd" },
 		GitSignsDeletePreview = { link = "DiffDelete" },
 		GitSignsDeleteVirtLn = { link = "DiffDelete" },
-		GitSignsStagedAdd = { fg = c.tints.added_strong },
-		GitSignsStagedChange = { fg = c.tints.changed_emphasis },
-		GitSignsStagedDelete = { fg = c.tints.removed_strong },
+		GitSignsStagedAdd = { fg = c.border },
+		GitSignsStagedChange = { fg = c.border },
+		GitSignsStagedDelete = { fg = c.border },
 		GitSignsCurrentLineBlame = { fg = c.text_subtlest, italic = opts.italic },
 	}
 end

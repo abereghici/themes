@@ -30,4 +30,4 @@ See ripgrep's [documentation](https://github.com/BurntSushi/ripgrep/blob/master/
 
 `pnpm test` checks this port on every push to `main` and every pull request ([CI](../../.github/workflows/ci.yml)):
 
-- ripgrep accepts every theme's `--colors` (it exits with an error on an invalid one) and marks matches in the theme's red (ripgrep 15.2.0, from mise.toml): [`tools.test.ts`](../../packages/build/src/tools.test.ts)
+- ripgrep accepts every theme's `--colors` (it exits with an error on an invalid one) and marks matches in the theme's yellow, like every other search highlight (ripgrep 15.2.0, from mise.toml): [`tools.test.ts`](../../packages/build/src/tools.test.ts)

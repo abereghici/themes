@@ -7,23 +7,25 @@
     "colors": {
       "frame": [243, 245, 238],
       "frame_inactive": [243, 245, 238],
-      "frame_incognito": [243, 245, 238],
-      "frame_incognito_inactive": [243, 245, 238],
+      "frame_incognito": [193, 195, 188],
+      "frame_incognito_inactive": [193, 195, 188],
       "background_tab": [243, 245, 238],
       "background_tab_inactive": [243, 245, 238],
       "tab_background_text": [83, 87, 80],
       "tab_background_text_inactive": [83, 87, 80],
-      "toolbar": [234, 235, 227],
+      "tab_background_text_incognito": [62, 65, 59],
+      "toolbar": [225, 227, 220],
       "tab_text": [42, 44, 39],
       "toolbar_text": [42, 44, 39],
       "toolbar_button_icon": [62, 65, 59],
       "bookmark_text": [62, 65, 59],
-      "omnibox_background": [225, 227, 220],
+      "omnibox_background": [243, 245, 238],
       "omnibox_text": [42, 44, 39],
       "ntp_background": [243, 245, 238],
       "ntp_header": [234, 235, 227],
       "ntp_text": [42, 44, 39],
-      "ntp_link": [78, 92, 64]
+      "ntp_link": [78, 92, 64],
+      "button_background": [243, 245, 238]
     },
     "properties": {
       "ntp_background_alignment": "bottom"

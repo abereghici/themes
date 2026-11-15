@@ -20,13 +20,13 @@ flavors: [dark, light, terminal]
   },
   "heading": {
     "block_suffix": "\n",
-    "color": "{{colors.accent.ref}}",
+    "color": "{{colors.blue.ref}}",
     "bold": true
   },
   "h1": {
     "prefix": " ",
     "suffix": " ",
-    "color": "{{colors.surfaceNested.ref}}",
+    "color": "{{#colors.surface}}{{colors.surface.ref}}{{/colors.surface}}{{^colors.surface}}{{colors.surfaceNested.ref}}{{/colors.surface}}",
     "background_color": "{{colors.accent.ref}}",
     "bold": true
   },
@@ -71,11 +71,11 @@ flavors: [dark, light, terminal]
     "unticked": "[ ] "
   },
   "link": {
-    "color": "{{colors.blue.ref}}",
+    "color": "{{colors.magenta.ref}}",
     "underline": true
   },
   "link_text": {
-    "color": "{{colors.cyan.ref}}",
+    "color": "{{colors.magenta.ref}}",
     "bold": true
   },
   "image": {
@@ -88,8 +88,8 @@ flavors: [dark, light, terminal]
   "code": {
     "prefix": " ",
     "suffix": " ",
-    "color": "{{colors.red.ref}}",
-    "background_color": "{{colors.surfaceNested.ref}}"
+    "color": "{{colors.cyan.ref}}",
+    "background_color": "{{colors.lineHighlight.ref}}"
   },
   "code_block": {
     "color": "{{colors.text.ref}}",
@@ -120,7 +120,7 @@ flavors: [dark, light, terminal]
         "color": "{{colors.cyan.ref}}"
       },
       "operator": {
-        "color": "{{colors.textSubtlest.ref}}"
+        "color": "{{colors.textSubtle.ref}}"
       },
       "punctuation": {
         "color": "{{colors.textSubtle.ref}}"
@@ -129,28 +129,28 @@ flavors: [dark, light, terminal]
         "color": "{{colors.text.ref}}"
       },
       "name_builtin": {
-        "color": "{{colors.red.ref}}"
+        "color": "{{colors.greenBright.ref}}"
       },
       "name_tag": {
-        "color": "{{colors.blue.ref}}"
-      },
-      "name_attribute": {
-        "color": "{{colors.cyan.ref}}"
-      },
-      "name_class": {
-        "color": "{{colors.yellow.ref}}"
-      },
-      "name_constant": {
-        "color": "{{colors.yellow.ref}}"
-      },
-      "name_decorator": {
         "color": "{{colors.magenta.ref}}"
       },
-      "name_function": {
+      "name_attribute": {
         "color": "{{colors.blue.ref}}"
       },
+      "name_class": {
+        "color": "{{colors.cyan.ref}}"
+      },
+      "name_constant": {
+        "color": "{{colors.cyan.ref}}"
+      },
+      "name_decorator": {
+        "color": "{{colors.green.ref}}"
+      },
+      "name_function": {
+        "color": "{{colors.green.ref}}"
+      },
       "literal_number": {
-        "color": "{{colors.red.ref}}"
+        "color": "{{colors.cyan.ref}}"
       },
       "literal_string": {
         "color": "{{colors.yellow.ref}}"
@@ -172,7 +172,10 @@ flavors: [dark, light, terminal]
       },
       "generic_strong": {
         "bold": true
-      }
+      }{{#colors.surfaceRaised}},
+      "background": {
+        "background_color": "{{colors.surfaceRaised.ref}}"
+      }{{/colors.surfaceRaised}}
     }
   },
   "table": {},

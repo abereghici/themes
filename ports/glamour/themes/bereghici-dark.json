@@ -16,13 +16,13 @@
   },
   "heading": {
     "block_suffix": "\n",
-    "color": "#a6d1b0",
+    "color": "#74a3d1",
     "bold": true
   },
   "h1": {
     "prefix": " ",
     "suffix": " ",
-    "color": "#1e221a",
+    "color": "#12150f",
     "background_color": "#a6d1b0",
     "bold": true
   },
@@ -67,11 +67,11 @@
     "unticked": "[ ] "
   },
   "link": {
-    "color": "#74a3d1",
+    "color": "#bc8db1",
     "underline": true
   },
   "link_text": {
-    "color": "#5daeb2",
+    "color": "#bc8db1",
     "bold": true
   },
   "image": {
@@ -84,8 +84,8 @@
   "code": {
     "prefix": " ",
     "suffix": " ",
-    "color": "#d37e6d",
-    "background_color": "#1e221a"
+    "color": "#5daeb2",
+    "background_color": "#2e3229"
   },
   "code_block": {
     "color": "#eeefe9",
@@ -116,7 +116,7 @@
         "color": "#5daeb2"
       },
       "operator": {
-        "color": "#a2a69d"
+        "color": "#bbbeb6"
       },
       "punctuation": {
         "color": "#bbbeb6"
@@ -125,28 +125,28 @@
         "color": "#eeefe9"
       },
       "name_builtin": {
-        "color": "#d37e6d"
+        "color": "#a6d1b0"
       },
       "name_tag": {
-        "color": "#74a3d1"
-      },
-      "name_attribute": {
-        "color": "#5daeb2"
-      },
-      "name_class": {
-        "color": "#f5ac69"
-      },
-      "name_constant": {
-        "color": "#f5ac69"
-      },
-      "name_decorator": {
         "color": "#bc8db1"
       },
-      "name_function": {
+      "name_attribute": {
         "color": "#74a3d1"
       },
+      "name_class": {
+        "color": "#5daeb2"
+      },
+      "name_constant": {
+        "color": "#5daeb2"
+      },
+      "name_decorator": {
+        "color": "#79b589"
+      },
+      "name_function": {
+        "color": "#79b589"
+      },
       "literal_number": {
-        "color": "#d37e6d"
+        "color": "#5daeb2"
       },
       "literal_string": {
         "color": "#f5ac69"
@@ -168,6 +168,9 @@
       },
       "generic_strong": {
         "bold": true
+      },
+      "background": {
+        "background_color": "#181b14"
       }
     }
   },

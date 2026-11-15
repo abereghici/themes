@@ -13,7 +13,7 @@ filekinds:
   socket: {foreground: "5"}
   special: {foreground: "3"}
   executable: {foreground: "2", is_bold: true}
-  mount_point: {foreground: "4", is_bold: true}
+  mount_point: {foreground: "12", is_bold: true}
 
 perms:
   user_read: {foreground: "3"}

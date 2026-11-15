@@ -127,7 +127,7 @@
 				<string>#6b3c03</string>
 			</dict>
 		</dict>
-		<!-- Interpolation brackets (${ } in templates, { } in f-strings) open code, not string, so they take the keyword hue -->
+		<!-- Interpolation brackets (${ } in templates, { } in f-strings) open code, not string, so they take the bright keyword hue (@punctuation.special in nvim) -->
 		<dict>
 			<key>name</key>
 			<string>Interpolation</string>
@@ -136,7 +136,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#8b537f</string>
+				<string>#6b3e62</string>
 			</dict>
 		</dict>
 		<dict>
@@ -156,7 +156,7 @@
 			<key>name</key>
 			<string>Number and constant</string>
 			<key>scope</key>
-			<string>constant, constant.numeric, constant.numeric punctuation.separator.decimal, constant.other, variable.other.constant, variable.other.enummember, constant.other.color, constant.other.color punctuation.definition, constant.other.symbol</string>
+			<string>constant, constant.numeric, constant.numeric punctuation.separator.decimal, constant.other, variable.other.constant, variable.other.enummember, constant.other.color, constant.other.color punctuation.definition</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -174,6 +174,17 @@
 				<string>#007a80</string>
 				<key>fontStyle</key>
 				<string>italic</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Symbol</string>
+			<key>scope</key>
+			<string>constant.other.symbol</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#005e63</string>
 			</dict>
 		</dict>
 
@@ -241,9 +252,22 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Built-in function and macro</string>
+			<string>Built-in function</string>
 			<key>scope</key>
-			<string>support.function, support.function.builtin, support.macro, entity.name.function.macro, entity.name.function.preprocessor</string>
+			<string>support.function, support.function.builtin</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#155f32</string>
+				<key>fontStyle</key>
+				<string>italic</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Macro</string>
+			<key>scope</key>
+			<string>support.macro, entity.name.function.macro, entity.name.function.preprocessor</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -308,7 +332,7 @@
 			<key>name</key>
 			<string>Parameter</string>
 			<key>scope</key>
-			<string>variable.parameter, entity.name.variable.parameter</string>
+			<string>variable.parameter, entity.name.variable.parameter, entity.name.command-line-option, entity.name.function.option</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -577,7 +601,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#8b537f</string>
+				<string>#6b3e62</string>
 				<key>fontStyle</key>
 				<string>underline</string>
 			</dict>
@@ -656,13 +680,24 @@
 			<key>name</key>
 			<string>Diff header</string>
 			<key>scope</key>
-			<string>meta.diff.header, meta.diff.index, meta.header.diff</string>
+			<string>meta.diff.header, meta.header.diff</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#2a2c27</string>
+				<string>#2f6da4</string>
 				<key>fontStyle</key>
 				<string>bold</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Diff index</string>
+			<key>scope</key>
+			<string>meta.diff.index</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#3e413b</string>
 			</dict>
 		</dict>
 		<dict>
@@ -673,7 +708,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#007a80</string>
+				<string>#8b537f</string>
 			</dict>
 		</dict>
 

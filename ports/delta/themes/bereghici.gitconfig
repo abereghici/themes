@@ -27,12 +27,19 @@
   plus-empty-line-marker-style = syntax "#082f16"
   zero-style = syntax
   whitespace-error-style = "#d37e6d" reverse
-  blame-palette = "#12150f #181b14 #1e221a"
+  blame-palette = "#12150f #2e3229"
   merge-conflict-begin-symbol = ~
   merge-conflict-end-symbol = ~
   merge-conflict-ours-diff-header-style = "#f5ac69" bold
   merge-conflict-theirs-diff-header-style = "#74a3d1" bold
-  map-styles = bold purple => syntax "#0a2842", bold cyan => syntax "#0a2842"
+  merge-conflict-ours-diff-header-decoration-style = "#696d63" box
+  merge-conflict-theirs-diff-header-decoration-style = "#696d63" box
+  inline-hint-style = "#a2a69d"
+  grep-file-style = "#f5ac69"
+  grep-line-number-style = "#a2a69d"
+  grep-match-line-style = syntax
+  grep-match-word-style = syntax "#413523"
+  map-styles = bold purple => syntax "#0a2842", bold cyan => syntax "#0a2842", bold blue => syntax "#153d5f", bold yellow => syntax "#153d5f"
 
 [delta "bereghici-light"]
   light = true
@@ -58,9 +65,16 @@
   plus-empty-line-marker-style = syntax "#e0f5e5"
   zero-style = syntax
   whitespace-error-style = "#a84837" reverse
-  blame-palette = "#f3f5ee #eaebe3 #e1e3dc"
+  blame-palette = "#f3f5ee #e1e3dc"
   merge-conflict-begin-symbol = ~
   merge-conflict-end-symbol = ~
   merge-conflict-ours-diff-header-style = "#925613" bold
   merge-conflict-theirs-diff-header-style = "#2f6da4" bold
-  map-styles = bold purple => syntax "#ddedfe", bold cyan => syntax "#ddedfe"
+  merge-conflict-ours-diff-header-decoration-style = "#858680" box
+  merge-conflict-theirs-diff-header-decoration-style = "#858680" box
+  inline-hint-style = "#535750"
+  grep-file-style = "#925613"
+  grep-line-number-style = "#535750"
+  grep-match-line-style = syntax
+  grep-match-word-style = syntax "#ddcebb"
+  map-styles = bold purple => syntax "#ddedfe", bold cyan => syntax "#ddedfe", bold blue => syntax "#bedbf8", bold yellow => syntax "#bedbf8"

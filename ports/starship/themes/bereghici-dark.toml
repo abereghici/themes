@@ -23,3 +23,6 @@ green_bright = "#a6d1b0"
 cyan_bright = "#87c8cb"
 blue_bright = "#97bfe6"
 magenta_bright = "#d4acca"
+# Starship's default module styles name purple and white, which the hues above don't override
+purple = "#bc8db1"
+white = "#eeefe9"

@@ -1,5 +1,6 @@
 # Bereghici Terminal for LS_COLORS. Generated from abereghici/themes; do not edit.
 # In the terminal's ANSI colors: with a Bereghici terminal theme it switches with it between
 # Dark and Light.
-# Directories blue, links cyan, executables green, archives red, media magenta, temporary files muted
-export LS_COLORS="di=1;34:ln=36:so=35:pi=33:ex=1;32:bd=1;33:cd=1;33:or=31:mi=31:su=1;31:sg=1;31:tw=1;4;34:ow=4;34:st=1;34:*.zip=31:*.tar=31:*.gz=31:*.tgz=31:*.bz2=31:*.xz=31:*.zst=31:*.7z=31:*.rar=31:*.dmg=31:*.png=35:*.jpg=35:*.jpeg=35:*.gif=35:*.webp=35:*.svg=35:*.ico=35:*.heic=35:*.mp4=35:*.mov=35:*.mkv=35:*.webm=35:*.mp3=35:*.flac=35:*.wav=35:*.log=90:*.tmp=90:*.bak=90:*.swp=90:*~=90:*.lock=90"
+# Directories blue, links cyan, executables green, archives red, images and video magenta, audio cyan,
+# keys and build files yellow, temporary and compiled files muted
+export LS_COLORS="di=1;34:ln=36:so=35:pi=33:ex=1;32:bd=1;33:cd=1;33:or=31:mi=31:su=1;31:sg=1;31:tw=1;4;34:ow=4;34:st=1;94:*.zip=31:*.tar=31:*.gz=31:*.tgz=31:*.bz2=31:*.xz=31:*.zst=31:*.7z=31:*.rar=31:*.dmg=31:*.bz=31:*.lz=31:*.lzma=31:*.lz4=31:*.tbz2=31:*.txz=31:*.deb=31:*.rpm=31:*.jar=31:*.iso=31:*.apk=31:*.pkg=31:*.png=35:*.jpg=35:*.jpeg=35:*.gif=35:*.webp=35:*.svg=35:*.ico=35:*.heic=35:*.mp4=35:*.mov=35:*.mkv=35:*.webm=35:*.bmp=35:*.tif=35:*.tiff=35:*.avif=35:*.psd=35:*.raw=35:*.avi=35:*.m4v=35:*.wmv=35:*.mpg=35:*.mp3=36:*.flac=36:*.wav=36:*.ogg=36:*.opus=36:*.m4a=36:*.aac=36:*.aiff=36:*.mid=36:*.log=90:*.tmp=90:*.bak=90:*.swp=90:*~=90:*.o=90:*.a=90:*.so=90:*.dylib=90:*.pyc=90:*.class=90:*.orig=90:*.rej=90:*.part=90:*.lock=90:*.DS_Store=90:*.gpg=33:*.asc=33:*.pem=33:*.key=33:*.crt=33:*.sig=33:*.mk=33:*Makefile=33:*Dockerfile=33"

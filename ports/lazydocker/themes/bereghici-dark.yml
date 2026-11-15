@@ -3,11 +3,14 @@
 gui:
   theme:
     activeBorderColor:
-      - "#74a3d1"
+      - "#a6d1b0"
       - bold
+    # lazydocker knows only the 8 basic names (no bright-black), so the terminal flavor keeps white
     inactiveBorderColor:
-      - "#bbbeb6"
+      - "#696d63"
+    # The background is the selected row's only cue. In ANSI every selection-like role is colour 0,
+    # which barely differs from the terminal background, so the terminal flavor reverses the row.
     selectedLineBgColor:
-      - "#1e221a"
+      - "#4b4f45"
     optionsTextColor:
       - "#74a3d1"
