@@ -2,6 +2,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 
+import { loadPalette } from "@repo/palette";
 import { describe, expect, it, onTestFinished } from "vitest";
 
 import { build, loadPorts, PORTS_DIR, ROOT } from "./index.ts";
@@ -58,6 +59,8 @@ const fixture = (): string => {
 
 const read = (root: string, path: string): string => readFileSync(join(root, path), "utf8");
 
+const palette = await loadPalette();
+
 describe("build", () => {
   it("renders a template once per flavor it names, and once otherwise", async () => {
     const root = fixture();
@@ -65,12 +68,14 @@ describe("build", () => {
     await build({ root });
 
     expect(read(root, "ports/example/themes/bereghici-dark.conf")).toBe(
-      "Bereghici Dark <#e99989>\n",
+      `Bereghici Dark <${palette.dark.colors.red.hex}>\n`,
     );
     expect(read(root, "ports/example/themes/bereghici-terminal.conf")).toBe(
       "Bereghici Terminal <1>\n",
     );
-    expect(read(root, "ports/example/themes/both.conf")).toBe("dark=eeefe9\nlight=2e3229\n");
+    expect(read(root, "ports/example/themes/both.conf")).toBe(
+      `dark=${palette.dark.colors.text.bare}\nlight=${palette.light.colors.text.bare}\n`,
+    );
   });
 
   it("generates the README's port table and install.sh from ports.yml", async () => {

@@ -67,25 +67,25 @@ Every value comes from [`@abereghici/tokens`](https://www.npmjs.com/package/@abe
 | `surface`       | `#12150f` | `#f3f5ee` | background |
 | `surfaceRaised` | `#181b14` | `#eaebe3` | background |
 | `surfaceNested` | `#1e221a` | `#e1e3dc` | ANSI 0     |
-| `textSubtlest`  | `#a2a69d` | `#686a64` | ANSI 8     |
-| `textSubtle`    | `#bbbeb6` | `#535750` | ANSI 7     |
-| `text`          | `#eeefe9` | `#2e3229` | ANSI 15    |
-| `lineHighlight` | `#1e221a` | `#eaebe3` | ANSI 0     |
+| `textSubtlest`  | `#a2a69d` | `#535750` | ANSI 8     |
+| `textSubtle`    | `#bbbeb6` | `#3e413b` | ANSI 7     |
+| `text`          | `#eeefe9` | `#171914` | ANSI 15    |
+| `lineHighlight` | `#2e3229` | `#e1e3dc` | ANSI 0     |
 | `selection`     | `#4b4f45` | `#c1c3bc` | ANSI 0     |
-| `border`        | `#696d63` | `#a3a49e` | ANSI 8     |
-| `accent`        | `#eceac9` | `#263316` | ANSI 2     |
-| `red`           | `#e99989` | `#a84837` | ANSI 1     |
-| `yellow`        | `#fabc86` | `#c3720f` | ANSI 3     |
-| `green`         | `#a6d1b0` | `#1f7c44` | ANSI 2     |
-| `cyan`          | `#87c8cb` | `#007a80` | ANSI 6     |
-| `blue`          | `#97bfe6` | `#2f6da4` | ANSI 4     |
-| `magenta`       | `#d4acca` | `#8b537f` | ANSI 5     |
-| `redBright`     | `#ffbfb2` | `#833426` | ANSI 9     |
-| `yellowBright`  | `#ffd8ac` | `#925613` | ANSI 11    |
-| `greenBright`   | `#c9e7d0` | `#155f32` | ANSI 10    |
-| `cyanBright`    | `#b3e2e4` | `#005e63` | ANSI 14    |
-| `blueBright`    | `#bedbf8` | `#20537f` | ANSI 12    |
-| `magentaBright` | `#ebcde3` | `#6b3e62` | ANSI 13    |
+| `border`        | `#696d63` | `#858680` | ANSI 8     |
+| `accent`        | `#a6d1b0` | `#263316` | ANSI 2     |
+| `red`           | `#d37e6d` | `#a84837` | ANSI 1     |
+| `yellow`        | `#f5ac69` | `#925613` | ANSI 3     |
+| `green`         | `#79b589` | `#1f7c44` | ANSI 2     |
+| `cyan`          | `#5daeb2` | `#007a80` | ANSI 6     |
+| `blue`          | `#74a3d1` | `#2f6da4` | ANSI 4     |
+| `magenta`       | `#bc8db1` | `#8b537f` | ANSI 5     |
+| `redBright`     | `#e99989` | `#833426` | ANSI 9     |
+| `yellowBright`  | `#fabc86` | `#6b3c03` | ANSI 11    |
+| `greenBright`   | `#a6d1b0` | `#155f32` | ANSI 10    |
+| `cyanBright`    | `#87c8cb` | `#005e63` | ANSI 14    |
+| `blueBright`    | `#97bfe6` | `#20537f` | ANSI 12    |
+| `magentaBright` | `#d4acca` | `#6b3e62` | ANSI 13    |
 
 <!-- /generated:palette -->
 
@@ -101,99 +101,101 @@ Yellow, and the hues on panels and the selection, sit below AA by design, as in 
 
 | Foreground     | Background      | Minimum | Dark  | Light |
 | -------------- | --------------- | ------- | ----- | ----- |
-| `text`         | `surface`       | 4.50    | 15.93 | 11.91 |
-| `text`         | `surfaceRaised` | 4.50    | 15.06 | 10.90 |
-| `textSubtle`   | `surface`       | 4.50    | 9.79  | 6.71  |
-| `textSubtle`   | `surfaceRaised` | 4.50    | 9.25  | 6.14  |
-| `textSubtlest` | `surface`       | 4.50    | 7.44  | 4.98  |
-| `textSubtlest` | `surfaceRaised` | 4.50    | 7.03  | 4.56  |
-| `accent`       | `surface`       | 4.50    | 15.07 | 12.19 |
-| `accent`       | `surfaceRaised` | 4.50    | 14.25 | 11.16 |
-| `text`         | `surfaceNested` | 4.50    | 13.98 | 10.11 |
-| `accent`       | `surfaceNested` | 4.50    | 13.23 | 10.35 |
+| `text`         | `surface`       | 4.50    | 15.93 | 16.12 |
+| `text`         | `surfaceRaised` | 4.50    | 15.06 | 14.75 |
+| `textSubtle`   | `surface`       | 4.50    | 9.79  | 9.44  |
+| `textSubtle`   | `surfaceRaised` | 4.50    | 9.25  | 8.64  |
+| `textSubtlest` | `surface`       | 4.50    | 7.44  | 6.71  |
+| `textSubtlest` | `surfaceRaised` | 4.50    | 7.03  | 6.14  |
+| `accent`       | `surface`       | 4.50    | 10.85 | 12.19 |
+| `accent`       | `surfaceRaised` | 4.50    | 10.26 | 11.16 |
+| `text`         | `surfaceNested` | 4.50    | 13.98 | 13.68 |
+| `textSubtle`   | `surfaceNested` | 4.50    | 8.59  | 8.01  |
+| `textSubtlest` | `surfaceNested` | 4.50    | 6.53  | 5.70  |
+| `accent`       | `surfaceNested` | 4.50    | 9.52  | 10.35 |
 
 **Syntax and ANSI colors on the background**
 
 | Foreground      | Background | Minimum | Dark  | Light |
 | --------------- | ---------- | ------- | ----- | ----- |
-| `red`           | `surface`  | 4.50    | 8.23  | 5.24  |
-| `yellow`        | `surface`  | 3.00    | 11.06 | 3.33  |
-| `green`         | `surface`  | 4.50    | 10.85 | 4.75  |
-| `cyan`          | `surface`  | 4.50    | 9.79  | 4.67  |
-| `blue`          | `surface`  | 4.50    | 9.57  | 4.97  |
-| `magenta`       | `surface`  | 4.50    | 9.26  | 5.25  |
-| `redBright`     | `surface`  | 4.50    | 11.71 | 7.69  |
-| `yellowBright`  | `surface`  | 4.50    | 13.75 | 5.36  |
-| `greenBright`   | `surface`  | 4.50    | 13.88 | 7.04  |
-| `cyanBright`    | `surface`  | 4.50    | 13.08 | 6.87  |
-| `blueBright`    | `surface`  | 4.50    | 12.88 | 7.33  |
-| `magentaBright` | `surface`  | 4.50    | 12.61 | 7.67  |
+| `red`           | `surface`  | 4.50    | 6.12  | 5.24  |
+| `yellow`        | `surface`  | 4.50    | 9.64  | 5.36  |
+| `green`         | `surface`  | 4.50    | 7.71  | 4.75  |
+| `cyan`          | `surface`  | 4.50    | 7.16  | 4.67  |
+| `blue`          | `surface`  | 4.50    | 6.93  | 4.97  |
+| `magenta`       | `surface`  | 4.50    | 6.65  | 5.25  |
+| `redBright`     | `surface`  | 4.50    | 8.23  | 7.69  |
+| `yellowBright`  | `surface`  | 4.50    | 11.06 | 8.41  |
+| `greenBright`   | `surface`  | 4.50    | 10.85 | 7.04  |
+| `cyanBright`    | `surface`  | 4.50    | 9.79  | 6.87  |
+| `blueBright`    | `surface`  | 4.50    | 9.57  | 7.33  |
+| `magentaBright` | `surface`  | 4.50    | 9.26  | 7.67  |
 
 **Syntax and ANSI colors on panels**
 
 | Foreground      | Background      | Minimum | Dark  | Light |
 | --------------- | --------------- | ------- | ----- | ----- |
-| `red`           | `surfaceRaised` | 3.00    | 7.78  | 4.80  |
-| `red`           | `surfaceNested` | 3.00    | 7.22  | 4.45  |
-| `yellow`        | `surfaceRaised` | 2.50    | 10.45 | 3.05  |
-| `yellow`        | `surfaceNested` | 2.50    | 9.70  | 2.83  |
-| `green`         | `surfaceRaised` | 3.00    | 10.26 | 4.35  |
-| `green`         | `surfaceNested` | 3.00    | 9.52  | 4.03  |
-| `cyan`          | `surfaceRaised` | 3.00    | 9.25  | 4.27  |
-| `cyan`          | `surfaceNested` | 3.00    | 8.59  | 3.96  |
-| `blue`          | `surfaceRaised` | 3.00    | 9.05  | 4.55  |
-| `blue`          | `surfaceNested` | 3.00    | 8.40  | 4.22  |
-| `magenta`       | `surfaceRaised` | 3.00    | 8.75  | 4.80  |
-| `magenta`       | `surfaceNested` | 3.00    | 8.12  | 4.45  |
-| `redBright`     | `surfaceRaised` | 3.00    | 11.07 | 7.04  |
-| `redBright`     | `surfaceNested` | 3.00    | 10.28 | 6.53  |
-| `yellowBright`  | `surfaceRaised` | 3.00    | 13.00 | 4.91  |
-| `yellowBright`  | `surfaceNested` | 3.00    | 12.06 | 4.55  |
-| `greenBright`   | `surfaceRaised` | 3.00    | 13.12 | 6.44  |
-| `greenBright`   | `surfaceNested` | 3.00    | 12.18 | 5.98  |
-| `cyanBright`    | `surfaceRaised` | 3.00    | 12.37 | 6.29  |
-| `cyanBright`    | `surfaceNested` | 3.00    | 11.48 | 5.83  |
-| `blueBright`    | `surfaceRaised` | 3.00    | 12.17 | 6.71  |
-| `blueBright`    | `surfaceNested` | 3.00    | 11.30 | 6.23  |
-| `magentaBright` | `surfaceRaised` | 3.00    | 11.92 | 7.02  |
-| `magentaBright` | `surfaceNested` | 3.00    | 11.07 | 6.51  |
+| `red`           | `surfaceRaised` | 3.00    | 5.79  | 4.80  |
+| `red`           | `surfaceNested` | 3.00    | 5.37  | 4.45  |
+| `yellow`        | `surfaceRaised` | 3.00    | 9.11  | 4.91  |
+| `yellow`        | `surfaceNested` | 3.00    | 8.46  | 4.55  |
+| `green`         | `surfaceRaised` | 3.00    | 7.28  | 4.35  |
+| `green`         | `surfaceNested` | 3.00    | 6.76  | 4.03  |
+| `cyan`          | `surfaceRaised` | 3.00    | 6.77  | 4.27  |
+| `cyan`          | `surfaceNested` | 3.00    | 6.28  | 3.96  |
+| `blue`          | `surfaceRaised` | 3.00    | 6.55  | 4.55  |
+| `blue`          | `surfaceNested` | 3.00    | 6.08  | 4.22  |
+| `magenta`       | `surfaceRaised` | 3.00    | 6.29  | 4.80  |
+| `magenta`       | `surfaceNested` | 3.00    | 5.84  | 4.45  |
+| `redBright`     | `surfaceRaised` | 3.00    | 7.78  | 7.04  |
+| `redBright`     | `surfaceNested` | 3.00    | 7.22  | 6.53  |
+| `yellowBright`  | `surfaceRaised` | 3.00    | 10.45 | 7.70  |
+| `yellowBright`  | `surfaceNested` | 3.00    | 9.70  | 7.14  |
+| `greenBright`   | `surfaceRaised` | 3.00    | 10.26 | 6.44  |
+| `greenBright`   | `surfaceNested` | 3.00    | 9.52  | 5.98  |
+| `cyanBright`    | `surfaceRaised` | 3.00    | 9.25  | 6.29  |
+| `cyanBright`    | `surfaceNested` | 3.00    | 8.59  | 5.83  |
+| `blueBright`    | `surfaceRaised` | 3.00    | 9.05  | 6.71  |
+| `blueBright`    | `surfaceNested` | 3.00    | 8.40  | 6.23  |
+| `magentaBright` | `surfaceRaised` | 3.00    | 8.75  | 7.02  |
+| `magentaBright` | `surfaceNested` | 3.00    | 8.12  | 6.51  |
 
 **Text and syntax colors on the selection**
 
 | Foreground | Background  | Minimum | Dark | Light |
 | ---------- | ----------- | ------- | ---- | ----- |
-| `text`     | `selection` | 4.50    | 7.25 | 7.35  |
-| `red`      | `selection` | 2.00    | 3.75 | 3.24  |
-| `yellow`   | `selection` | 2.00    | 5.03 | 2.06  |
-| `green`    | `selection` | 2.00    | 4.94 | 2.93  |
-| `cyan`     | `selection` | 2.00    | 4.46 | 2.88  |
-| `blue`     | `selection` | 2.00    | 4.36 | 3.07  |
-| `magenta`  | `selection` | 2.00    | 4.22 | 3.24  |
+| `text`     | `selection` | 4.50    | 7.25 | 9.95  |
+| `red`      | `selection` | 2.50    | 2.79 | 3.24  |
+| `yellow`   | `selection` | 2.50    | 4.39 | 3.31  |
+| `green`    | `selection` | 2.50    | 3.51 | 2.93  |
+| `cyan`     | `selection` | 2.50    | 3.26 | 2.88  |
+| `blue`     | `selection` | 2.50    | 3.16 | 3.07  |
+| `magenta`  | `selection` | 2.50    | 3.03 | 3.24  |
 
 **Text on diff and search backgrounds**
 
 | Foreground | Background        | Minimum | Dark  | Light |
 | ---------- | ----------------- | ------- | ----- | ----- |
-| `text`     | `added`           | 4.50    | 12.71 | 9.64  |
-| `text`     | `addedEmphasis`   | 4.50    | 9.46  | 7.74  |
-| `text`     | `removed`         | 4.50    | 13.37 | 9.55  |
-| `text`     | `removedEmphasis` | 4.50    | 10.10 | 7.51  |
-| `text`     | `addedStrong`     | 4.50    | 6.69  | 6.06  |
-| `text`     | `removedStrong`   | 4.50    | 7.31  | 5.86  |
-| `text`     | `changed`         | 4.50    | 13.02 | 9.62  |
-| `text`     | `changedEmphasis` | 4.50    | 9.74  | 7.66  |
-| `text`     | `search`          | 4.50    | 9.93  | 9.27  |
+| `text`     | `added`           | 4.50    | 12.71 | 13.04 |
+| `text`     | `addedEmphasis`   | 4.50    | 9.46  | 10.47 |
+| `text`     | `removed`         | 4.50    | 13.37 | 12.93 |
+| `text`     | `removedEmphasis` | 4.50    | 10.10 | 10.17 |
+| `text`     | `addedStrong`     | 4.50    | 6.69  | 8.21  |
+| `text`     | `removedStrong`   | 4.50    | 7.31  | 7.92  |
+| `text`     | `changed`         | 4.50    | 13.02 | 13.02 |
+| `text`     | `changedEmphasis` | 4.50    | 9.74  | 10.36 |
+| `text`     | `search`          | 4.50    | 10.33 | 11.49 |
 
 **Comments on diff backgrounds**
 
 | Foreground     | Background        | Minimum | Dark | Light |
 | -------------- | ----------------- | ------- | ---- | ----- |
-| `textSubtlest` | `added`           | 3.50    | 5.93 | 4.03  |
-| `textSubtlest` | `removed`         | 3.50    | 6.24 | 4.00  |
-| `textSubtlest` | `changed`         | 3.50    | 6.08 | 4.03  |
-| `textSubtlest` | `addedEmphasis`   | 3.00    | 4.42 | 3.24  |
-| `textSubtlest` | `removedEmphasis` | 3.00    | 4.72 | 3.14  |
-| `textSubtlest` | `changedEmphasis` | 3.00    | 4.55 | 3.20  |
+| `textSubtlest` | `added`           | 3.50    | 5.93 | 5.43  |
+| `textSubtlest` | `removed`         | 3.50    | 6.24 | 5.38  |
+| `textSubtlest` | `changed`         | 3.50    | 6.08 | 5.42  |
+| `textSubtlest` | `addedEmphasis`   | 3.00    | 4.42 | 4.36  |
+| `textSubtlest` | `removedEmphasis` | 3.00    | 4.72 | 4.23  |
+| `textSubtlest` | `changedEmphasis` | 3.00    | 4.55 | 4.32  |
 
 <!-- /generated:contrast -->
 

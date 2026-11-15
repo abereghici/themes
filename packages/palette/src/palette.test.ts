@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 
+import { distance, lightness } from "./color.ts";
 import { CONTRAST, measure } from "./contrast.ts";
 import { APPEARANCES, HUES, loadPalette, ROLES, TERMINAL_COLORS } from "./index.ts";
 import type { Role } from "./index.ts";
@@ -48,8 +49,29 @@ describe.each(APPEARANCES)("Bereghici %s", (appearance) => {
   it("keeps the six syntax hues apart", () => {
     for (const [i, a] of HUES.entries()) {
       for (const b of HUES.slice(i + 1)) {
-        expect(variant.colors[a].hex, `${a} vs ${b}`).not.toBe(variant.colors[b].hex);
+        const apart = distance(variant.colors[a].hex, variant.colors[b].hex);
+
+        expect(apart, `${a} vs ${b}`).toBeGreaterThanOrEqual(0.06);
       }
     }
+  });
+
+  it("sets each bright hue off from its normal, away from the background", () => {
+    // Bold-as-bright and the bright ANSI colors only mean something when they stand out more
+    const away = appearance === "dark" ? 1 : -1;
+
+    for (const hue of HUES) {
+      const step =
+        lightness(variant.colors[`${hue}Bright`].hex) - lightness(variant.colors[hue].hex);
+
+      expect(step * away, hue).toBeGreaterThanOrEqual(0.03);
+    }
+  });
+
+  it("keeps the cursor, the cursor line and the text apart", () => {
+    const { colors } = variant;
+
+    expect(distance(colors.accent.hex, colors.text.hex)).toBeGreaterThanOrEqual(0.08);
+    expect(distance(colors.lineHighlight.hex, colors.surface.hex)).toBeGreaterThanOrEqual(0.05);
   });
 });

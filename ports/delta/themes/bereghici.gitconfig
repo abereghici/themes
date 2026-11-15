@@ -6,18 +6,18 @@
 [delta "bereghici-dark"]
   dark = true
   syntax-theme = bereghici-dark
-  commit-decoration-style = "#d4acca" box
-  commit-style = "#d4acca"
-  file-style = "#fabc86" bold
+  commit-decoration-style = "#bc8db1" box
+  commit-style = "#bc8db1"
+  file-style = "#f5ac69" bold
   file-decoration-style = "#696d63" overline
   hunk-header-style = file line-number syntax
   hunk-header-decoration-style = "#696d63" box
-  hunk-header-file-style = "#fabc86"
+  hunk-header-file-style = "#f5ac69"
   hunk-header-line-number-style = "#a2a69d"
   line-numbers-left-style = "#696d63"
   line-numbers-right-style = "#696d63"
-  line-numbers-minus-style = "#e99989" bold
-  line-numbers-plus-style = "#a6d1b0" bold
+  line-numbers-minus-style = "#d37e6d" bold
+  line-numbers-plus-style = "#79b589" bold
   line-numbers-zero-style = "#a2a69d"
   minus-style = syntax "#45140c"
   minus-emph-style = syntax "#632419"
@@ -26,12 +26,12 @@
   plus-emph-style = syntax "#0e4624"
   plus-empty-line-marker-style = syntax "#082f16"
   zero-style = syntax
-  whitespace-error-style = "#e99989" reverse
+  whitespace-error-style = "#d37e6d" reverse
   blame-palette = "#12150f #181b14 #1e221a"
   merge-conflict-begin-symbol = ~
   merge-conflict-end-symbol = ~
-  merge-conflict-ours-diff-header-style = "#fabc86" bold
-  merge-conflict-theirs-diff-header-style = "#97bfe6" bold
+  merge-conflict-ours-diff-header-style = "#f5ac69" bold
+  merge-conflict-theirs-diff-header-style = "#74a3d1" bold
   map-styles = bold purple => syntax "#0a2842", bold cyan => syntax "#0a2842"
 
 [delta "bereghici-light"]
@@ -39,17 +39,17 @@
   syntax-theme = bereghici-light
   commit-decoration-style = "#8b537f" box
   commit-style = "#8b537f"
-  file-style = "#c3720f" bold
-  file-decoration-style = "#a3a49e" overline
+  file-style = "#925613" bold
+  file-decoration-style = "#858680" overline
   hunk-header-style = file line-number syntax
-  hunk-header-decoration-style = "#a3a49e" box
-  hunk-header-file-style = "#c3720f"
-  hunk-header-line-number-style = "#686a64"
-  line-numbers-left-style = "#a3a49e"
-  line-numbers-right-style = "#a3a49e"
+  hunk-header-decoration-style = "#858680" box
+  hunk-header-file-style = "#925613"
+  hunk-header-line-number-style = "#535750"
+  line-numbers-left-style = "#858680"
+  line-numbers-right-style = "#858680"
   line-numbers-minus-style = "#a84837" bold
   line-numbers-plus-style = "#1f7c44" bold
-  line-numbers-zero-style = "#686a64"
+  line-numbers-zero-style = "#535750"
   minus-style = syntax "#ead9cf"
   minus-emph-style = syntax "#dfbdb1"
   minus-empty-line-marker-style = syntax "#ead9cf"
@@ -61,6 +61,6 @@
   blame-palette = "#f3f5ee #eaebe3 #e1e3dc"
   merge-conflict-begin-symbol = ~
   merge-conflict-end-symbol = ~
-  merge-conflict-ours-diff-header-style = "#c3720f" bold
+  merge-conflict-ours-diff-header-style = "#925613" bold
   merge-conflict-theirs-diff-header-style = "#2f6da4" bold
   map-styles = bold purple => syntax "#d3dfe3", bold cyan => syntax "#d3dfe3"
