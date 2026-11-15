@@ -8,7 +8,7 @@
   "block_quote": {
     "indent": 1,
     "indent_token": "│ ",
-    "color": "#858a81"
+    "color": "#a2a69d"
   },
   "paragraph": {},
   "list": {
@@ -98,7 +98,7 @@
         "color": "#e99989"
       },
       "comment": {
-        "color": "#858a81"
+        "color": "#a2a69d"
       },
       "comment_preproc": {
         "color": "#d4acca"
@@ -116,10 +116,10 @@
         "color": "#87c8cb"
       },
       "operator": {
-        "color": "#858a81"
+        "color": "#a2a69d"
       },
       "punctuation": {
-        "color": "#a2a69d"
+        "color": "#bbbeb6"
       },
       "name": {
         "color": "#eeefe9"
@@ -161,7 +161,7 @@
         "color": "#a6d1b0"
       },
       "generic_subheading": {
-        "color": "#a2a69d"
+        "color": "#bbbeb6"
       },
       "generic_emph": {
         "italic": true

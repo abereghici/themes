@@ -36,7 +36,7 @@
       "$description": "Low-contrast foreground: comments, ignored files, line numbers",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{semantic.color-text-subtlest}"
+          "dark": "{primitive.palette-night-300}"
         }
       }
     },
@@ -46,7 +46,7 @@
       "$description": "Medium-contrast foreground: punctuation, operators, inactive items",
       "$extensions": {
         "com.bereghici.theme": {
-          "dark": "{semantic.color-text-subtle}"
+          "dark": "{primitive.palette-night-200}"
         }
       }
     },

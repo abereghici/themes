@@ -60,6 +60,14 @@ export const CONTRAST: readonly ContrastGroup[] = [
     title: "Text on diff and search backgrounds",
     pairs: pairs(["text"], Object.keys(TINTS) as Tint[], () => 4.5),
   },
+  {
+    // delta keeps syntax colors over the diff backgrounds, so comments must stay legible on them
+    title: "Comments on diff backgrounds",
+    pairs: [
+      ...pairs(["textSubtlest"], ["added", "removed", "changed"], () => 3.5),
+      ...pairs(["textSubtlest"], ["addedEmphasis", "removedEmphasis", "changedEmphasis"], () => 3),
+    ],
+  },
 ];
 
 export interface Measured extends ContrastPair {

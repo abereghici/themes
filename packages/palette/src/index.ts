@@ -94,19 +94,31 @@ export interface AnsiColor extends Color {
   readonly index: number;
 }
 
+interface TintSource {
+  /** Mixed into `surface` by `amount` in OKLab */
+  readonly role: Role;
+  readonly amount: number;
+  /**
+   * The primitive Bereghici Dark uses instead of the mix. Mixing the dark theme's pastel hues into
+   * a near-black surface gives near-grey tints, so its diff backgrounds take the deep steps of the
+   * hue's own ramp: as dark as the mix, with three to four times the chroma.
+   */
+  readonly dark?: string;
+}
+
 /** Opaque tints of a role over `surface`, for diff and search backgrounds that can't be translucent. */
 export const TINTS = {
-  added: { role: "green", amount: 0.16 },
-  addedEmphasis: { role: "green", amount: 0.32 },
-  removed: { role: "red", amount: 0.16 },
-  removedEmphasis: { role: "red", amount: 0.32 },
+  added: { role: "green", amount: 0.16, dark: "{primitive.palette-fern-900}" },
+  addedEmphasis: { role: "green", amount: 0.32, dark: "{primitive.palette-fern-800}" },
+  removed: { role: "red", amount: 0.16, dark: "{primitive.palette-clay-900}" },
+  removedEmphasis: { role: "red", amount: 0.32, dark: "{primitive.palette-clay-800}" },
   // The changed words of a line, where a tool has a third, stronger diff shade
-  addedStrong: { role: "green", amount: 0.48 },
-  removedStrong: { role: "red", amount: 0.48 },
-  changed: { role: "blue", amount: 0.16 },
-  changedEmphasis: { role: "blue", amount: 0.32 },
+  addedStrong: { role: "green", amount: 0.48, dark: "{primitive.palette-fern-700}" },
+  removedStrong: { role: "red", amount: 0.48, dark: "{primitive.palette-clay-700}" },
+  changed: { role: "blue", amount: 0.16, dark: "{primitive.palette-lake-900}" },
+  changedEmphasis: { role: "blue", amount: 0.32, dark: "{primitive.palette-lake-800}" },
   search: { role: "yellow", amount: 0.24 },
-} as const satisfies Record<string, { role: Role; amount: number }>;
+} as const satisfies Record<string, TintSource>;
 
 export type Tint = keyof typeof TINTS;
 
@@ -281,11 +293,19 @@ export async function loadPalette(): Promise<Palette> {
       index,
       ...color(hexIn(token(`ansi-${index}`), appearance, dictionary)),
     }));
+    const tintHex = ({ role, amount, ...source }: TintSource): string => {
+      const primitive = appearance === "dark" && "dark" in source ? source.dark : undefined;
+
+      if (primitive === undefined) return mixOklab(colors.surface.hex, colors[role].hex, amount);
+
+      const target = referencedToken(primitive, dictionary);
+
+      if (target === undefined) throw new Error(`Tint primitive ${primitive} doesn't resolve`);
+
+      return hexIn(target, appearance, dictionary);
+    };
     const tints = Object.fromEntries(
-      Object.entries(TINTS).map(([tint, { role, amount }]) => [
-        tint,
-        color(mixOklab(colors.surface.hex, colors[role].hex, amount)),
-      ]),
+      Object.entries(TINTS).map(([tint, source]) => [tint, color(tintHex(source))]),
     ) as Record<Tint, Color>;
     const title = appearance === "dark" ? "Dark" : "Light";
 
