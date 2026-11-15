@@ -79,6 +79,8 @@ return function(c, opts)
 		["@comment.warning"] = { fg = c.surface, bg = c.yellow, bold = opts.bold },
 		["@comment.todo"] = { fg = c.surface, bg = c.magenta, bold = opts.bold },
 		["@comment.note"] = { fg = c.surface, bg = c.blue, bold = opts.bold },
+		["@comment.info"] = { link = "@comment.note" },
+		["@comment.hint"] = { fg = c.surface, bg = c.magenta, bold = opts.bold },
 
 		["@markup.strong"] = { bold = true },
 		["@markup.italic"] = { italic = true },

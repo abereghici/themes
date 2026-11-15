@@ -1,7 +1,5 @@
 -- render-markdown.nvim and CopilotChat, which renders its chat as markdown
 
-local mix = require("bereghici.color").mix
-
 ---@param c bereghici.Colors
 ---@param opts bereghici.Config
 ---@return bereghici.Highlights
@@ -10,7 +8,7 @@ return function(c, opts)
 		RenderMarkdownCode = { bg = c.surface_raised },
 		RenderMarkdownCodeBorder = { bg = c.surface_nested },
 		RenderMarkdownCodeInfo = { fg = c.text_subtle },
-		RenderMarkdownCodeInline = { fg = c.cyan, bg = c.line_highlight },
+		RenderMarkdownCodeInline = { fg = c.cyan_bright, bg = c.line_highlight },
 		RenderMarkdownInlineHighlight = { link = "Search" },
 		RenderMarkdownBullet = { fg = c.text_subtle },
 		RenderMarkdownDash = { fg = c.border },
@@ -41,10 +39,10 @@ return function(c, opts)
 		CopilotChatModels = { fg = c.cyan },
 	}
 
-	-- Every heading level is blue, as in the other editors, on a faint band of it
+	-- Every heading level is blue, as in the other editors, on the blue diff tint
 	for level = 1, 6 do
 		groups["RenderMarkdownH" .. level] = { fg = c.blue, bold = opts.bold }
-		groups["RenderMarkdownH" .. level .. "Bg"] = { bg = mix(c.blue, c.surface, 0.12) }
+		groups["RenderMarkdownH" .. level .. "Bg"] = { bg = c.tints.changed }
 	end
 
 	return groups
