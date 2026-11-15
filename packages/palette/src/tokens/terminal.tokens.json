@@ -52,7 +52,7 @@
     },
     "color-text": {
       "$type": "color",
-      "$value": "{primitive.palette-sage-950}",
+      "$value": "{primitive.palette-sage-900}",
       "$description": "High-contrast foreground: body text, variables, active items",
       "$extensions": {
         "com.bereghici.theme": {
@@ -92,7 +92,7 @@
     },
     "color-accent": {
       "$type": "color",
-      "$value": "{semantic.color-text-accent}",
+      "$value": "{primitive.palette-moss-700}",
       "$description": "The brand action color: the cursor, focused borders, the prompt",
       "$extensions": {
         "com.bereghici.theme": {

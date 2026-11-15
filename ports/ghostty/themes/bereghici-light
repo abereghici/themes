@@ -14,11 +14,11 @@ palette = 11=#6b3c03
 palette = 12=#20537f
 palette = 13=#6b3e62
 palette = 14=#005e63
-palette = 15=#171914
+palette = 15=#2a2c27
 background = #f3f5ee
-foreground = #171914
-cursor-color = #263316
+foreground = #2a2c27
+cursor-color = #4e5c40
 cursor-text = #f3f5ee
 selection-background = #c1c3bc
-selection-foreground = #171914
+selection-foreground = #2a2c27
 split-divider-color = #858680

@@ -14,16 +14,16 @@
       "tab_background_text": [83, 87, 80],
       "tab_background_text_inactive": [83, 87, 80],
       "toolbar": [234, 235, 227],
-      "tab_text": [23, 25, 20],
-      "toolbar_text": [23, 25, 20],
+      "tab_text": [42, 44, 39],
+      "toolbar_text": [42, 44, 39],
       "toolbar_button_icon": [62, 65, 59],
       "bookmark_text": [62, 65, 59],
       "omnibox_background": [225, 227, 220],
-      "omnibox_text": [23, 25, 20],
+      "omnibox_text": [42, 44, 39],
       "ntp_background": [243, 245, 238],
       "ntp_header": [234, 235, 227],
-      "ntp_text": [23, 25, 20],
-      "ntp_link": [38, 51, 22]
+      "ntp_text": [42, 44, 39],
+      "ntp_link": [78, 92, 64]
     },
     "properties": {
       "ntp_background_alignment": "bottom"

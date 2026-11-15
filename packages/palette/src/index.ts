@@ -99,24 +99,65 @@ interface TintSource {
   readonly role: Role;
   readonly amount: number;
   /**
-   * The primitive Bereghici Dark uses instead of the mix. Mixing the dark theme's pastel hues into
-   * a near-black surface gives near-grey tints, so its diff backgrounds take the deep steps of the
-   * hue's own ramp: as dark as the mix, with three to four times the chroma.
+   * The primitive an appearance uses instead of the mix. Mixing a hue into the canvas gives
+   * near-grey tints, so the diff backgrounds take steps of the hue's own ramp instead: the deep
+   * ones in Bereghici Dark, the pale ones in Bereghici Light, with several times the chroma.
    */
   readonly dark?: string;
+  readonly light?: string;
 }
 
 /** Opaque tints of a role over `surface`, for diff and search backgrounds that can't be translucent. */
 export const TINTS = {
-  added: { role: "green", amount: 0.16, dark: "{primitive.palette-fern-900}" },
-  addedEmphasis: { role: "green", amount: 0.32, dark: "{primitive.palette-fern-800}" },
-  removed: { role: "red", amount: 0.16, dark: "{primitive.palette-clay-900}" },
-  removedEmphasis: { role: "red", amount: 0.32, dark: "{primitive.palette-clay-800}" },
+  added: {
+    role: "green",
+    amount: 0.16,
+    dark: "{primitive.palette-fern-900}",
+    light: "{primitive.palette-fern-100}",
+  },
+  addedEmphasis: {
+    role: "green",
+    amount: 0.32,
+    dark: "{primitive.palette-fern-800}",
+    light: "{primitive.palette-fern-200}",
+  },
+  removed: {
+    role: "red",
+    amount: 0.16,
+    dark: "{primitive.palette-clay-900}",
+    light: "{primitive.palette-clay-100}",
+  },
+  removedEmphasis: {
+    role: "red",
+    amount: 0.32,
+    dark: "{primitive.palette-clay-800}",
+    light: "{primitive.palette-clay-200}",
+  },
   // The changed words of a line, where a tool has a third, stronger diff shade
-  addedStrong: { role: "green", amount: 0.48, dark: "{primitive.palette-fern-700}" },
-  removedStrong: { role: "red", amount: 0.48, dark: "{primitive.palette-clay-700}" },
-  changed: { role: "blue", amount: 0.16, dark: "{primitive.palette-lake-900}" },
-  changedEmphasis: { role: "blue", amount: 0.32, dark: "{primitive.palette-lake-800}" },
+  addedStrong: {
+    role: "green",
+    amount: 0.48,
+    dark: "{primitive.palette-fern-700}",
+    light: "{primitive.palette-fern-300}",
+  },
+  removedStrong: {
+    role: "red",
+    amount: 0.48,
+    dark: "{primitive.palette-clay-700}",
+    light: "{primitive.palette-clay-300}",
+  },
+  changed: {
+    role: "blue",
+    amount: 0.16,
+    dark: "{primitive.palette-lake-900}",
+    light: "{primitive.palette-lake-100}",
+  },
+  changedEmphasis: {
+    role: "blue",
+    amount: 0.32,
+    dark: "{primitive.palette-lake-800}",
+    light: "{primitive.palette-lake-200}",
+  },
   search: { role: "yellow", amount: 0.24 },
 } as const satisfies Record<string, TintSource>;
 
@@ -294,7 +335,7 @@ export async function loadPalette(): Promise<Palette> {
       ...color(hexIn(token(`ansi-${index}`), appearance, dictionary)),
     }));
     const tintHex = ({ role, amount, ...source }: TintSource): string => {
-      const primitive = appearance === "dark" && "dark" in source ? source.dark : undefined;
+      const primitive = appearance in source ? source[appearance] : undefined;
 
       if (primitive === undefined) return mixOklab(colors.surface.hex, colors[role].hex, amount);
 

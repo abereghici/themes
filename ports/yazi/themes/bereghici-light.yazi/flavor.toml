@@ -17,20 +17,20 @@ count_selected = { fg = "#f3f5ee", bg = "#925613" }
 border_style = { fg = "#858680" }
 
 [tabs]
-active = { fg = "#f3f5ee", bg = "#263316", bold = true }
+active = { fg = "#f3f5ee", bg = "#4e5c40", bold = true }
 inactive = { fg = "#3e413b", bg = "#e1e3dc" }
 
 [mode]
-normal_main = { fg = "#f3f5ee", bg = "#263316", bold = true }
-normal_alt = { fg = "#263316", bg = "#e1e3dc" }
+normal_main = { fg = "#f3f5ee", bg = "#4e5c40", bold = true }
+normal_alt = { fg = "#4e5c40", bg = "#e1e3dc" }
 select_main = { fg = "#f3f5ee", bg = "#8b537f", bold = true }
 select_alt = { fg = "#8b537f", bg = "#e1e3dc" }
 unset_main = { fg = "#f3f5ee", bg = "#a84837", bold = true }
 unset_alt = { fg = "#a84837", bg = "#e1e3dc" }
 
 [indicator]
-parent = { fg = "#171914", bg = "#c1c3bc" }
-current = { fg = "#171914", bg = "#c1c3bc" }
+parent = { fg = "#2a2c27", bg = "#c1c3bc" }
+current = { fg = "#2a2c27", bg = "#c1c3bc" }
 preview = { underline = true }
 
 [status]
@@ -39,7 +39,7 @@ perm_type = { fg = "#2f6da4" }
 perm_read = { fg = "#925613" }
 perm_write = { fg = "#a84837" }
 perm_exec = { fg = "#1f7c44" }
-progress_normal = { fg = "#263316", bg = "#e1e3dc" }
+progress_normal = { fg = "#4e5c40", bg = "#e1e3dc" }
 progress_error = { fg = "#a84837", bg = "#e1e3dc" }
 
 [which]
@@ -51,11 +51,11 @@ separator_style = { fg = "#535750" }
 
 [confirm]
 border = { fg = "#858680" }
-title = { fg = "#263316" }
+title = { fg = "#4e5c40" }
 
 [spot]
 border = { fg = "#858680" }
-title = { fg = "#263316" }
+title = { fg = "#4e5c40" }
 tbl_col = { fg = "#2f6da4" }
 tbl_cell = { fg = "#925613", reversed = true }
 
