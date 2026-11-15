@@ -53,6 +53,11 @@ export const CONTRAST: readonly ContrastGroup[] = [
     pairs: pairs([...HUES, ...BRIGHT_HUES], PANELS, () => 3),
   },
   {
+    // The cursor line keeps syntax colors over it in every editor, and Bereghici Light's is surfaceNested
+    title: "Syntax and ANSI colors on the cursor line",
+    pairs: pairs([...HUES, ...BRIGHT_HUES], ["lineHighlight"], () => 3.5),
+  },
+  {
     title: "Text and syntax colors on the selection",
     pairs: [...pairs(["text"], ["selection"], () => 4.5), ...pairs(HUES, ["selection"], () => 2.5)],
   },

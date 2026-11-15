@@ -160,6 +160,23 @@ Yellow, and the hues on panels and the selection, sit below AA by design, as in 
 | `magentaBright` | `surfaceRaised` | 3.00    | 8.75  | 7.02  |
 | `magentaBright` | `surfaceNested` | 3.00    | 8.12  | 6.51  |
 
+**Syntax and ANSI colors on the cursor line**
+
+| Foreground      | Background      | Minimum | Dark | Light |
+| --------------- | --------------- | ------- | ---- | ----- |
+| `red`           | `lineHighlight` | 3.50    | 4.35 | 4.45  |
+| `yellow`        | `lineHighlight` | 3.50    | 6.85 | 4.55  |
+| `green`         | `lineHighlight` | 3.50    | 5.47 | 4.03  |
+| `cyan`          | `lineHighlight` | 3.50    | 5.09 | 3.96  |
+| `blue`          | `lineHighlight` | 3.50    | 4.93 | 4.22  |
+| `magenta`       | `lineHighlight` | 3.50    | 4.73 | 4.45  |
+| `redBright`     | `lineHighlight` | 3.50    | 5.85 | 6.53  |
+| `yellowBright`  | `lineHighlight` | 3.50    | 7.85 | 7.14  |
+| `greenBright`   | `lineHighlight` | 3.50    | 7.71 | 5.98  |
+| `cyanBright`    | `lineHighlight` | 3.50    | 6.95 | 5.83  |
+| `blueBright`    | `lineHighlight` | 3.50    | 6.80 | 6.23  |
+| `magentaBright` | `lineHighlight` | 3.50    | 6.58 | 6.51  |
+
 **Text and syntax colors on the selection**
 
 | Foreground | Background  | Minimum | Dark | Light |

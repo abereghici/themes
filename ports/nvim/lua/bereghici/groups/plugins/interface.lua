@@ -53,7 +53,8 @@ return function(c, opts)
 		TroubleNormal = { fg = c.text, bg = bg_panel },
 		TroubleNormalNC = { link = "TroubleNormal" },
 		TroubleText = { fg = c.text },
-		TroubleCount = { fg = c.magenta, bg = c.selection },
+		-- A filled pill like the other counts: magenta text on the selection was 3:1
+		TroubleCount = { fg = c.surface, bg = c.magenta, bold = opts.bold },
 		TroubleCode = { fg = c.text_subtlest },
 		TroubleSource = { fg = c.text_subtlest },
 		TroubleFilename = { fg = c.blue },
