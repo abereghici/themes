@@ -165,8 +165,8 @@ settings:
 catalogs:
   default:
     '@abereghici/tokens':
-      specifier: 0.2.0
-      version: 0.2.0
+      specifier: 0.3.0
+      version: 0.3.0
     '@types/mustache':
       specifier: 4.2.6
       version: 4.2.6
@@ -275,7 +275,7 @@ importers:
     dependencies:
       '@abereghici/tokens':
         specifier: 'catalog:'
-        version: 0.2.0
+        version: 0.3.0
       colorjs.io:
         specifier: 'catalog:'
         version: 0.5.2
@@ -285,8 +285,8 @@ importers:
 
 packages:
 
-  '@abereghici/tokens@0.2.0':
-    resolution: {integrity: sha512-GkGulduwXWAi2zN9xlH3k/qLiPPJuaa33ghjtPkJg7L1IRuZ9qck8d4tFNGllZd4n/OwZWHaN/osCFgR0/E5xA==}
+  '@abereghici/tokens@0.3.0':
+    resolution: {integrity: sha512-q9j5ng22HB042w+lQ+wdiNFki0E6IoLTfOLhGTwM+Bge4ZmbLQT2JJkOzZJhA3MyD4b8p6GOABVEcpzohRDNFQ==}
 
   '@azure/abort-controller@2.2.0':
     resolution: {integrity: sha512-fNAjWnA/nZ2jz31kxR/AqRaUT8ewHBw/WuBIosK0moMy1C9e5ValbDfFdIxJzVOOYaYkV/b2F1S4H/aHiqfVQg==}
@@ -2142,7 +2142,7 @@ packages:
 
 snapshots:
 
-  '@abereghici/tokens@0.2.0': {}
+  '@abereghici/tokens@0.3.0': {}
 
   '@azure/abort-controller@2.2.0':
     dependencies:
